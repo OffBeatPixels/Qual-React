@@ -1,137 +1,43 @@
-// import React, { useState } from "react";
-// import { Button } from "@nextui-org/react";
-// import { Link } from "react-router-dom";
-
-// export default function NavbarComp() {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-//   return (
-//     <nav className=" p-4">
-//       <div className="container mx-auto flex justify-between items-center">
-//         {/* Logo on the left */}
-//         <div className="font-bold text-lg">
-//           <a href="/" className="flex items-center">
-//             <img
-//               src="src/assets/logo.webp"
-//               alt="Qualiinsight's Logo"
-//               className="h-20"
-//             />
-//           </a>
-//         </div>
-
-//         {/* Hamburger button for small screens */}
-//         <button className="lg:hidden " onClick={toggleMenu}>
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="w-6 h-6"
-//             fill="none"
-//             stroke="currentColor"
-//             viewBox="0 0 24 24"
-//             strokeWidth="2"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               d="M4 6h16M4 12h16M4 18h16"
-//             />
-//           </svg>
-//         </button>
-
-//         {/* Menu items for large screens */}
-//         <div className="hidden lg:flex gap-8 ml-72">
-//           <a href="#" className=" hover:text-gray-400">
-//             Home
-//           </a>
-//           <a href="#" className=" hover:text-gray-400">
-//             About
-//           </a>
-//           <a href="#" className=" hover:text-gray-400">
-//             Solution
-//           </a>
-//           <a href="#" className=" hover:text-gray-400">
-//             Resources
-//           </a>
-//         </div>
-
-//         {/* Book a Meeting button */}
-//         <div className="flex items-center">
-//           <Button
-//             as={Link}
-//             color="primary"
-//             href="#"
-//             variant="flat"
-//             className="h-10 py-2 bg-[#d33e5f] text-white  rounded-xl"
-//           >
-//             Book A Meeting
-//           </Button>
-//         </div>
-//       </div>
-
-//       {/* Dropdown menu for small screens */}
-//       {isMenuOpen && (
-//         <div className="lg:hidden  p-4 mt-4">
-//           <a href="#" className="block py-2 px-4 hover:bg-gray-200">
-//             Home
-//           </a>
-//           <a href="#" className="block py-2 px-4 hover:bg-gray-200">
-//             About
-//           </a>
-//           <a href="#" className="block py-2 px-4 hover:bg-gray-200">
-//             Solution
-//           </a>
-//           <a href="#" className="block py-2 px-4 hover:bg-gray-200">
-//             Resources
-//           </a>
-//         </div>
-//       )}
-//     </nav>
-//   );
-// }
-
-
-
-
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { MdOutlineArrowDropDown } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
   {
     id: 2,
     title: "About",
-    path: "/about",
+    // path: "/about",
     delay: "0.2s",
     hasDropdown: true, // Added flag for dropdown menu
     dropdownItems: [
-      { title: "Company", path: "/solutions/web-dev" },
-      { title: "Careers", path: "/solutions/app-dev" },
+      { title: "Company", path: "/company" },
+      { title: "Careers", path: "/careers" },
     ],
   },
   {
     id: 3,
-    title: "Solutions",
-    path: "/Solutions",
+    title: "Offerings",
+    // path: "/Offerings",
     delay: "0.5s",
     hasDropdown: true, // Added flag for dropdown menu
     dropdownItems: [
-      { title: "Services", path: "/solutions/web-dev" },
-      { title: "Products", path: "/solutions/app-dev" },
+      { title: "Project Based Services", path: "/services" },
+      { title: "Managed Services", path: "/services1" },
     ],
   },
   {
     id: 4,
     title: "Resources",
-    path: "/blog",
+    // path: "/blog",
     delay: "0.3s",
     hasDropdown: true, // Added flag for dropdown menu
     dropdownItems: [
-      { title: "Blog", path: "/solutions/web-dev" },
-      { title: "Usecase", path: "/solutions/app-dev" },
+      { title: "Blog", path: "/blog" },
+      { title: "Usecase", path: "/usecase" },
+      { title: "Contact", path: "/contact" },
     ],
   },
 ];
@@ -153,6 +59,17 @@ const SlideDown = (delay) => {
     },
   };
 };
+
+ const getNavbarColor = () => {
+   switch (location.pathname) {
+
+     case "/":
+       return "bg-[#F7F7F7]"; // Blue for the About page
+
+     default:
+       return "bg-[#F7F7F7]"; // Default color
+   }
+ };
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -177,24 +94,33 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", menuClose);
   }, []);
 
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+  
   return (
-    <nav className="w-full h-20 justify-end">
+    <nav className={`w-full h-20 justify-end ${getNavbarColor()}`}>
       <div
         className="flex items-center justify-between font-league"
         ref={menuRef}
       >
         {/* LOGO */}
-        <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          src="src/assets/logo.webp"
-          alt="Qualiinsight's Logo"
-          className="w-36 h-20 lg:ml-20"
-        />
+        <Link to="/">
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            src="src/assets/logo.webp"
+            alt="Qualiinsight's Logo"
+            loading="lazy"
+            className=" h-20 py-1 ml-5 lg:ml-20"
+          />
+        </Link>
 
         {/* Menu (always visible on larger screens) */}
-        <div className="hidden md:flex flex-grow justify-end  mt-5">
+        <div className="hidden md:flex flex-grow justify-end  ">
           <ul className="flex  ">
             {navmenu.map((menu) => (
               <motion.li
@@ -206,7 +132,7 @@ const Navbar = () => {
               >
                 {/* Check if the item has a dropdown */}
                 <div
-                  className="relative z-50"
+                  className="relative z-50 font-semibold"
                   onMouseEnter={() =>
                     menu.hasDropdown && toggleDropdown(menu.id)
                   } // Open dropdown on hover
@@ -214,21 +140,25 @@ const Navbar = () => {
                 >
                   <NavLink
                     to={menu.path}
+                    onClick={() => {
+                      scrollToTop();
+                      setIsOpen(false); // Close mobile menu if open
+                    }}
                     className={({ isActive }) =>
                       isActive
-                        ? "inline-block px-2 text-md font-sans font-bold text-orange-700"
-                        : "inline-block px-2 text-md font-sans font-bold hover:text-orange-500"
+                        ? "flex px-4 py-2 text-lg "
+                        : "flex px-4 py-2 text-lg text-black "
                     }
                   >
                     {menu.title}
                     {/* Show the dropdown arrow if the menu has a dropdown */}
                     {menu.hasDropdown && (
-                      <MdOutlineArrowDropDown  className="inline-block" />
+                      <MdOutlineArrowDropDown className="  mt-2 xl:mt-1 " />
                     )}
                   </NavLink>
                   {/* Dropdown Menu */}
                   {menu.hasDropdown && dropdownOpen === menu.id && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
+                    <div className="absolute left-0  w-48 bg-white shadow-lg rounded-lg">
                       <ul className="flex flex-col">
                         {menu.dropdownItems.map((item, index) => (
                           <li key={index} className="hover:bg-gray-200">
@@ -247,13 +177,17 @@ const Navbar = () => {
               </motion.li>
             ))}
           </ul>
-          <button className="rounded-3xl p-2  mx-5 bg-red-400">
-            Book A Meeting
-          </button>
         </div>
+        <Link
+          to="/contact"
+          className=" p-2 px-4 mr-2 hidden md:block text-white font-bold  md:ml-0 lg:mr-20 
+        rounded-lg shadow-lg hover:bg-red-600 transition duration-300 relative z-20 bg-[#D93455]"
+        >
+          Book A Meeting
+        </Link>
 
         {/* Menu Button (Mobile View) */}
-        <div className="flex px-5 mt-5 justify-between sm:hidden">
+        <div className="flex px-5  justify-between sm:hidden">
           <motion.div
             className="h-[40px] w-[40px] grid place-items-center bg-black hover:bg-gray-600 rounded-full"
             variants={SlideDown(1)}
@@ -269,7 +203,7 @@ const Navbar = () => {
         {/* Mobile Menu (visible only when toggled) */}
         {isOpen && (
           <div className="fixed top-0 right-0 mt-16 w-40 z-50 rounded-2xl md:hidden">
-            <ul className="flex flex-col gap-2 p-4 bg-white/80 shadow-lg">
+            <ul className="flex flex-col gap-2 p-4 bg-white shadow-lg">
               {navmenu.map((menu) => (
                 <motion.li
                   variants={SlideDown(menu.delay)}
@@ -286,15 +220,15 @@ const Navbar = () => {
                       to={menu.path}
                       className={({ isActive }) =>
                         isActive
-                          ? "block px-4 py-2 text-lg text-orange-700"
-                          : "block px-4 py-2 text-lg text-gray-800 hover:text-orange-700"
+                          ? "block px-4 py-2 text-lg "
+                          : "block px-4 py-2 text-lg text-gray-800 "
                       }
                     >
                       {menu.title}
                     </NavLink>
                     {/* Show dropdown arrow only if there's a dropdown */}
                     {menu.hasDropdown && (
-                      <MdOutlineArrowDropDown  className="inline-block  " />
+                      <MdOutlineArrowDropDown className="inline-block  " />
                     )}
                   </div>
 

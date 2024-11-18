@@ -10,7 +10,7 @@ export const BoxesCore = ({ className, ...rest }) => {
     "--sky-300",
     "--pink-300",
     "--green-300",
-    "--yellow-300",
+    "--yellow-300",  
     "--red-300",
     "--purple-300",
     "--blue-300",
@@ -27,7 +27,7 @@ export const BoxesCore = ({ className, ...rest }) => {
         transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
       }}
       className={cn(
-        "absolute left-1/4 p-4 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 ",
+        "absolute left-1/4 p-4 -top-1/4 flex -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 ",
         className
       )}
       {...rest}
@@ -35,7 +35,8 @@ export const BoxesCore = ({ className, ...rest }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-slate-700 relative"
+          className="w-16 h-8  border-l   relative"
+          // className="w-16 h-8   relative"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -47,9 +48,10 @@ export const BoxesCore = ({ className, ...rest }) => {
                 transition: { duration: 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-700 relative"
+              // className="w-16 h-8  border-r border-t border-slate-700 relative"  
+              className="w-16 h-8  relative"  
             >
-              {j % 2 === 0 && i % 2 === 0 ? (
+              {/* {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -61,10 +63,10 @@ export const BoxesCore = ({ className, ...rest }) => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M12 6v12m6-6H6"
+                    d="M12 6v12m6-6H6"   
                   />
                 </svg>
-              ) : null}
+              ) : null} */}
             </motion.div>
           ))}
         </motion.div>
