@@ -24,7 +24,7 @@ export function BackgroundBoxesDemo() {
         Accelerate AGI Implementation <br /> with <br />
         Quality Insights!
       </p>
-      <Link className=" md:flex gap-2 md:my-8 mt-2 p-2 md:py-3 md:px-5 md:text-lg bg-[#d33e5f] text-white font-semibold rounded-lg shadow-lg hover:bg-red-600 transition duration-300 relative z-20">
+      <Link className=" md:flex gap-2 md:my-8 mt-2 p-2 md:py-3 md:px-5 md:text-lg bg-[#d33e5f] shadow-2xl shadow-inner shadow-black text-white font-semibold rounded-lg  hover:bg-red-600 transition duration-300 relative z-20">
        Scroll Down to  Learn More
       </Link>
     </div>

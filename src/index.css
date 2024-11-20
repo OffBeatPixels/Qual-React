@@ -136,23 +136,7 @@
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 1200px) {
-    svg {
-        width: 70%; /* Adjust for slightly smaller screens */
-    }
-}
 
-@media (max-width: 800px) {
-    svg {
-        width: 80%; /* Adjust further for medium-sized screens */
-    }
-}
-
-@media (max-width: 600px) {
-    svg {
-        width: 90%; /* Adjust for smaller screens */
-    }
-}
 /* General circle styling */
 .circle {
     fill: transparent;

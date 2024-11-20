@@ -146,7 +146,7 @@ const scrollToTop = () => {
                     }}
                     className={({ isActive }) =>
                       isActive
-                        ? "flex px-4 py-2 text-lg "
+                        ? "flex px-4 py-2 text-lg text-black"
                         : "flex px-4 py-2 text-lg text-black "
                     }
                   >

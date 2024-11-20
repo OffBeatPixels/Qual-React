@@ -163,7 +163,7 @@ const FlipCardSection = () => {
   };
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white ">
       <h1 className="text-3xl md:text-4xl text-center font-bold text-black">
         Capabilities
       </h1>

@@ -163,15 +163,15 @@ export default function Services() {
 
   return (
     <section
-      style={{
-        backgroundImage: `url(${Servicebg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "100% ",
-        backgroundBlendMode: "overlay",
-        "@media (max-width: 768px)": {
-          backgroundImage: "none",
-        },
-      }}
+      // style={{
+      //   backgroundImage: `url(${Servicebg})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "100% ",
+      //   backgroundBlendMode: "overlay",
+      //   "@media (max-width: 768px)": {
+      //     backgroundImage: "none",
+      //   },
+      // }}
     >
       <div className=" pb-8 md:px-20 pt-10 md:mx-20">
         {/* Section Title */}

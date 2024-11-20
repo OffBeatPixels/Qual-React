@@ -1,6 +1,8 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+// import 'rsuite/dist/rsuite.min.css';
+//  import { CustomProvider } from 'rsuite'
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +12,7 @@ import {
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { Meeting } from "./components/Meeting";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import Error from "./assets/Error404.gif"
 
 // Lazy load the components
@@ -49,17 +51,27 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
+const ScrollTop = ()=>{
+    const {pathname} =useLocation()
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[pathname])
+
+  return null;
+  
+}
 
 const MainLayout = () => {
   const location = useLocation();
-  console.log("current location is : " ,location );
-  
+
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <Suspense fallback={<div className="text-center">Loading .... </div>}>
+            <ScrollTop/>
           <Routes location={location}>
             <Route index element={<App />} />
             <Route path="/company" element={<Company />} />
@@ -80,7 +92,9 @@ const MainLayout = () => {
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+  // <CustomProvider >
   <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    
     <ErrorBoundary
       fallback={
         <div className="flex justify-center items-center md:mt-20 h-full md:h-60 ">
@@ -91,4 +105,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <MainLayout />
     </ErrorBoundary>
   </Router>
+  //  </CustomProvider>
 );

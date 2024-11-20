@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Goals = () => {
   useEffect(() => {
     const tl = gsap.timeline();
-
+if(window.innerWidth >768){
     tl.fromTo(
       ".g2",
       { opacity: 0, x: -100 },
@@ -20,7 +20,6 @@ const Goals = () => {
           start: "top 70%",
           end: "top 50%",
           scrub: 2,
-          
         },
       }
     ).fromTo(
@@ -38,6 +37,39 @@ const Goals = () => {
         },
       }
     );
+  }
+  else{
+     tl.fromTo(
+       ".g2",
+       { opacity: 0, y: -200 },
+       {
+         opacity: 1,
+         y: 0,
+         scrollTrigger: {
+           trigger: ".goals",
+           scroller: "body",
+           start: "top 70%",
+           end: "top 50%",
+           scrub: 2,
+         },
+       }
+     ).fromTo(
+       ".g3",
+       { opacity: 0, y: -100 },
+       {
+         opacity: 1,
+         y: 0,
+         scrollTrigger: {
+           trigger: ".goals",
+           scroller: "body",
+           start: "top 40%",
+           end: "top 20%",
+           scrub: 2,
+         },
+       }
+     );
+  }
+  
 
     // tl.from(".goals-section p", {
     //   opacity: 0,
@@ -49,9 +81,10 @@ const Goals = () => {
 
   return (
     <section
-      className=" bg-cover bg-no-repeat py-10 border-y-2 border-gray-500"
+      className=" bg-cover bg-no-repeat py-10 border-y-3 border-black"
       style={{ backgroundImage: "url('/path/to/goals-bg.webp')" }}
     >
+      
       <p className="w-full text-2xl font-bold py-5 mb-5  text-center">
         Transforming excellence from a goal to your daily reality with
         Qualiinsight's QaaS.

@@ -4,6 +4,8 @@ import { BackgroundBoxesDemo } from "./components/ui/BackgroundBoxesDemo";
 
 import Card from "./components/Card";
 import FlipCardSection from "./components/FlipCardSection";
+import Info from "./components/Info";
+
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
     <div>
       <BackgroundBoxesDemo  /> 
        <Goals />
+
       <Card/>
       <FlipCardSection/>
       
