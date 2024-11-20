@@ -145,17 +145,17 @@
 
 /* Background images for each circle */
 .circle1 {
-    background-image: url('SVG-1.png');
+    background-image: url('https://picsum.photos/200');
     background-size: cover;
 }
 
 .circle2 {
-    background-image: url('SVG-1.png');
+    background-image: url('https://picsum.photos/200');
     background-size: cover;
 }
 
 .circle3 {
-    background-image: url('SVG-1.png');
+    background-image: url('https://picsum.photos/200');
     background-size: cover;
 }
 

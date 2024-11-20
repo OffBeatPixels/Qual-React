@@ -67,7 +67,7 @@ const SlideDown = (delay) => {
        return "bg-[#F7F7F7]"; // Blue for the About page
 
      default:
-       return "bg-[#F7F7F7]"; // Default color
+       return "bg-gray-200"; // Default color
    }
  };
 

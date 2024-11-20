@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import { Meeting } from "./components/Meeting";
 import React, { Suspense, useEffect } from "react";
 import Error from "./assets/Error404.gif"
+import { WobbleCardDemo } from "./components/ui/WobbleCardDemo.jsx";
 
 // Lazy load the components
       const Company = React.lazy(() =>
@@ -79,7 +80,7 @@ const MainLayout = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/services1" element={<Services1 />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/usecase" element={<Usecase />} />
+            <Route path="/usecase" element={<WobbleCardDemo />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="*" element={<App />} />
           </Routes>
