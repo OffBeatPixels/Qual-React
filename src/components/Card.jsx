@@ -89,12 +89,20 @@ export default function Card() {
   // }, []);
 
   return (
-    <section className="relative bg-[#ffffff] h-fit md:h-full py-10 text-white">
-      <h1 className="card-h1 text-3xl md:text-4xl text-center text-[#000000] font-bold relative z-20">
+    <section className="relative bg-[#ffffff] h-fit md:h-full  text-white">
+      <div className="flex mx-auto h-px w-[30%] justify-center">
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <div className="flex-grow h-2px bg-black"></div>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+      </div>
+      <h1 className="card-h1 text-3xl md:text-4xl text-center pt-10 text-[#000000] font-bold relative z-20">
         Challenges faced by the <br />
         business teams today
       </h1>
-
       <p className="text-center text-black text-lg md:mx-14 mt-4 mb-10 font-semibold relative z-20">
         Many businesses struggle to harness the full potential of Quality due to
         outdated frameworks, insufficient comparative analysis, <br /> biased
@@ -130,7 +138,7 @@ export default function Card() {
       </svg>
 
       {/* Card Grid */}
-      <div className="relative z-20 flex overflow-x-auto gap-4 px-4 py-10 lg:px-3 xl:px-20 2xl:mx-60">
+      <div className="relative z-20 flex overflow-x-auto md:overflow-hidden gap-4 px-4 py-10 lg:px-3 xl:px-20 2xl:mx-60">
         {cardData.map((item, index) => (
           <div
             key={index}
@@ -138,7 +146,7 @@ export default function Card() {
             className="group relative flex-shrink-0 p-2 md:p-2 xl:p104 rounded-lg  w-[85%] sm:w-[70%] md:w-[40%] lg:w-52 xl:w-60 bg-[#ffffff] overflow-hidden"
           >
             {/* Animated Border */}
-            <div className="absolute inset-0 bg-white border-8 blur-sm opacity-100 group-hover:bg-gradient-to-r group-hover:from-[#169A47] group-hover:via-[#1F5F5C] group-hover:to-[#042315] group-hover:animate-spin-gradient"></div>
+            <div className="absolute inset-0 bg-white border-1 border-gray-500  opacity-100 group-hover:bg-gradient-to-r group-hover:from-[#169A47] group-hover:via-[#1F5F5C] group-hover:to-[#042315] group-hover:animate-spin-gradient"></div>
             <div className="absolute inset-1 bg-[#ffffff] rounded-lg"></div>
 
             {/* Card Content */}

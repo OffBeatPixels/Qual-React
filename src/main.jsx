@@ -16,6 +16,8 @@ import React, { Suspense, useEffect } from "react";
 import Error from "./assets/Error404.gif"
 import { WobbleCardDemo } from "./components/ui/WobbleCardDemo.jsx";
 
+import ScrollProvider from "./components/Animations/ScrollProvider.jsx";
+
 // Lazy load the components
       const Company = React.lazy(() =>
         import("./components/Navbar/Nav-pages/Company.jsx")
@@ -63,6 +65,9 @@ const ScrollTop = ()=>{
   
 }
 
+
+
+
 const MainLayout = () => {
   const location = useLocation();
 
@@ -70,20 +75,24 @@ const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow">
+      <main  className="flex-grow">
         <Suspense fallback={<div className="text-center">Loading .... </div>}>
-            <ScrollTop/>
-          <Routes location={location}>
-            <Route index element={<App />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/careers" element={<Career />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services1" element={<Services1 />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/usecase" element={<WobbleCardDemo />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="*" element={<App />} />
-          </Routes>
+          <ScrollTop />
+          {/* <ScrollProvider>
+            <div id="scroll-container" className="scroll-container"> */}
+              <Routes location={location}>
+                <Route index element={<App />} />
+                <Route path="/company" element={<Company />} />
+                <Route path="/careers" element={<Career />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/services1" element={<Services1 />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/usecase" element={<WobbleCardDemo />} />
+                <Route path="/contact" element={<ContactUs />} />
+                <Route path="*" element={<App />} />
+              </Routes>
+            {/* </div>
+          </ScrollProvider> */}
         </Suspense>
       </main>
       <Meeting />

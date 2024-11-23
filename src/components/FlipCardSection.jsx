@@ -164,9 +164,19 @@ const FlipCardSection = () => {
 
   return (
     <section className="bg-white ">
-      <h1 className="text-3xl md:text-4xl text-center font-bold text-black">
+      <div className="flex mx-auto h-px w-[30%] text-white justify-center">
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <span className="h-[2px] mr-2 bg-black">....</span>
+        <div className="flex-grow h-[2px] bg-black"> </div>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+        <span className="h-[2px] ml-2 bg-black">....</span>
+      </div>
+      <h1 className="text-3xl md:text-4xl text-center pt-10 font-bold text-black">
         Capabilities
       </h1>
+
       <div className="flex flex-wrap justify-center gap-6 mt-8 px-4 md:px-10">
         {cardData.map((card, index) => (
           <div
@@ -181,7 +191,7 @@ const FlipCardSection = () => {
               onMouseLeave={() => handleFlip(index)}
             >
               {/* Front Side */}
-              <div className="absolute w-full h-full bg-white border border-gray-200 rounded-lg shadow-lg backface-hidden flex flex-col items-center justify-center">
+              <div className="absolute w-full h-full bg-white border border-gray-200 rounded-lg shadow-xl backface-hidden flex flex-col items-center justify-center">
                 {card.icon}
                 <h3 className="text-lg font-bold mt-2 text-center px-2">
                   {card.title}

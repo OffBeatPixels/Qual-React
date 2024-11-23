@@ -1,36 +1,36 @@
 import React from "react";
-import Service from "../../assets/Service1.jpg";
+import Service from "../../assets/mg.gif";
 
 
 export default function Services1() {
 
   return (
     <section
-      className="  h-screen flex justify-end "
+      className=" mx-28 mt-10  flex justify-end "
       style={{
         backgroundImage: `url(${Service})`,
         backgroundRepeat: "no-repeat",
         // backgroundPosition: "center",
-        minHeight: "100%",
+        height: "70vh",
+
         // minWidth:"100%",
         backgroundBlendMode: "overlay",
         "@media (max-width: 768px)": {
           backgroundImage: "none",
         },
-        backgroundSize: "cover",
+        backgroundSize: "contain",
       }}
     >
       {/* Section Title */}
-      <div className="text-justify w-80 mt-48 mr-40">
-        
+      <div className="text-wrap h-10 w-[40%] mt-32 mr-20">
         <h3 className="text-3xl text-black font-bold mb-8 ">
           Managed Services
         </h3>
-        <p>
+        <p >
           By systematically following four key stages Assessment, Report,
-          Insights, and Process Improvement, 
-          we provide actionable insights and measurable enhancements, fostering
-          a culture of ongoing innovation and operational excellence.
+          Insights, and Process Improvement, we provide actionable insights and
+          measurable enhancements, fostering a culture of ongoing innovation and
+          operational excellence.
         </p>
       </div>
     </section>

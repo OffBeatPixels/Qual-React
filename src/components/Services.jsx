@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Service1 from "../assets/Service-1.jpg"
 import Service2 from "../assets/Service-2.jpg"
 import Service3 from "../assets/Service-3.jpg"
-import Servicebg from "../assets/Service-bg.jpg"
+import graph1 from "../assets/graph1.webm"
 import Popup from "./Popup";
 
 const ServiceData = [
@@ -151,58 +151,46 @@ const ServiceData = [
 
 
 export default function Services() {
-  const [popupData, setPopupData] = useState(null);
-
-  const handleImageClick = (item) => {
-    setPopupData(item);
-  };
-
-  const handleClosePopup = () => {
-    setPopupData(null);
-  };
-
+ 
   return (
-    <section
-      // style={{
-      //   backgroundImage: `url(${Servicebg})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "100% ",
-      //   backgroundBlendMode: "overlay",
-      //   "@media (max-width: 768px)": {
-      //     backgroundImage: "none",
-      //   },
-      // }}
-    >
-      <div className=" pb-8 md:px-20 pt-10 md:mx-20">
+    <section>
+      <div className="pb-8 pt-10">
         {/* Section Title */}
-        <h3 className="text-3xl  font-bold mb-8 text-center">
+        <h3 className="text-3xl font-bold mb-8 text-left ml-14">
           Project Based Services
         </h3>
 
+        <video
+          src={graph1}
+          loop
+          autoPlay
+          className="absolute top-48 left-0 h-[70vh]"
+        />
         {/* Cards Section */}
-        <div className="grid grid-cols-1 w- sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center ">
-          {ServiceData.map((item) => (
+        <div className="grid  grid-cols-2 ml-[40%] gap-5">
+          {ServiceData.map((item, index) => (
             <div
               key={item.id}
-              className="group space-y-4 text-center bg-white  shadow-2xl p-3 "
+              className="group space-y-4 w-80 text-center bg-white shadow-2xl p-3"
+              // style={{
+              //   gridColumn: index < 2 ? `span 1 / span 1` : undefined, // 2 cards in the first row
+              //   gridRow: index < 2 ? `1` : `2`, // Explicitly place 3 cards in the second row
+              //   justifySelf: index < 2 ? "left" : "center", // Align the first-row cards to the right
+              // }}
             >
               <div className="flex justify-center items-center">
                 <img
                   src={item.img}
                   alt={item.name}
                   loading="lazy"
-                  className="
-                   w-full "
+                  className="w-full"
                 />
               </div>
               <div>
-                <p
-                  className="text-md font-bold 0 text-red-600 mb-2 cursor-pointer"
-                  // onClick={() => handleImageClick(item)}
-                >
+                <p className="text-md font-bold text-red-600 mb-2">
                   {item.name}
                 </p>
-                <p className="text-sm text-justify font-normal  overflow-hidden">
+                <p className="text-sm text-justify font-normal overflow-hidden">
                   {item.description}
                 </p>
               </div>
@@ -210,16 +198,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-
-      {/* Popup */}
-      {popupData && (
-        <Popup
-          //   image={popupData.img}
-          name={popupData.name}
-          text={popupData.text}
-          onClose={handleClosePopup}
-        />
-      )}
     </section>
   );
 }
