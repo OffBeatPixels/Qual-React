@@ -22,19 +22,19 @@ export function BackgroundBoxesDemo() {
       <Boxes />
       <h1
         className={cn(
-          "md:text-5xl text-3xl  text-left left-[55%] font-bold relative z-20 "
+          "md:text-5xl text-3xl text-center   left-[25%] font-bold relative z-20 "
         )}
       >
         Quality in your DNA, <br />
         not just your SLA
       </h1>
-      <p className="text-left left-[55%]  text-lg mt-8   font-semibold relative z-20">
-        Unlock Revenue, Minimize Costs, Elevate Customer Experience <br /> &{" "}
+      <p className="text-wrap w-[40%] left-[55%] text-center text-lg mt-8   font-semibold relative z-20">
+        Unlock Revenue, Minimize Costs, Elevate Customer Experience <br /> &
         <br />
-        Accelerate AGI Implementation <br /> with <br />
+        Accelerate AGI Implementation <br /> with <br />{" "}
         Quality Insights!
       </p>
-      <Link className="w-56 left-[55%]  gap-2 md:my-8 mt-2 p-2 md:py-3 md:px-5 md:text-sm bg-[#d33e5f] shadow-2xl  shadow-black text-white font-semibold rounded-lg  hover:bg-red-600 transition duration-300 relative z-20">
+      <Link className="w-56 left-[67%]  gap-2 md:my-8 mt-2 p-2 md:py-3 md:px-5 md:text-sm bg-[#d33e5f] shadow-2xl  shadow-black text-white font-semibold rounded-lg  hover:bg-red-600 transition duration-300 relative z-20">
         Scroll Down to Learn More
       </Link>
     </div>

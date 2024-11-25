@@ -103,7 +103,7 @@ const scrollToTop = () => {
   return (
     <nav className={`w-full h-20 justify-end ${getNavbarColor()}`}>
       <div
-        className="flex items-center justify-between font-league"
+        className="flex items-center mt-2 justify-between font-league"
         ref={menuRef}
       >
         {/* LOGO */}
@@ -115,7 +115,7 @@ const scrollToTop = () => {
             src="src/assets/logo.webp"
             alt="Qualiinsight's Logo"
             loading="lazy"
-            className=" h-20 py-1 ml-5 lg:ml-20"
+            className=" h-14 py-1 ml-5 lg:ml-20"
           />
         </Link>
 
