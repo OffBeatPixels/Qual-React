@@ -66,5 +66,9 @@
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     }
-  }
+  },
+  "main": "eslint.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
