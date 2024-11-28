@@ -1,17 +1,16 @@
 import React from "react";
 import Logo from "/src/assets/logo.webp";
+import fit from "/src/assets/ft-bg-1.jpg";
 import { Link } from "react-router-dom";
-import {
-  FaFacebook,
-  FaLinkedin,
-} from "react-icons/fa6";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
+import Services from './Services';
 
 const Footer = () => {
   return (
     <footer
       className="relative z-10 text-black  pt-10 "
       style={{
-        backgroundImage: "url('/src/assets/ft-bg-1.jpg')",
+        backgroundImage: `url(${fit})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -27,22 +26,22 @@ const Footer = () => {
         {/* Quick Links */}
 
         <div>
-          <h3 className="font-bold text-xl  mb-4 text-black ">Solutions</h3>
+          <h3 className="  text-xl  mb-4 text-black ">Solutions</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/products" className=" hover:text-red-500 ">
-                Product
+              <Link to="/services" className=" hover:text-red-500 ">
+                Project Based Services
               </Link>
             </li>
             <li>
-              <Link to="/services" className=" hover:text-red-500 ">
-                Services
+              <Link to="/services1" className=" hover:text-red-500 ">
+                Managed Services
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-xl  mb-4 text-black ">Resources</h3>
+          <h3 className="  text-xl  mb-4 text-black ">Resources</h3>
           <ul className="space-y-2 ">
             <li>
               <Link to="/blog" className=" hover:text-red-500 ">
@@ -62,7 +61,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-xl  mb-4 text-black ">About</h3>
+          <h3 className="  text-xl  mb-4 text-black ">About</h3>
           <ul className="space-y-2  ">
             <li>
               <Link to="/company" className=" hover:text-red-500 ">
@@ -76,8 +75,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div >
-          <h2 className="font-bold text-xl  mb-4 text-black ">Follow Us</h2>
+        <div>
+          <h2 className="  text-xl  mb-4 text-black ">Follow Us</h2>
           <div className="flex gap-4 ">
             <a
               href="https://www.facebook.com/profile.php?id=61563835936410"

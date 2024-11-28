@@ -1,5 +1,5 @@
 // <div className=" min-h-screen">
-//   <h1 className="text-3xl sm:text-4xl text-center mt-8 font-bold text-gray-800">
+//   <h1 className="text-3xl sm:text-4xl text-center mt-8   text-gray-800">
 //     Use Case
 //   </h1>
 
@@ -17,7 +17,7 @@
 //         {/* Content Overlay */}
 //         <div className="absolute inset-0 flex items-center justify-center p-5 mt-80 md:mt-96 ">
 //           <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-//             <span className="font-bold text-lg block mb-2">
+//             <span className="  text-lg block mb-2">
 //               Sales Performance
 //             </span>
 //             Boost Your Sales with Quality as a Service (QaaS)
@@ -91,7 +91,7 @@
 //         {/* Content Overlay */}
 //         <div className="absolute inset-0 flex items-center justify-center p-5 mt-80 md:mt-96 ">
 //           <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-//             <span className="font-bold text-lg block mb-2">
+//             <span className="  text-lg block mb-2">
 //               Content Services
 //             </span>
 //             We specialize in empowering and training content moderation tools to effectively monitor and filter user-generated content across various digital platforms. Our services enhance these tools` ability to detect and flag inappropriate, offensive, or harmful content, thereby improving their output quality. This approach offers several key benefits:
@@ -189,7 +189,7 @@
 //         {/* Content Overlay */}
 //         <div className="absolute inset-0 flex items-center justify-center p-5 mt-80 md:mt-96 ">
 //           <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-//             <span className="font-bold text-lg block mb-2">
+//             <span className="  text-lg block mb-2">
 //               Transform Your Contact Center Operations with Our Comprehensive QaaS Solution
 //             </span>
 //             At Qualiinsight, we offer a state-of-the-art Quality as a Service (QaaS) solution designed to revolutionize your contact center operations. Our QaaS service combines advanced technology, expert insights, and best practices to enhance customer satisfaction, streamline processes, and boost overall performance.
@@ -267,7 +267,7 @@
 
 
 <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-[65vh] p-4 text-justify rounded-lg ">
-              <span className="font-bold text-medium block mb-2">
+              <span className="  text-medium block mb-2">
                 Sales Performance
               </span>
               Boost Your Sales with Quality as a Service (QaaS) At Qualiinsight,
@@ -332,7 +332,7 @@
 
 
  <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-   <span className="font-bold text-medium block mb-2">Content Services</span>
+   <span className="  text-medium block mb-2">Content Services</span>
    We specialize in empowering and training content moderation tools to
    effectively monitor and filter user-generated content across various digital
    platforms. Our services enhance these tools` ability to detect and flag
@@ -440,7 +440,7 @@
 
 
 <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-                <span className="font-bold text-medium block mb-2">
+                <span className="  text-medium block mb-2">
                   Transform Your Contact Center Operations with Our
                   Comprehensive QaaS Solution
                 </span>
@@ -546,7 +546,7 @@
 // export default function Usecase() {
 //   return (
 //     <div className=" h-[100%]">
-//       <h1 className="text-3xl sm:text-4xl text-center mt-8 font-bold text-gray-800">
+//       <h1 className="text-3xl sm:text-4xl text-center mt-8   text-gray-800">
 //         Use Case
 //       </h1>
 
@@ -562,7 +562,7 @@
 //             {/* Content Overlay */}
 //             <div>
 //               <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-[65vh] p-4 text-justify rounded-lg ">
-//                 <span className="font-bold text-medium block mb-2">
+//                 <span className="  text-medium block mb-2">
 //                   Sales Performance
 //                 </span>
 //                 Boost Your Sales with Quality as a Service (QaaS) At
@@ -637,7 +637,7 @@
 //               {/* Content Overlay */}
 //               <div className=" inset-0 flex items-center justify-center p-5 ">
 //                 <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-//                   <span className="font-bold text-medium block mb-2">
+//                   <span className="  text-medium block mb-2">
 //                     Content Services
 //                   </span>
 //                   We specialize in empowering and training content moderation
@@ -790,7 +790,7 @@
 //               {/* Content Overlay */}
 //               <div >
 //                 <p className="text-black bg-white text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-//                   <span className="font-bold text-medium block mb-2">
+//                   <span className="  text-medium block mb-2">
 //                     Transform Your Contact Center Operations with Our
 //                     Comprehensive QaaS Solution
 //                   </span>
@@ -959,35 +959,35 @@
 //         >
 //           <Panel>
 //             <p className="text-black shadow-inner bg-gray-50 text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-[65vh] p-4 text-justify">
-//               <span className="font-bold text-center text-xl block mb-2">
+//               <span className="  text-center text-xl block mb-2">
 //                 Sales Performance
 //               </span>
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Boost Your Sales with Quality as a Service (QaaS) At
 //                 Qualiinsight,
 //               </span>
 //               At Qualiinsight, we offer a comprehensive Quality as a Service
 //               (QaaS) solution designed to enhance your sales process. Here’s how
 //               our service can transform your sales strategy:
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Customer Experience Enhancement
 //               </span>
 //               We ensure every customer interaction is positive, addressing pain
 //               points effectively to foster trust and loyalty, driving sales
 //               growth.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Quality Management Systems (QMS)
 //               </span>
 //               We implement QMS to streamline sales processes, reduce errors, and
 //               enhance operational efficiency, making your sales pitch more
 //               compelling.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Decode the voice of customers
 //               </span>
 //               Move towards customer-centric selling by comprehending the
 //               customer needs and their key pain points to create upselling and
 //               cross-selling opportunities.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Case Study Utilization
 //               </span>
 //               We conduct targeted studies that prioritize business needs, market
@@ -996,20 +996,20 @@
 //               enhance sales, brand value, product strength, and customer
 //               experience. This method goes beyond traditional quality
 //               approaches, maximizing the results generated from your QA systems.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Data-Driven Insights
 //               </span>
 //               Our QaaS solution analyzes customer interactions and sales
 //               processes to refine pitches, improve targeting, enhance platform
 //               and product features, and elevate user experience, ultimately
 //               driving overall sales effectiveness.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Continuous Improvement
 //               </span>
 //               Adopting a Total Quality Management (TQM) approach, we ensure
 //               continuous improvement through regular evaluations and feedback
 //               sessions.
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Best Practices for Sales improvement
 //               </span>
 //               <ul>
@@ -1045,7 +1045,7 @@
 //                   friction and build trust.
 //                 </li>
 //               </ul>
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Why Choose Our QaaS?
 //               </span>
 //               <ul>
@@ -1080,7 +1080,7 @@
 //                   results and success stories.
 //                 </li>
 //               </ul>
-//               <span className="font-bold text-medium block mb-2">
+//               <span className="  text-medium block mb-2">
 //                 Conclusion
 //               </span>
 //               Integrate our QaaS into your outbound sales strategy to improve
@@ -1133,7 +1133,7 @@
 //         >
 //           <Panel>
 //             <p className="text-black shadow-inner bg-gray-50 text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-[65vh] p-4 text-justify">
-//               <span className="font-bold text-center text-xl block mb-2">
+//               <span className="  text-center text-xl block mb-2">
 //                 Content Services
 //               </span>
 //               We specialize in empowering and training content moderation tools
@@ -1305,7 +1305,7 @@ import Usecase3 from "../assets/Usecase3.webp";
 export default function Usecase() {
   return (
     <div className=" mb-52">
-      <h1 className="text-3xl sm:text-4xl text-center mt-8 font-bold text-gray-800">
+      <h1 className="text-3xl sm:text-4xl text-center mt-8   text-gray-800">
         Use Case
       </h1>
 
@@ -1321,7 +1321,7 @@ export default function Usecase() {
             {/* Content Overlay */}
             <div>
               <p className=" absolute mx-5 w-96 top-60 text-black bg-white  text-sm sm:text-base overflow-y-scroll leading-relaxed  h-52  p-4 text-justify  ">
-                <span className="font-bold text-medium block mb-2">
+                <span className="  text-medium block mb-2">
                   Sales Performance
                 </span>
                 Boost Your Sales with Quality as a Service (QaaS) At
@@ -1401,7 +1401,7 @@ export default function Usecase() {
               {/* Content Overlay */}
               <div>
                 <p className=" absolute mx-5 w-96 top-60 text-black bg-gray-100 text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-[65vh] p-4 text-justify rounded-lg  ">
-                  <span className="font-bold text-medium block mb-2">
+                  <span className="  text-medium block mb-2">
                     Content Services
                   </span>
                   We specialize in empowering and training content moderation
@@ -1545,7 +1545,7 @@ export default function Usecase() {
               {/* Content Overlay */}
               <div>
                 <p className="absolute m-1 w-96 top-60 text-black bg-gray-100 text-sm sm:text-base overflow-y-scroll leading-relaxed  h-64 sm:h-80 p-4 text-justify rounded-lg ">
-                  <span className="font-bold text-medium block mb-2">
+                  <span className="  text-medium block mb-2">
                     Transform Your Contact Center Operations with Our
                     Comprehensive QaaS Solution
                   </span>

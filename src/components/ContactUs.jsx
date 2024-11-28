@@ -18,15 +18,13 @@ const ContactUs = () => {
 
   return (
     <div className="grid md:grid-cols-2 md:px-20">
-      <div className="flex items-center justify-center font-bold mt-10 text-2xl md:text-4xl px-10">
+      <div className="flex items-center justify-center   mt-10 text-2xl md:text-4xl px-10">
         Learn more about how Qualiinsight can help your Business and Quality
         teams
       </div>
       <div className="min-h-52 flex items-center justify-center">
         <div className="p-8 w-full max-w-xl">
-          <h2 className="text-3xl font-bold text-center text-gray-800">
-            Contact Us
-          </h2>
+          <h2 className="text-3xl   text-center text-gray-800">Contact Us</h2>
           <form
             action="https://formspree.io/f/xeojkllk"
             method="POST"
@@ -101,7 +99,6 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
-   
   );
 };
 

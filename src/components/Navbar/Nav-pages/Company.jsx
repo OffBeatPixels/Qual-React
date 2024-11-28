@@ -1,22 +1,11 @@
-import React from 'react'
-import Mission from "../../../assets/Mission.jpg"
+import React from "react";
+import {motion} from "framer-motion"
 
-export default function Company () {
+export default function Company() {
   return (
-    <div
-      className=" "
-      style={{
-        backgroundImage: `url(${Mission})`,
-        backgroundSize: "cover",
-        backgroundPosition: "right",
-        backgroundRepeat: "no-repeat",
-        minHeight: "400px",
-        position: "relative",
-        backgroundPositionX: "100%",
-      }}
-    >
+    <div className="flex">
       <div className="md:w-1/2 md:text-justify  md:ml-20 p-8 md:p-10">
-        <h1 className="text-4xl font-bold text-left mb-4">Our Mission</h1>
+        <h1 className="text-4xl   text-left mb-4">Our Mission</h1>
         <p>
           At QualiInsight, we envision a future where quality, insights,
           innovation, and research are the cornerstones of every business
@@ -41,6 +30,52 @@ export default function Company () {
           innovation, enriching lives, and empowering organizations to thrive in
           an ever-evolving landscape.
         </p>
+      </div>
+      <div className=" w-1/2">
+        <motion.svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-4500 -3000 10000 6000"
+          className="w-full h-screen"
+        >
+          <defs>
+            <linearGradient id="gradient-fill" gradientTransform="rotate(90)">
+              <stop offset="0%" stopColor="#760000" />
+              <stop offset="25%" stopColor="#fccbd7" />
+              <stop offset="50%" stopColor="#f9c2c250" />
+              <stop offset="100%" stopColor="#ffffff" />
+            </linearGradient>
+          </defs>
+
+          <motion.path
+            d="M-15-2866A1 1 0 003098-10 1 1 0 007 3142"
+            fill="url(#gradient-fill)"
+            stroke="url(#gradient-fill)"
+            strokeWidth="10"
+            strokeDasharray="1 2000"
+            animate={{
+              strokeDashoffset: [2000, 0], // Path drawing animation
+              scale: [1, 2, 1.5], // Oscillating scale effect
+              rotate: [0, 10,0], // Full rotation
+            }}
+            transition={{
+              strokeDashoffset: {
+                duration: 2,
+                repeat: 0,
+                repeatType: "loop",
+              },
+              scale: {
+                duration: 2,
+                repeat: 0,
+                repeatType: "mirror",
+              },
+              rotate: {
+                duration: 5,
+                repeat: 0,
+                ease: "linear",
+              },
+            }}
+          />
+        </motion.svg>
       </div>
     </div>
   );

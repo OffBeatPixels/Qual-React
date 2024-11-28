@@ -30,7 +30,7 @@ export function WobbleCardDemo() {
   return (
     <div>
       {" "}
-      <h1 className="text-3xl sm:text-4xl text-center my-2 font-bold text-gray-800">
+      <h1 className="text-3xl sm:text-4xl text-center my-2   text-gray-800">
         UseCase
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
@@ -61,7 +61,7 @@ export function WobbleCardDemo() {
         {/* WobbleCard Section 1 */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#B59F78] min-h-[500px] lg:min-h-[300px]">
           <div className="max-w-xs">
-            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
               Sales Performance
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
@@ -141,7 +141,7 @@ export function WobbleCardDemo() {
 
         {/* WobbleCard Section 2 */}
         <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
             Content Services
           </h2>
           <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
@@ -165,7 +165,7 @@ export function WobbleCardDemo() {
         {/* WobbleCard Section 3 */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#A6AEBF] min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
           <div className="max-w-sm">
-            <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+            <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
               Contact Center
             </h2>
             <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">

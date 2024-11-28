@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import { AiFillProduct } from "react-icons/ai";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { RiFolderSettingsFill } from "react-icons/ri";
 
 export default function Products() {
   return (
-    <div className='my-10'>
-      <main >
-        <h1 className="text-4xl font-bold mt-10 ml-20  text-left">
+    <div className="my-10">
+      <main>
+        <h1 className="text-4xl   mt-10 ml-20  text-left">
           Our Product Related Services
         </h1>
         <p className="text-lg px-10 ml-12  justify-center  ">

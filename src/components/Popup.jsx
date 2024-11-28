@@ -15,23 +15,17 @@ const Popup = ({ image, name, text, onClose }) => {
         </button>
 
         <div className="flex gap-20 text-gray-800">
-        
-
           {/* Text Section */}
           <div className="w-full pl-4">
             {/* Blog Title */}
-            <h1 className="text-2xl flex justify-center font-semibold mb-1">
+            <h1 className="text-2xl flex justify-center   mb-1">
               {text.title}
             </h1>
-
-          
 
             {/* First Section (with Heading, Content, and Image) */}
             <div>
               <p className="text-lg  mb-4">{text.intro}</p>
-              <h2 className="text-xl  font-bold mb-2">
-                {text.sections[0].heading}
-              </h2>
+              <h2 className="text-xl    mb-2">{text.sections[0].heading}</h2>
               {text.sections[0].content}
             </div>
           </div>

@@ -3,25 +3,16 @@ import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.webp";
 
 const navmenu = [
   { id: 1, title: "Home", path: "/", delay: "0.1s" },
+
   {
     id: 2,
-    title: "About",
-    // path: "/about",
-    delay: "0.2s",
-    hasDropdown: true, // Added flag for dropdown menu
-    dropdownItems: [
-      { title: "Company", path: "/company" },
-      { title: "Careers", path: "/careers" },
-    ],
-  },
-  {
-    id: 3,
     title: "Offerings",
     // path: "/Offerings",
-    delay: "0.5s",
+    delay: "0.2s",
     hasDropdown: true, // Added flag for dropdown menu
     dropdownItems: [
       { title: "Project Based Services", path: "/services" },
@@ -29,7 +20,7 @@ const navmenu = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     title: "Resources",
     // path: "/blog",
     delay: "0.3s",
@@ -38,6 +29,17 @@ const navmenu = [
       { title: "Blog", path: "/blog" },
       { title: "Usecase", path: "/usecase" },
       { title: "Contact", path: "/contact" },
+    ],
+  },
+  {
+    id: 4,
+    title: "About",
+    // path: "/about",
+    delay: "0.4s",
+    hasDropdown: true, // Added flag for dropdown menu
+    dropdownItems: [
+      { title: "Company", path: "/company" },
+      { title: "Careers", path: "/careers" },
     ],
   },
 ];
@@ -60,16 +62,15 @@ const SlideDown = (delay) => {
   };
 };
 
- const getNavbarColor = () => {
-   switch (location.pathname) {
+const getNavbarColor = () => {
+  switch (location.pathname) {
+    case "/Qual-React/":
+      return "bg-[#fccbd7] "; // Blue for the About page
 
-     case "/":
-       return "bg-[#F7F7F7]"; // Blue for the About page
-
-     default:
-       return "bg-gray-200"; // Default color
-   }
- };
+    default:
+      return "bg-white"; // Default color
+  }
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,12 +95,10 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", menuClose);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-
-  
   return (
     <nav className={`w-full h-20 justify-end ${getNavbarColor()}`}>
       <div
@@ -112,15 +111,15 @@ const scrollToTop = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            src="src/assets/logo.webp"
+            src={logo}
             alt="Qualiinsight's Logo"
             loading="lazy"
-            className=" h-14 py-1 ml-5 lg:ml-20"
+            className=" h-14 scale-75 md:scale-100 py-1 lg:ml-20"
           />
         </Link>
 
         {/* Menu (always visible on larger screens) */}
-        <div className="hidden md:flex flex-grow justify-end  ">
+        <div className="hidden md:flex  flex-grow justify-end  ">
           <ul className="flex  ">
             {navmenu.map((menu) => (
               <motion.li
@@ -132,7 +131,7 @@ const scrollToTop = () => {
               >
                 {/* Check if the item has a dropdown */}
                 <div
-                  className="relative z-50 font-semibold"
+                  className="relative   z-50  "
                   onMouseEnter={() =>
                     menu.hasDropdown && toggleDropdown(menu.id)
                   } // Open dropdown on hover
@@ -158,7 +157,7 @@ const scrollToTop = () => {
                   </NavLink>
                   {/* Dropdown Menu */}
                   {menu.hasDropdown && dropdownOpen === menu.id && (
-                    <div className="absolute left-0  w-48 bg-white shadow-lg rounded-lg">
+                    <div className="absolute left-0  w-48 bg-slate-100  shadow-lg rounded-lg">
                       <ul className="flex flex-col">
                         {menu.dropdownItems.map((item, index) => (
                           <li key={index} className="hover:bg-gray-200">
@@ -180,7 +179,7 @@ const scrollToTop = () => {
         </div>
         <Link
           to="/contact"
-          className=" p-2 px-4 mr-2 hidden md:block text-white font-bold  md:ml-0 lg:mr-20 
+          className=" p-2 px-4 mr-2 hidden md:block text-white    md:ml-0 lg:mr-20 
         rounded-lg shadow-lg hover:bg-red-600 transition duration-300 relative z-20 bg-[#D93455]"
         >
           Book A Meeting
@@ -259,6 +258,4 @@ const scrollToTop = () => {
   );
 };
 
-
 export default Navbar;
-

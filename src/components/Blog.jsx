@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
-
 import Service1 from "../assets/Blog1.jpg";
 import Service2 from "../assets/Blog2.jpg";
-
+import React, { useState } from "react";
 import Popup from "./Popup";
 
-const BlogData = [
+const blogs = [
   {
     id: 1,
-    name: "Mastering Multi-Vendor Complexity ",
+    name: "Mastering Multi-Vendor Complexity with the QualiInsights QaaS Framework",
+    category: "POV",
     img: Service1,
-    delay: 0.4,
+    description:
+      "In today’s competitive landscape, managing multiple vendors can be a daunting task. Businesses often face challenges such as inconsistent customer experiences, biased audits, slow learning processes, ineffective change management, and increased costs.",
+
     text: {
       title:
         "Mastering Multi-Vendor Complexity with the QualiInsights QaaS Framework",
@@ -31,7 +32,7 @@ const BlogData = [
                 efficiency and effectiveness.
               </p>
               <br />
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl  ">
                 The Challenges of Multi-Vendor Management
               </h1>
               <br />
@@ -147,7 +148,7 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl  ">
                 Qualiinsight QaaS - A Profit Center For Clients
               </h1>
               <br />
@@ -190,7 +191,7 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">Conclusion</h1>
+              <h1 className="text-xl  ">Conclusion</h1>
               <br />
               <p>
                 At QualiInsight, our QaaS framework is the cornerstone of
@@ -214,9 +215,12 @@ const BlogData = [
   },
   {
     id: 2,
-    name: "Mastering AI Solutions",
+    name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
+    category: "Use Case",
+    description:
+      "In today`s rapidly evolving technological landscape, businesses are constantly seeking ways to stay ahead of the curve. At QualiInsights, we understand the unique challenges and opportunities presented by AI.",
     img: Service2,
-    delay: 0.4,
+
     text: {
       title:
         "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
@@ -235,7 +239,7 @@ const BlogData = [
                 your AI initiatives.
               </p>
               <br />
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl  ">
                 Enhancing Existing AI Implementations
               </h1>
               <p>
@@ -245,7 +249,7 @@ const BlogData = [
                 value.
               </p>
               <br />
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl  ">
                 Measuring AI solution Quality and Ensuring ROI
               </h1>
               <p>
@@ -267,9 +271,7 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">
-                Optimizing Implemented AI Solutions
-              </h1>
+              <h1 className="text-xl  ">Optimizing Implemented AI Solutions</h1>
               <p>
                 For AI solutions already in place, our expertise can help you
                 identify opportunities for enhancement. We conduct regular
@@ -290,9 +292,7 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">
-                Maximizing Technology Investments
-              </h1>
+              <h1 className="text-xl  ">Maximizing Technology Investments</h1>
               <p>
                 We partner with you to ensure that your technology investments
                 are fully utilized and maintained according to changing
@@ -300,9 +300,7 @@ const BlogData = [
                 solutions remain relevant and valuable over time.
               </p>
               <br />
-              <h1 className="text-xl font-bold">
-                Implementing New AI Solutions
-              </h1>
+              <h1 className="text-xl  ">Implementing New AI Solutions</h1>
               <p>
                 For clients aspiring to implement new AI tools or technologies,
                 our QaaS framework provides a structured approach to process
@@ -320,7 +318,7 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">Expected Benefits</h1>
+              <h1 className="text-xl  ">Expected Benefits</h1>
               <p>
                 By leveraging our QaaS framework, businesses can expect
                 significant improvements in various areas:
@@ -344,7 +342,155 @@ const BlogData = [
                 </li>
               </ul>
               <br />
-              <h1 className="text-xl font-bold">Conclusion</h1>
+              <h1 className="text-xl  ">Conclusion</h1>
+              <p>
+                At QualiInsights, we are committed to helping you harness the
+                power of AI to drive business transformation. Our expertise and
+                innovative QaaS framework ensure that your AI initiatives are
+                not only successfully implemented but also continually optimized
+                for maximum impact.
+              </p>
+              <br />
+              <p>
+                Ready to transform your business with AI? Contact us today to
+                learn how QualiInsights can help you achieve your goals.
+              </p>
+            </div>
+          ),
+        },
+      ],
+    },
+  },
+  {
+    id: 3,
+    name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
+    category: "Industry",
+    description:
+      "In today`s rapidly evolving technological landscape, businesses are constantly seeking ways to stay ahead of the curve. At QualiInsights, we understand the unique challenges and opportunities presented by AI.",
+    img: Service2,
+
+    text: {
+      title:
+        "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
+      sections: [
+        {
+          content: (
+            <div>
+              <p>
+                In today`s rapidly evolving technological landscape, businesses
+                are constantly seeking ways to stay ahead of the curve. At
+                QualiInsights, we understand the unique challenges and
+                opportunities presented by AI. Our Quality as a Service (QaaS)
+                framework is designed to help businesses not only implement and
+                adopt AI but also optimize and enhance existing AI solutions.
+                Here`s how we can help you achieve unparalleled success with
+                your AI initiatives.
+              </p>
+              <br />
+              <h1 className="text-xl  ">
+                Enhancing Existing AI Implementations
+              </h1>
+              <p>
+                For clients who already have tools and technology in place and
+                prefer not to introduce new systems, our QaaS framework offers a
+                comprehensive solution to ensure these resources deliver maximum
+                value.
+              </p>
+              <br />
+              <h1 className="text-xl  ">
+                Measuring AI solution Quality and Ensuring ROI
+              </h1>
+              <p>
+                Our framework acts as a robust solution to measure the quality
+                of your planned AI implementations. We ensure that your AI
+                initiatives meet expected outcomes and deliver a strong return
+                on investment (ROI). As domain experts, we:
+              </p>
+              <ul>
+                <li>
+                  <strong>Identify the Right Use Cases:</strong> We pinpoint the
+                  most effective AI or automation use cases tailored to your
+                  business needs.
+                </li>
+                <li>
+                  <strong>Design AI Solutions:</strong> We support you in
+                  designing AI solutions and drafting precise requirements for
+                  tech team.
+                </li>
+              </ul>
+              <br />
+              <h1 className="text-xl  ">Optimizing Implemented AI Solutions</h1>
+              <p>
+                For AI solutions already in place, our expertise can help you
+                identify opportunities for enhancement. We conduct regular
+                research on tool capabilities, benchmark against similar
+                solutions in the market, and ensure that new trends, policies,
+                and process changes are incorporated. This continuous
+                optimization ensures your AI solutions deliver consistent,
+                high-value outcomes.
+              </p>
+              <ul>
+                <li>
+                  <strong>Improvement Opportunities:</strong> We identify areas
+                  where technology/platform capabilities can be enhanced.
+                </li>
+                <li>
+                  <strong>Market Comparisons:</strong> We compare your solutions
+                  with market alternatives to ensure competitiveness.
+                </li>
+              </ul>
+              <br />
+              <h1 className="text-xl  ">Maximizing Technology Investments</h1>
+              <p>
+                We partner with you to ensure that your technology investments
+                are fully utilized and maintained according to changing
+                requirements and environments. This ensures that your AI
+                solutions remain relevant and valuable over time.
+              </p>
+              <br />
+              <h1 className="text-xl  ">Implementing New AI Solutions</h1>
+              <p>
+                For clients aspiring to implement new AI tools or technologies,
+                our QaaS framework provides a structured approach to process
+                assessment and solution recommendation.
+              </p>
+              <ul>
+                <li>
+                  <strong>Comprehensive Process Assessments:</strong> We
+                  pinpoint the most effective AI or automation use cases
+                  tailored to your business needs.
+                </li>
+                <li>
+                  <strong>Strategic Recommendations:</strong> We identify areas
+                  where technology/platform capabilities can be enhanced.
+                </li>
+              </ul>
+              <br />
+              <h1 className="text-xl  ">Expected Benefits</h1>
+              <p>
+                By leveraging our QaaS framework, businesses can expect
+                significant improvements in various areas:
+              </p>
+              <ul>
+                <li>
+                  <strong>Enhanced ROI:</strong> Our solutions typically result
+                  in a 20-30% increase in ROI by optimizing existing AI
+                  implementations and ensuring new AI investments are
+                  strategically aligned with business goals.
+                </li>
+                <li>
+                  <strong>Cost Reduction:</strong> Clients can achieve up to 25%
+                  reduction in operational costs by streamlining processes and
+                  implementing efficient AI solutions.
+                </li>
+                <li>
+                  <strong>Improved Customer Experience:</strong> AI-driven
+                  enhancements can lead to a 15-20% improvement in customer
+                  satisfaction and engagement.
+                </li>
+              </ul>
+              <br />
+              <h1 className="text-xl  ">Conclusion</h1>
               <p>
                 At QualiInsights, we are committed to helping you harness the
                 power of AI to drive business transformation. Our expertise and
@@ -365,68 +511,96 @@ const BlogData = [
   },
 ];
 
-export default function Blog() {
-  const [popupData, setPopupData] = useState(null);
 
-  const handleImageClick = (item) => {
-    setPopupData(item);
-  };
+const Blog = () => {
+    const [popupData, setPopupData] = useState(null);
 
-  const handleClosePopup = () => {
-    setPopupData(null);
-  };
+    const handleImageClick = (blog) => {
+      setPopupData(blog);
+    };
+
+    const handleClosePopup = () => {
+      setPopupData(null);
+    };
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
+
+  const filteredBlogs =
+    selectedCategory === "All"
+      ? blogs
+      : blogs.filter((blog) => blog.category === selectedCategory);
 
   return (
-    <section >
-      <div className="container pb-20 md:px-20 pt-10 md:mx-20">
-        {/* Section Title */}
-        <h3 className="text-3xl font-bold mb-8 text-center">
-          The Quality Chronicles
-        </h3>
+    <div className="mb-20">
+      <h3 className="text-5xl   mt-20 ml-10 text-left md:text-center">
+        The Quality Chronicles
+      </h3>
 
-        <p className="text-center font-semibold">ARTICLES AND STORIES ABOUT QUALITY AS A SERVICE</p>
-
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 mt-10  sm:grid-cols-2 md:grid-cols-3 gap-5 place-items-center  ">
-          {BlogData.map((item) => (
-            <div
-              key={item.id}
-              className="group space-y-4 text-center bg-white  shadow-2xl p-3 "
-            >
-              <div className="flex justify-center items-center">
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  loading="lazy"
-                  className="
-                   w-72 "
-                />
-              </div>
-              <div>
-                <p
-                  className="text-md font-bold 0 hover:text-red-600 cursor-pointer"
-                  onClick={() => handleImageClick(item)}
-                >
-                  {item.name}
-                </p>
-                {/* <p className="text-sm font-bold text-yellow-500 overflow-hidden">
-                  {item.descriptoin}
-                </p> */}
-              </div>
+      <p className="text-left md:text-center py-5 ml-10  ">
+        ARTICLES AND STORIES ABOUT QUALITY AS A SERVICE
+      </p>
+      {/* Categories Menu */}
+      <div className="text-center my-10">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            style={{
+              margin: "5px",
+              padding: "5px",
+              backgroundColor:
+                selectedCategory === category ? "#B8B9B8" : "#fff",
+              color: selectedCategory === category ? "#fff" : "#000",
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+              height: "30px",
+              width: "100px",
+              cursor: "pointer",
+            }}
+            className="items-center"
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+      {/* Display Blogs */}
+      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-32 place-items-center gap-5">
+        {filteredBlogs.map((blog) => (
+          <div
+            key={blog.id}
+            className="group w-96 h-80 text-left bg-white  rounded-xl border-1 border-stone-950 flex flex-col justify-between"
+          >
+            <div>
+              {/* <p className="text-md p-3 rounded-t-xl  bg-gradient-to-r from-[#fccbd7] via-[#f9c2c250] to-[#ffffff] "> */}
+              <p className="text-md p-3 rounded-t-xl  ">{blog.name}</p>
+              <p className="text-md  p-3 text-justify w-full  border-t-1 border-stone-950">
+                {blog.description}
+              </p>
             </div>
-          ))}
-        </div>
+            <button
+              className="border-t-1 rounded-b-xl border-stone-950 w-full hover:bg-black hover:text-white  mx-auto  py-3 "
+              onClick={() => handleImageClick(blog)}
+            >
+              Read More
+            </button>
+          </div>
+        ))}
       </div>
 
       {/* Popup */}
       {popupData && (
         <Popup
-          //   image={popupData.img}
+          // image={popupData.img}
           name={popupData.name}
           text={popupData.text}
           onClose={handleClosePopup}
         />
       )}
-    </section>
+    </div>
   );
-}
+};
+
+export default Blog;
+
