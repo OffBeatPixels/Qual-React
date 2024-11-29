@@ -1,10 +1,24 @@
-import {motion} from "framer-motion"
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 export function Meeting() {
+  const getBlogColor = () => {
+    switch (location.pathname) {
+      case "/blog":
+        return "bg-white "; // Blue for the About page
+      case "/usecase":
+        return "bg-white "; // Blue for the About page
+
+      default:
+        return "bg-gradient-to-b from-[#b6d5f0] via-[#ffffff] to-[#ffffff]"; // Default color
+    }
+  };
   return (
-    <div className="h-[50vh] mt-10  bg-gradient-to-b from-[#fccbd7] via-[#f9c2c250] to-[#ffffff] relative w-full overflow-hidden flex flex-col md:flex-row">
+    // Rremove blue color from Blog page
+    <div
+      className={`h-[50vh] mt-10 ${getBlogColor()} relative w-full overflow-hidden flex flex-col md:flex-row`}
+    >
       {/* Content Section */}
       <div className="w-full z-20 absolute h-full flex flex-col items-center justify-center ">
         {/* Background Mask */}
@@ -22,7 +36,6 @@ export function Meeting() {
           Book A Meeting
         </Link>
       </div>
-      
     </div>
   );
 }

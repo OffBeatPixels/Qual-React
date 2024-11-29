@@ -29,9 +29,9 @@ export default function Career() {
       >
         <defs>
           <linearGradient id="gradient-id" gradientTransform="rotate(90)">
-            <stop offset="0%" stopColor="#fccbd7" />
-            <stop offset="50%" stopColor="#f9c2c250" />
-            <stop offset="100%" stopColor="#ffffff" />
+            <stop offset="0%" stopColor="#8FABC3" />
+            <stop offset="50%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#8FABC3" />
           </linearGradient>
         </defs>
         {/* Inner Circle */}
@@ -69,8 +69,6 @@ export default function Career() {
           }}
         />
       </motion.svg>
-
-      
     </div>
   );
 }

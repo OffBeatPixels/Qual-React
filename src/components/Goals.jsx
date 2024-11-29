@@ -95,17 +95,17 @@ const Goals = () => {
 
       <div className="goals flex flex-col md:flex-row items-center justify-center gap-10 w-full">
         {/* Circle 1 */}
-        <div className="g1 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#ff849f] flex items-center justify-center">
+        <div className="g1 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#C16523] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] text-[#ff5076] bg-transparent">1</h1>
+            <h1 className="text-[20vh] text-[#C16523] bg-transparent">1</h1>
             <p className="lg:text-2xl text-left ">Supercharge Quality</p>
           </div>
         </div>
 
         {/* Circle 2 */}
-        <div className="g2 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#d93f61] flex items-center justify-center">
+        <div className="g2 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#8FABC3] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#d93f61]">2</h1>
+            <h1 className="text-[20vh] bg-transparent text-[#8FABC3]">2</h1>
             <p className="lg:text-2xl text-left ">
               Product Identification & Customization
             </p>
@@ -113,9 +113,9 @@ const Goals = () => {
         </div>
 
         {/* Circle 3 */}
-        <div className="g3 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#9c2942] flex items-center justify-center">
+        <div className="g3 w-52 md:w-72 min-h-[200px] lg:min-h-[300px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#9c2942]">3</h1>
+            <h1 className="text-[20vh] bg-transparent text-[#EDC05F]">3</h1>
             <p className="lg:text-2xl text-left ">
               Custom AGI training & deployment
             </p>

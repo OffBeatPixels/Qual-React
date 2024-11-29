@@ -59,12 +59,12 @@ export function WobbleCardDemo() {
         </Modal>
 
         {/* WobbleCard Section 1 */}
-        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#B59F78] min-h-[500px] lg:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#8FABC3] min-h-[500px] lg:min-h-[300px]">
           <div className="max-w-xs">
-            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
+            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
               Sales Performance
             </h2>
-            <p className="mt-4 text-left text-base/6 text-neutral-200">
+            <p className="mt-4 text-left text-base/6 text-black">
               At Qualiinsight, we offer a comprehensive Quality as a Service
               (QaaS) solution designed to enhance your sales process. Here’s how
               our service can transform your sales strategy.
@@ -141,10 +141,10 @@ export function WobbleCardDemo() {
 
         {/* WobbleCard Section 2 */}
         <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
+          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
             Content Services
           </h2>
-          <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+          <p className="mt-4 max-w-[26rem] text-left text-base/6 text-black">
             We specialize in empowering and training content moderation tools to
             effectively monitor and filter user-generated content across various
             digital platforms.
@@ -163,12 +163,12 @@ export function WobbleCardDemo() {
         </WobbleCard>
 
         {/* WobbleCard Section 3 */}
-        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#A6AEBF] min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#EDC05F]  min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
           <div className="max-w-sm">
-            <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-white">
+            <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
               Contact Center
             </h2>
-            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-black">
               At Qualiinsight, we offer a state-of-the-art Quality as a Service
               (QaaS) solution designed to revolutionize your contact center
               operations.

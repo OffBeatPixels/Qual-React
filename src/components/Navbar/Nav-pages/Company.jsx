@@ -33,46 +33,36 @@ export default function Company() {
       </div>
       <div className=" w-1/2">
         <motion.svg
+          width="800"
+          height="1000"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="-4500 -3000 10000 6000"
-          className="w-full h-screen"
+          viewBox="0 50 200 200"
+          className="w-full h-auto"
         >
           <defs>
-            <linearGradient id="gradient-fill" gradientTransform="rotate(90)">
-              <stop offset="0%" stopColor="#760000" />
-              <stop offset="25%" stopColor="#fccbd7" />
-              <stop offset="50%" stopColor="#f9c2c250" />
-              <stop offset="100%" stopColor="#ffffff" />
+            <linearGradient
+              id="gradient-infinity"
+              gradientTransform="rotate(90)"
+            >
+              <stop offset="0%" stopColor="#153B56" />
+              <stop offset="50%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#8FABC3" />
             </linearGradient>
           </defs>
-
           <motion.path
-            d="M-15-2866A1 1 0 003098-10 1 1 0 007 3142"
-            fill="url(#gradient-fill)"
-            stroke="url(#gradient-fill)"
-            strokeWidth="10"
-            strokeDasharray="1 2000"
+            d="M100 100C1 20 0 180 100 100 195 19 211 183 100 100Z" // Infinity loop path
+            fill="none"
+            stroke="url(#gradient-infinity)"
+            strokeWidth="5"
+            strokeLinecap="round"
             animate={{
-              strokeDashoffset: [2000, 0], // Path drawing animation
-              scale: [1, 2, 1.5], // Oscillating scale effect
-              rotate: [0, 10,0], // Full rotation
+              strokeDasharray: [1, 400], // Stroke appears and repeats
+              strokeDashoffset: [0, -800], // Moves along the path
             }}
             transition={{
-              strokeDashoffset: {
-                duration: 2,
-                repeat: 0,
-                repeatType: "loop",
-              },
-              scale: {
-                duration: 2,
-                repeat: 0,
-                repeatType: "mirror",
-              },
-              rotate: {
-                duration: 5,
-                repeat: 0,
-                ease: "linear",
-              },
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
             }}
           />
         </motion.svg>

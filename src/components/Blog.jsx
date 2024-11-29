@@ -532,8 +532,9 @@ const Blog = () => {
       ? blogs
       : blogs.filter((blog) => blog.category === selectedCategory);
 
+
   return (
-    <div className="mb-20">
+    <div className="pb-20 bg-gradient-to-b from-[#ffffff] via-[#F7E5B6] to-[#ffffff] ">
       <h3 className="text-5xl   mt-20 ml-10 text-left md:text-center">
         The Quality Chronicles
       </h3>

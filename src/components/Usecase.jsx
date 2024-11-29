@@ -135,7 +135,7 @@ export default function Usecase() {
 
             {/* Content Section */}
             <div className="flex-grow ">
-              <div className=" absolute right-40  my-5 bg-white text-black text-sm sm:text-base leading-relaxed overflow-y-scroll h-72 w-full sm:w-[40vw]  p-4 rounded-lg shadow-lg">
+              <div className=" absolute right-40  my-5 bg- text-black text-sm sm:text-base leading-relaxed overflow-y-scroll h-72 w-full sm:w-[40vw]  p-4 rounded-lg shadow-lg">
                 <span className="font-bold text-medium block mb-2">
                   Sales Performance
                 </span>

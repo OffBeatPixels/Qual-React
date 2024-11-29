@@ -353,13 +353,13 @@ const ServiceData = [
 
 export default function Services() {
   return (
-    <section>
-      <h3 className="text-4xl   mb-4 ml-20 text-left ">
+    <section className="mx-auto container text-center">
+      <h3 className="text-4xl   py-10 ml-20 text-left ">
         Project Based Services
       </h3>
       <div className="pb-8 pt-10">
         {/* Cards 1 */}
-        <div className="flex gap-10 px-40">
+        <div className="flex gap-10 px-40 ">
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000 ">
             <h1 className="text-3xl">QA Process Design</h1>
             <p>

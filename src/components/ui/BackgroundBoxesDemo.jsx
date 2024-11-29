@@ -13,7 +13,7 @@ export function BackgroundBoxesDemo() {
   
   return (
     <div
-      className="h-[90vh]  relative w-full bg-gradient-to-b from-[#fccbd7] via-[#f9c2c250] to-[#ffffff] overflow-hidden text-black text-justify flex flex-col justify-center"
+      className="h-[90vh]  relative w-full bg-gradient-to-b from-[#b6d5f0] via-[#ffffff] to-[#ffffff] overflow-hidden text-black text-justify flex flex-col justify-center"
       style={{
         // backgroundImage: `url(${Banner})`,
         backgroundPosition: window.innerWidth < 640 ? " " : "top",
@@ -46,8 +46,7 @@ export function BackgroundBoxesDemo() {
         duration={700}
         className="mx-auto mt-10 cursor-pointer"
       >
-       
-        <MdKeyboardDoubleArrowDown color="gray" size={40} />
+        <MdKeyboardDoubleArrowDown color="153A55" size={40} />
       </Link>
     </div>
   );

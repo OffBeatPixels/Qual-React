@@ -65,7 +65,7 @@ const SlideDown = (delay) => {
 const getNavbarColor = () => {
   switch (location.pathname) {
     case "/Qual-React/":
-      return "bg-[#fccbd7] "; // Blue for the About page
+      return "bg-[#b6d5f0] "; // Blue for the About page
 
     default:
       return "bg-white"; // Default color

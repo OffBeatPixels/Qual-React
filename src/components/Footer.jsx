@@ -8,19 +8,22 @@ import Services from './Services';
 const Footer = () => {
   return (
     <footer
-      className="relative z-10 text-black  pt-10 "
-      style={{
-        backgroundImage: `url(${fit})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100%",
-        // height: window.innerWidth < 768 ? "100vh" : "50vh",
-      }}
+      className="relative z-10 text-black  p-10 "
+      style={
+        {
+          // backgroundImage: `url(${fit})`,
+          // backgroundRepeat: "no-repeat",
+          // backgroundSize: "cover",
+          // backgroundPosition: "center",
+          // height: "100%",
+          // height: window.innerWidth < 768 ? "100vh" : "50vh",
+          // backdropFilter: "blur(15px)",
+        }
+      }
     >
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-10 ml-5 z-99  ">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-10 ml-5 z-   ">
         {/* <div className=" bottom-5 relative z-10   "> */}
-        <div>
+        <div className=" ml-5 relative z-10   ">
           <img src={Logo} alt="Logo" width={200} />
         </div>
         {/* Quick Links */}
