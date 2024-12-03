@@ -551,120 +551,194 @@
 
 
 
+//I am spliting cards data in two array because i cant apply the logice on each row beacuse every cards getting palced in first cards potions so if you can do it please go ahead 
 import React, { useState } from "react";
-import { FaBrain } from "react-icons/fa6";
-import { FcCustomerSupport } from "react-icons/fc";
-import { FcBarChart } from "react-icons/fc";
+import { FaBrain } from "react-icons/fa";
+import { FcCustomerSupport, FcBarChart } from "react-icons/fc";
 import { TbGraphFilled } from "react-icons/tb";
 import { FaRobot } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Capabilites from "./Capabilites";
 
-const FlipCardSection = () => {
-  const initialCardData = [
+// Default fallback data for cardGroups
+const defaultCardGroups = {
+  group1: [
     {
-      title: "Actionable business and strategic insights",
+      title: "End-to-End QA Frameworks",
       details:
-        "We empower businesses with actionable, data-driven insights that enhance strategic decision-making. By transforming raw data into valuable intelligence, we enable organizations to implement meaningful improvements.",
+        " Design and implement scalable Quality Assurance frameworks that go beyond compliance to capture vital signals and drive operational excellence.",
       icon: <FaBrain size={50} />,
     },
     {
-      title: "Early detection of potential customer issues",
+      title: " Process Improvement Consulting",
       details:
-        "Rapidly identifying customer issues is essential for effective service. We accelerate the detection cycle, enabling quicker responses to customer concerns.",
+        "Identify inefficiencies, streamline workflows, and realign processes to strategic business objectives, boosting efficiency and effectiveness.",
       icon: <FcCustomerSupport size={50} />,
     },
     {
-      title: "Functions as an independent monitoring entity",
+      title: " KPI Development and Implementation",
       details:
-        "QaaS provides a unified approach to manage multiple vendors, driving process standardization and consistency.",
+        " Establish tailored Key Performance Indicators (KPIs) that provide actionable insights, enabling smarter decision-making and measurable outcomes.",
       icon: <FcBarChart size={50} />,
     },
     {
-      title: "Drives continuous improvement effectively",
+      title: "AI-Powered Dashboard Solutions",
       details:
-        "Traditional quality audits often fail to drive continuous improvement effectively. QaaS transforms this approach by fostering dynamic processes that evolve with your business.",
+        " Leverage cutting-edge visualization tools and predictive analytics to transform raw data into meaningful insights, driving informed strategies and proactive decision-making.",
       icon: <TbGraphFilled size={50} color="1a88cc" />,
     },
-    {
-      title: "Accelerate Responsible AGI Deployment",
-      details:
-        "At Qualiinsight, we aim to accelerate the advancement and deployment of Artificial General Intelligence (AGI) through our innovative framework of QaaS. By integrating expert human feedback, we enhance AGI outputs, ensuring they meet the highest quality standards.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-  ];
+  ],
+  // group2: [
+  //   {
+  //     title: " Continuous Improvement Programst",
+  //     details:
+  //       " Embed a culture of ongoing innovation with structured initiatives that empower teams to identify and implement impactful changes, ensuring long-term growth.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
 
-  const [cardData, setCardData] = useState(initialCardData);
-  const [hoveredCard, setHoveredCard] = useState(null);
+  //   {
+  //     title: " Independent Quality Audits",
+  //     details:
+  //       "Audits Provide unbiased, third-party evaluations to enhance accountability, improve trust, and deliver actionable recommendations for sustained quality enhancement.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: "  Vendor and Process Scalability Solutions",
+  //     details:
+  //       " Develop adaptive frameworks that scale effortlessly with your business, ensuring consistency and quality across all operations.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: " Strategic Quality Transformation",
+  //     details:
+  //       " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  // ],
+  // group3: [
+  //   {
+  //     title: " Actionable Business and Strategic Insights",
+  //     details:
+  //       "Generate insights that empower businesses to make data-driven decisions, address key challenges, and achieve strategic objectives.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: "  Function as an Independent Monitoring Partners",
+  //     details:
+  //       "  Operate as a neutral, independent monitoring function to provide unbiased insights, improve transparency, and maintain accountability.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: " Early Detection of Potential Customer Issuess",
+  //     details:
+  //       " Utilize advanced monitoring and predictive analytics to identify and address customer pain points before they escalate.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: "Accelerate Responsible AGI Development",
+  //     details:
+  //       " Leverage expertise in advanced analytics and ethical practices to accelerate the development and deployment of Responsible Artificial General Intelligence (AGI) solutions.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: " Drive Continuous Improvement Effectively",
+  //     details:
+  //       " Implement a structured, iterative approach to foster a culture of improvement, ensuring sustained operational excellence and adaptability.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  // ],
+};
 
-  // Handle card hover: When a card is hovered, it moves to the first position
-  const handleCardHover = (index) => {
+const FlipCardSection = ({ cardGroups = defaultCardGroups }) => {
+  const [groupData, setGroupData] = useState(cardGroups);
+  const [hoveredCard, setHoveredCard] = useState(null); // Track hovered card
+
+  // Handle card hover: Moves hovered card to the first position within each group
+  const handleCardHover = (groupKey, index) => {
+    const newGroupData = { ...groupData };
+    const cardData = newGroupData[groupKey];
+
     if (index !== null) {
       const newCardData = [...cardData];
       const [hoveredCardData] = newCardData.splice(index, 1); // Remove hovered card
       newCardData.unshift(hoveredCardData); // Add it to the first position
-      setCardData(newCardData);
-      setHoveredCard(0); // Set the first position as hovered
+      newGroupData[groupKey] = newCardData; // Update the group data
+      setGroupData(newGroupData); // Update the state for this group
+      setHoveredCard({ groupKey, index: 0 }); // Track hovered card now at first position
     }
   };
 
   // Handle mouse leave: Reset the order to the original
-  const handleMouseLeave = () => {
-    setHoveredCard(null); // Reset hovered card to null
-    setCardData(initialCardData); // Restore original card order
+  const handleMouseLeave = (groupKey) => {
+    setGroupData(cardGroups); // Restore original order for all groups
+    setHoveredCard(null); // Reset hovered card
   };
+
+  // Ensure that groupData is an object before calling Object.keys()
+  if (!groupData || typeof groupData !== "object") return null;
 
   return (
     <section className="bg-white">
-      <h1 className="text-3xl md:text-4xl text-center pt-10  text-black">
+      <h1 className="text-3xl md:text-4xl text-center pt-10 font-bold text-black">
         Capabilities
       </h1>
 
-      <div className="flex gap-6 mt-8 px-4 md:px-10 overflow-hidden">
-        {cardData.map((card, index) => (
-          <div
-            key={index}
-            className={`relative flex-shrink-0 transition-all duration-700 group`}
-            onMouseEnter={() => handleCardHover(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Card Section */}
+      {/* Render each group */}
+      {Object.keys(groupData).map((groupKey) => (
+        <div
+          key={groupKey}
+          className="grid grid-cols-4  gap-6 mt-8  md:mx-10 overflow-hidden"
+        >
+          {groupData[groupKey].map((card, index) => (
             <div
-              className={`w-[250px] h-[200px] p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center transition-all duration-700 ${
-                hoveredCard === 0 && index !== 0
-                  ? "translate-x-[100%] scale-[0.9] opacity-0" // Move non-hovered cards to the right with scale down
-                  : hoveredCard === 0 && index === 0
-                  ? "z-20 translate-x-0 scale-100 opacity-100" // Hovered card at the first position, with scaling
-                  : "translate-x-0 scale-100 opacity-100"
-              }`}
+              key={index}
+              className="relative flex-shrink-0 transition-all duration-700 group"
+              onMouseEnter={() => handleCardHover(groupKey, index)}
+              onMouseLeave={() => handleMouseLeave(groupKey)}
             >
-              {card.icon}
-              <h3 className="text-lg  mt-2 text-center">{card.title}</h3>
-            </div>
-
-            {/* Details Section - Pop-up effect */}
-            {hoveredCard === 0 && index === 0 && (
+              {/* Card Section */}
               <div
-                className="absolute top-0 left-0 p-4  border-2 border-[#fff6de] rounded-lg shadow-lg transition-all duration-700"
-                style={{
-                  zIndex: 50, // Ensure the details are in front
-                  width: "800px", // Maintain the width of the details section
-                  height: "200px",
-                  transform: "translateX(35%)", // Show details on the right of the hovered card
-                }}
+                className={`w-[250px] h-[200px] p-4 border border-gray-200 rounded-lg flex flex-col items-center justify-center transition-all duration-700 ${
+                  index === 0
+                    ? "z-20 translate-x-0 scale-100 opacity-100" // Highlight hovered card
+                    : "translate-x-0 scale-100 opacity-100"
+                }`}
               >
-                <h3 className="text-xl  mb-2">{card.title}</h3>
-                <p className="text-sm text-gray-700">{card.details}</p>
+                {card.icon}
+                <h3 className="text-lg mt-2 text-center">{card.title}</h3>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+              {/* Details Section - Pop-up effect */}
+              {hoveredCard &&
+                hoveredCard.groupKey === groupKey &&
+                hoveredCard.index === index && (
+                  <div
+                    className="absolute top-0 left-0 p-4 border-2 opacity-100  bg-white border-[#fff6de] rounded-lg shadow-lg transition-all duration-700 "
+                    style={{
+                      zIndex: 50, // Ensure the details are in front
+                      width: "800px", // Width of details section
+                      height: "200px",
+                      transform: "translateX(35%)", // Show details on the right of the hovered card
+                    }}
+                  >
+                    <h3 className="text-xl mb-2">{card.title}</h3>
+                    <p className="text-sm text-gray-700">{card.details}</p>
+                  </div>
+                )}
+              {/* If the card is clicked, show blurred background */}
+              {groupData === index && (
+                <div className="absolute inset-0 bg-black opacity-10 z-10"></div>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+      <Link to="/capabilites" className="bg-[#8FABC3] rounded-md p-2 justify-center items-center m-14">
+     
+        Read More
+      </Link>
     </section>
   );
 };
 
 export default FlipCardSection;
-
-
-
-
 

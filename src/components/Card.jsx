@@ -12,42 +12,79 @@ import db from "../assets/db.webm";
 import qa from "../assets/qa.webm";
 import styled from "styled-components";
 
+// const cardData = [
+//   {
+//     title: "Quality frameworks do not capture broader signals",
+//     description:
+//       "Current quality frameworks focus on auditing according to guidelines but often fail to capture vital signals essential for comprehensive operational insight.",
+//     icon: <FiDatabase size={50} strokeWidth="" color="black" />,
+//     // icon: <video src={db} alt="Database Icon" className="h-10" autoPlay loop />,
+//   },
+//   {
+//     title:
+//       "In a multi-vendor environment, there is often a lack of comparative analysis",
+//     description:
+//       "In a multi-vendor environment, the lack of comparative analysis impedes effective evaluation and optimization of vendor performance and service quality.",
+//     icon: <FaRegStar size={40} color="black" />,
+//     // icon: <video src={ca} alt="ca Icon" className="h-10" autoPlay loop />,
+//   },
+//   {
+//     title: "Lack of Independent assessment",
+//     description:
+//       "The lack of independent assessment is a major barrier to obtaining unbiased evaluations and ensuring strong quality assurance. ",
+//     icon: <BsGraphUpArrow size={40} color="black" />,
+//     // icon: <video src={graph} alt="Graph Icon" className="h-10" autoPlay loop />,
+//   },
+//   {
+//     title:
+//       "The current model is unable to scale beyond the requirements of a quality audit",
+//     description:
+//       "The existing framework lacks scalability beyond basic quality audits, limiting its ability to effectively address broader operational and strategic needs.",
+//     icon: <BsBoxes size={40} color="black" />,
+//     // icon: <video src={blocks} alt="blocks Icon" className="h-10" autoPlay loop />
+//   },
+//   {
+//     title:
+//       "Quality is often viewed as a cost center rather than a transformation center",
+//     description:
+//       "Quality Assurance (QA) is frequently perceived as a cost center rather than a value creator because traditional frameworks focus primarily on defect detection instead of driving transformative initiatives. This narrow approach limits QA's potential to contribute strategically to business success.",
+//     icon: <MdCenterFocusWeak size={40} color="black" />,
+//     // icon: <video src={qa} alt="QA Icon" className="h-10" autoPlay loop />,
+//   },
+// ];
 const cardData = [
   {
-    title: "Quality frameworks do not capture broader signals",
+    title: " Inconsistent Adoption of Improvement Initiatives",
     description:
-      "Current quality frameworks focus on auditing according to guidelines but often fail to capture vital signals essential for comprehensive operational insight.",
+      " Teams often resist new workflows or changes, resulting in fragmented efforts and a lack of measurable progress.",
     icon: <FiDatabase size={50} strokeWidth="" color="black" />,
     // icon: <video src={db} alt="Database Icon" className="h-10" autoPlay loop />,
   },
   {
-    title:
-      "In a multi-vendor environment, there is often a lack of comparative analysis",
+    title: " Short-Term Gains Overshadow Long-Term Sustainability",
     description:
-      "In a multi-vendor environment, the lack of comparative analysis impedes effective evaluation and optimization of vendor performance and service quality.",
+      " Many improvement projects deliver immediate benefits but fail to embed a culture of sustained operational excellence.",
     icon: <FaRegStar size={40} color="black" />,
     // icon: <video src={ca} alt="ca Icon" className="h-10" autoPlay loop />,
   },
   {
-    title: "Lack of Independent assessment",
+    title: " Unstructured Feedback Channels Stall Growth",
     description:
-      "The lack of independent assessment is a major barrier to obtaining unbiased evaluations and ensuring strong quality assurance. ",
+      " Lack of structured feedback mechanisms from employees, vendors, and customers prevents organizations from identifying areas of continuous improvement.",
     icon: <BsGraphUpArrow size={40} color="black" />,
     // icon: <video src={graph} alt="Graph Icon" className="h-10" autoPlay loop />,
   },
   {
-    title:
-      "The current model is unable to scale beyond the requirements of a quality audit",
+    title: " Data Without Context Limits Actionability",
     description:
-      "The existing framework lacks scalability beyond basic quality audits, limiting its ability to effectively address broader operational and strategic needs.",
+      " Organizations gather extensive data but fail to contextualize it for actionable insights that drive impactful changes.",
     icon: <BsBoxes size={40} color="black" />,
     // icon: <video src={blocks} alt="blocks Icon" className="h-10" autoPlay loop />
   },
   {
-    title:
-      "Quality is often viewed as a cost center rather than a transformation center",
+    title: " Failure to Link Improvements to Strategic Goals",
     description:
-      "Quality Assurance (QA) is frequently perceived as a cost center rather than a value creator because traditional frameworks focus primarily on defect detection instead of driving transformative initiatives. This narrow approach limits QA's potential to contribute strategically to business success.",
+      " Improvement initiatives are often treated as standalone efforts, missing opportunities to align with broader organizational strategies and unlock transformative potential.",
     icon: <MdCenterFocusWeak size={40} color="black" />,
     // icon: <video src={qa} alt="QA Icon" className="h-10" autoPlay loop />,
   },
@@ -58,24 +95,22 @@ export default function Card() {
 
   return (
     <section className="relative bg-[#ffffff] h-fit md:h-full  text-white pt-10">
-      {/*   {/* <div className="flex mx-auto h-px w-[80%] md:w-[30%] justify-center">
-         
-         
-         
-        <div className="flex-grow h-2px bg-black"></div>
-        <span className="h-[2px] ml-2 bg-black">....</span>
-        <span className="h-[2px] ml-2 bg-black">....</span>
-        <span className="h-[2px] ml-2 bg-black">....</span>
-      </div> */}
+     
       <h1 className="card-h1 text-3xl md:text-4xl text-center pt-10 text-[#000000]   relative z-20">
         Challenges faced by the <br />
         business teams today
       </h1>
       <p className="text-center w-[100%] px-2 md:w-[80%] md:left-40 text-black text-lg md:mx-14 mt-4   relative z-20">
+        Next Gen QA - Transforming Quality into a Strategic Advantage Quality
+        frameworks do not capture broader signals Current quality frameworks
+        focus on auditing according to guidelines but often fail to capture
+        vital signals essential for comprehensive operational insight.
+      </p>
+      {/* <p className="text-center w-[100%] px-2 md:w-[80%] md:left-40 text-black text-lg md:mx-14 mt-4   relative z-20">
         Many businesses struggle to harness the full potential of Quality due to
         outdated frameworks, <br /> insufficient comparative analysis, biased audits,
         and a limited understanding of Quality’s diverse applications.
-      </p>
+      </p> */}
 
       {/* SVG Background */}
       <svg

@@ -17,6 +17,7 @@ import Error from "./assets/Error404.gif"
 import { WobbleCardDemo } from "./components/ui/WobbleCardDemo.jsx";
 
 import ScrollProvider from "./components/Animations/ScrollProvider.jsx";
+import Capabilites from "./components/Capabilites.jsx";
 
 // Lazy load the components
       const Company = React.lazy(() =>
@@ -86,6 +87,7 @@ const MainLayout = () => {
                 <Route path="/careers" element={<Career />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/services1" element={<Services1 />} />
+                <Route path="/capabilites" element={<Capabilites />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/usecase" element={<WobbleCardDemo />} />
                 <Route path="/contact" element={<ContactUs />} />
