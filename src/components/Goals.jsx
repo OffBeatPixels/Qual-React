@@ -95,9 +95,9 @@ const Goals = () => {
 
       <div className="goals flex flex-col md:flex-row items-center justify-center  w-full">
         {/* Circle 1 */}
-        <div className="g1 w-68  min-h-[200px] lg:min-h-[200px] rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#C16523] flex items-center justify-center">
+        <div className="g1 w-68  min-h-[200px] lg:min-h-[250px] rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#C16523] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] text-[#C16523] bg-transparent">1</h1>
+            <h1 className="text-[15vh] text-[#C16523] bg-transparent">1</h1>
             <p className="text-xs text-left ">
               <strong>
                 {" "}
@@ -111,10 +111,10 @@ const Goals = () => {
         </div>
 
         {/* Circle 2 */}
-        <div className="g2 w-68  min-h-[200px] lg:min-h-[200px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#8FABC3] flex items-center justify-center">
+        <div className="g2 w-68  min-h-[200px] lg:min-h-[250px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#8FABC3] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#8FABC3]">2</h1>
-            <p className="text-sm text-left ">
+            <h1 className="text-[15vh] bg-transparent text-[#8FABC3]">2</h1>
+            <p className="text-xs text-left ">
               "Streamline Success: Optimize Processes, Maximize Impact"
               Transform workflows and eliminate inefficiencies with tailored
               process improvement consulting for sustainable operational
@@ -124,10 +124,10 @@ const Goals = () => {
         </div>
 
         {/* Circle 3 */}
-        <div className="g3 w-68  min-h-[200px] lg:min-h-[200px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
+        <div className="g3 w-68  min-h-[200px] lg:min-h-[250px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#EDC05F]">3</h1>
-            <p className="text-sm text-left ">
+            <h1 className="text-[15vh] bg-transparent text-[#EDC05F]">3</h1>
+            <p className="text-xs text-left ">
               "Insights That Empower: Measure, Predict, Transform" Leverage
               data-driven KPI design and AI-powered dashboards to gain
               actionable insights and predictive analytics for smarter
@@ -137,10 +137,10 @@ const Goals = () => {
         </div>
 
         {/* Circle 4 */}
-        <div className="g3 w-68  min-h-[200px] lg:min-h-[200px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
+        <div className="g3 w-68  min-h-[200px] lg:min-h-[250px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#EDC05F]">4</h1>
-            <p className="text-sm text-left ">
+            <h1 className="text-[15vh] bg-transparent text-[#EDC05F]">4</h1>
+            <p className="text-xs text-left ">
               "Continuously Innovate: Build a Future-Ready Organization" Embed a
               culture of continuous improvement with robust frameworks,
               innovation councils, and benefit measurement strategies.
@@ -148,10 +148,10 @@ const Goals = () => {
           </div>
         </div>
         {/* Circle 5 */}
-        <div className="g3 w-68  min-h-[200px] lg:min-h-[200px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
+        <div className="g3 w-68  min-h-[200px] lg:min-h-[250px] ml-8 rounded-full border-t-[3px] border-b-[3px] border-r-[10px] border-l-[0px] border-[#EDC05F] flex items-center justify-center">
           <div className="g1-box flex flex-row items-center">
-            <h1 className="text-[20vh] bg-transparent text-[#EDC05F]">5</h1>
-            <p className="text-sm text-left ">
+            <h1 className="text-[15vh] bg-transparent text-[#EDC05F]">5</h1>
+            <p className="text-xs text-left ">
               "AI at Your Fingertips: Tailored Training, Seamless Deployment"
               Equip your teams with custom AI/AGI training and deployment
               solutions to drive agility, scalability, and sustained growth.
