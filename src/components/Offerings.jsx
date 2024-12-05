@@ -8,7 +8,7 @@ export default function Offerings() {
   return (
     <div>
       <div>
-        <h1 className="text-3xl md:text-4xl text-center mt-24 pb-14   text-black">
+        <h1 className="text-3xl md:text-4xl text-center pb-14   text-black">
           Offerings
         </h1>
         <div className="grid grid-cols-3 px-10">
@@ -16,7 +16,7 @@ export default function Offerings() {
 
           <div className=" mt-10">
             <Link to="/services" className="text-3xl hover:text-blue-500 ">
-              Text about Project Based Services
+            Project Based Services
             </Link>
             <p>
               <ol className="list-disc leading-10">
@@ -30,7 +30,7 @@ export default function Offerings() {
           </div>
           <div className=" mt-10">
             <Link to="/services1" className="text-3xl hover:text-blue-500 ">
-                Text about Managed Services
+              Managed Services
               </Link>
             <p >
               {" "}

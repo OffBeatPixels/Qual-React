@@ -21,7 +21,7 @@ export default function Services1() {
     >
       {/* Section Title */}
       <div className="text-wrap h-10 w-[40%] mt-32 mr-20">
-        <h3 className="text-3xl text-black   mb-8 ">Managed Services</h3>
+        <h3 className="text-3xl text-black text-justify  mb-8 ">Managed Services</h3>
         <p>
           By systematically following four key stages Assessment, Report,
           Insights, and Process Improvement, we provide actionable insights and

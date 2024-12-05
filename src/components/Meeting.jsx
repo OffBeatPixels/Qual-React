@@ -11,7 +11,7 @@ export function Meeting() {
         return "bg-white "; // Blue for the About page
 
       default:
-        return "bg-gradient-to-b from-[#b6d5f0] via-[#ffffff] to-[#ffffff]"; // Default color
+        return "bg-gradient-to-b from-[#ffffff] via-[#b6d5f0]   to-[#ffffff]"; // Default color
     }
   };
   return (

@@ -61,7 +61,7 @@ export default function Company() {
             }}
             transition={{
               duration: 4,
-              repeat: Infinity,
+              repeat: 1,
               ease: "linear",
             }}
           />

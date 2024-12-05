@@ -24,7 +24,7 @@ export default function Usecase() {
             </div>
 
             {/* Content Section */}
-            <div className="flex-grow ">
+            {/* <div className="flex-grow ">
               <div className=" absolute right-36  my-5 bg-white text-black  text-sm sm:text-base leading-relaxed overflow-y-scroll h-72 w-full sm:w-[40vw]  p-4 rounded-lg shadow-lg">
                 <span className="font-bold text-medium block mb-2">
                   Sales Performance
@@ -58,6 +58,60 @@ export default function Usecase() {
                 </ul>
                 <p className="mt-4">
                   <span className="font-semibold">Why Choose Our QaaS?</span>{" "}
+                  Leverage our expertise, innovative framework, and data-driven
+                  insights to drive sales growth.
+                </p>
+              </div>
+            </div> */}
+
+            <div className="flex-grow relative">
+              <div className="absolute right-36 my-5 bg-white text-gray-800 text-sm sm:text-base leading-relaxed overflow-y-scroll h-72 w-full sm:w-[40vw] p-6 rounded-lg shadow-lg border border-gray-200">
+                {/* Title */}
+                <h2 className="text-lg font-medium mb-4 text-gray-900">
+                  Sales Performance
+                </h2>
+                {/* Description */}
+                {/* <p className="mb-4">
+                  Boost Your Sales with Quality as a Service (QaaS). At
+                  Qualiinsight, we offer a comprehensive Quality as a Service
+                  (QaaS) solution designed to enhance your sales process. Here’s
+                  how our service can transform your sales strategy:
+                </p> */}
+                {/* List Section */}
+                <ul className="list-disc pl-6 space-y-3">
+                  <li>
+                    <h3 className="font-medium text-gray-900 mb-1">
+                      Customer Experience Enhancement:
+                    </h3>
+                    <p className="text-gray-700">
+                      Foster trust and loyalty by addressing pain points
+                      effectively.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 className="font-medium text-gray-900 mb-1">
+                      Quality Management Systems (QMS):
+                    </h3>
+                    <p className="text-gray-700">
+                      Streamline sales processes, reduce errors, and enhance
+                      operational efficiency.
+                    </p>
+                  </li>
+                  <li>
+                    <h3 className="font-medium text-gray-900 mb-1">
+                      Decode the Voice of Customers:
+                    </h3>
+                    <p className="text-gray-700">
+                      Create upselling and cross-selling opportunities by
+                      understanding customer needs.
+                    </p>
+                  </li>
+                </ul>
+                {/* Closing Section */}
+                <p className="mt-6">
+                  <span className="font-medium text-gray-900">
+                    Why Choose Our QaaS?
+                  </span>{" "}
                   Leverage our expertise, innovative framework, and data-driven
                   insights to drive sales growth.
                 </p>

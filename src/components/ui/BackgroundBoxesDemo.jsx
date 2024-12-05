@@ -30,15 +30,14 @@ export function BackgroundBoxesDemo() {
           "text-3xl md:text-5xl  md:top-0  text-center   md:left-[25%]   relative z-20 "
         )}
       > */}
-      <h1 className="text-3xl md:text-5xl   text-center  relative z-20 ">
-        Quality in your DNA, <br />
+      <h1 className="text-3xl md:text-6xl   text-center  relative z-20 ">
+        Quality in our DNA, <br />
         not just your SLA
       </h1>
 
-      <p className="text-wrap   text-center text-lg mt-8    relative z-20">
+      <p className="text-wrap   text-center text-2xl mt-8    relative z-20">
         Unlock Revenue, Minimize Costs, Elevate Customer Experience <br /> &
-        <br />
-        Accelerate AGI Implementation <br /> with <br /> Quality Insights!
+        Accelerate AGI Implementation with <span className="text-red-500">Quality Insights!</span>
       </p>
       <Link
         to="goals-section" // Target id of Goals section
