@@ -452,7 +452,7 @@ const Card = () => {
               }`}
             >
               {card.icon}
-              <h3 className="text-lg  text-center">{card.title}</h3>
+              <h3 className="text-lg text-center">{card.title}</h3>
               <p
                 className="bg-[#dd4160] absolute top-52 text-white  p-1 rounded-lg cursor-pointer"
                 onClick={() => setHoveredCard(index)}

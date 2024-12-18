@@ -5,6 +5,40 @@ import logo from "../assets/logo.webp"
 import { FaCalendarCheck } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+const hoverContent = [
+  {
+    heading: "Elevate Quality:",
+    subHeading: "Redefine Standards, Deliver Excellence",
+    text: ` Implement world-class QA frameworks that exceed industry benchmarks, ensuring operational consistency, compliance, and customer satisfaction.`,
+    position: "top-[10%] right-40",
+  },
+  {
+    heading: "Streamline Success with Process Consulting: ",
+    subHeading: " Optimize Processes, Maximize Impact",
+    text: ` Transform workflows and eliminate inefficiencies with tailored process improvement consulting for sustainable operational excellence.`,
+    position: "top-[35%] right-0",
+  },
+  {
+    heading: "Insights That Empower:",
+    subHeading: "Measure, Predict, Transform",
+    text: ` Leverage data-driven KPI design and AI-powered dashboards to gain actionable insights and predictive analytics for smarter decisions.`,
+    position: "top-[60%] right-24",
+  },
+  {
+    heading: "Continuously Innovate:",
+    subHeading: "Build a Future-Ready Organization",
+    text: ` Embed a culture of continuous improvement with robust frameworks, innovation councils, and benefit measurement strategies.`,
+    position: "top-[60%] left-10",
+  },
+  {
+    heading: "AI at Your Fingertips:",
+    subHeading: "Tailored Training, Seamless Deployment",
+    text: ` Equip your teams with custom AI/AGI training and deployment solutions to drive agility, scalability, and sustained growth.`,
+    position: "top-[25%] left-0",
+  },
+];
 const Goals = () => {
 
   const [hover ,setHover] =useState(null)
@@ -85,6 +119,8 @@ const Goals = () => {
   //   // });
   // }, []);
 
+
+
   return (
     <section
       id="goals-section"
@@ -100,14 +136,19 @@ const Goals = () => {
        <span className="h-[2px] ml-2 bg-black">....</span>
      </div> */}
       <p className="w-full text-4xl  pb-5  text-center">
-        Transforming excellence from a goal to your <br />
-        daily reality with Qualiinsight's QaaS.
+        <span className="text-[#296fa8]"> Transforming excellence</span> from a
+        goal to your <br />
+        daily reality with{" "}
+        <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
       </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
         viewBox="0 0 500 500"
         className="w-[52vw] mx-auto font-extrabold relative"
+        onClick={() => {
+          setHover(null);
+        }}
       >
         <g id="objects">
           <linearGradient
@@ -140,22 +181,23 @@ const Goals = () => {
             fill="url(#SVGID_00000030457618418328388150000018171444825362933640_)"
             d="M250.093 307.179c-32.603 0-59.126-26.523-59.126-59.126s26.523-59.124 59.126-59.124 59.125 26.523 59.125 59.124-26.523 59.126-59.125 59.126"
           ></path>
-          {/* <text
-            fill="#"
-            fontFamily="BebasNeueBold"
-            fontSize="24.926"
-            transform="translate(200.885 265.112)"
-          >
-            INFOGRAPHIC
-         </text> */}
           <text
             fill="#"
-            fontFamily="Raleway-LightItalic"
-            fontSize="30"
-            transform="translate(200 255)"
+            fontFamily="BebasNeueBold"
+            fontSize="17"
+            transform="translate(193 250)"
           >
-            GOALS
+            Transformation
           </text>
+          <text
+            fill="#"
+            fontFamily="BebasNeueBold"
+            fontSize="17"
+            transform="translate(206.885 267.112)"
+          >
+            Excellence
+          </text>
+
           <linearGradient
             id="SVGID_00000106834035774230130410000010904847904469769344_"
             x1="248.35"
@@ -218,9 +260,6 @@ const Goals = () => {
             onMouseEnter={() => {
               setHover(1);
             }}
-            onMouseLeave={() => {
-              setHover(null);
-            }}
           ></path>
           {/* Elevate Quality Icon */}
           <g>
@@ -251,14 +290,7 @@ const Goals = () => {
               Quality
             </tspan>
           </text>
-          <text
-            fill="#FFF"
-            fontFamily="BebasNeueBold"
-            fontSize="24.713"
-            transform="translate(193.837 128.773)"
-          >
-            A.
-          </text>
+
           <linearGradient
             id="SVGID_00000013902993248744404930000004420467486649866411_"
             x1="482.953"
@@ -312,11 +344,8 @@ const Goals = () => {
             onMouseEnter={() => {
               setHover(2);
             }}
-            onMouseLeave={() => {
-              setHover(null);
-            }}
           ></path>
-          <text transform="translate(392.908 235)">
+          <text transform="translate(392.908 232)">
             <tspan
               x="-10"
               y="0"
@@ -325,17 +354,17 @@ const Goals = () => {
               fontSize="13"
               className="font-bold leading-6"
             >
-              Streamline
+              Process
             </tspan>
             <tspan
-              x="-2"
+              x="-10"
               y="14"
               fill="#"
               fontFamily="Raleway-LightItalic"
               fontSize="13"
               className="font-bold leading-6"
             >
-              Success
+              consulting
             </tspan>
           </text>
           {/* <path
@@ -350,14 +379,7 @@ const Goals = () => {
             transform="translate(405, 190)"
             d="M24,23c0,.552-.448,1-1,1H3c-1.654,0-3-1.346-3-3V1C0,.448,.448,0,1,0s1,.448,1,1V21c0,.551,.449,1,1,1H23c.552,0,1,.448,1,1Zm-3-18h-4c-.552,0-1,.448-1,1s.448,1,1,1h3.563l-4.857,4.707c-.377,.378-1.036,.378-1.413,0-.041-.04-1.239-.893-1.239-.893-1.138-1.073-3.077-1.033-4.162,.051l-4.586,4.414c-.398,.383-.41,1.016-.027,1.414,.197,.204,.458,.307,.721,.307,.25,0,.5-.093,.693-.279l4.6-4.428c.377-.378,1.036-.378,1.413,0,.041,.04,1.239,.893,1.239,.893,1.139,1.074,3.076,1.036,4.164-.054l4.89-4.74v3.607c0,.552,.448,1,1,1s1-.448,1-1v-4c0-1.654-1.346-3-3-3Z"
           />
-          <text
-            fill="#FFF"
-            fontFamily="BebasNeueBold"
-            fontSize="24.713"
-            transform="translate(347.919 167.95)"
-          >
-            B.
-          </text>
+
           <linearGradient
             id="SVGID_00000147911194658856914340000011550493519070322062_"
             x1="949.943"
@@ -410,9 +432,6 @@ const Goals = () => {
             d="M302.121 362.21c19.754-14.353 47.501-9.957 61.852 9.797 14.352 19.753 9.957 47.499-9.796 61.85-19.753 14.353-47.498 9.958-61.851-9.795-14.351-19.753-9.957-47.502 9.795-61.852"
             onMouseEnter={() => {
               setHover(3);
-            }}
-            onMouseLeave={() => {
-              setHover(null);
             }}
           ></path>
           <text transform="translate(298 408)">
@@ -470,14 +489,6 @@ const Goals = () => {
             d="m21.867,23.988l-5.944-5.943c-1.707,1.263-3.759,1.956-5.923,1.956C4.486,20,0,15.514,0,10S4.484.002,9.996,0c.001,0,.003,0,.004,0C12.112,0,14.071.662,15.687,1.785l-1.977,2.29c-1.077-.677-2.346-1.075-3.709-1.075h0c-3.859,0-7,3.14-7,7,0,.638.093,1.252.254,1.84l4.64-5.568,3.521,3.521L19.859.014l2.27,1.961-10.555,12.221-3.479-3.479-3.294,3.954c1.282,1.426,3.135,2.33,5.2,2.33,1.876,0,3.638-.732,4.961-2.062,0,0,0-.002.001-.002,1.056-1.061,1.723-2.405,1.947-3.858l2.837-3.285c.161.711.254,1.448.254,2.207,0,2.163-.692,4.216-1.955,5.924l5.944,5.943-2.121,2.121Z"
           />
 
-          <text
-            fill="#FFF"
-            fontFamily="BebasNeueBold"
-            fontSize="24.713"
-            transform="translate(355.573 330.907)"
-          >
-            C.
-          </text>
           <linearGradient
             id="SVGID_00000148632012637901452470000013411009166135448491_"
             x1="1004.312"
@@ -531,9 +542,6 @@ const Goals = () => {
             onMouseEnter={() => {
               setHover(4);
             }}
-            onMouseLeave={() => {
-              setHover(null);
-            }}
           ></path>
           <text transform="translate(94 380)">
             <tspan
@@ -563,14 +571,7 @@ const Goals = () => {
             transform="translate(-130, 40) scale(0.8)"
             d="M321.919 383.426a6.23 6.23 0 0 1 12.46 0 6.23 6.23 0 0 1-12.46 0m4.171-15.453c-.568 0-.899.526-1.028 1.03l-.376 1.5a13.4 13.4 0 0 0-3.22 1.336l-1.331-.796c-.244-.146-.539-.253-.817-.253a.88.88 0 0 0-.64.253l-2.911 2.914c-.401.403-.243.986 0 1.455l.792 1.319a13.3 13.3 0 0 0-1.344 3.232l-1.488.371c-.505.129-1.029.462-1.029 1.028v4.124c0 .569.524.867 1.029 1.028l1.488.373c.309 1.146.76 2.228 1.344 3.232l-.792 1.317c-.267.449-.401 1.054 0 1.457l2.911 2.912a.85.85 0 0 0 .617.247c.281 0 .579-.109.84-.247l1.331-.796a13.3 13.3 0 0 0 3.22 1.337l.376 1.5c.129.502.46 1.029 1.028 1.029h4.121c.567 0 .868-.527 1.031-1.029l.373-1.5a13.3 13.3 0 0 0 3.223-1.337l1.324.796c.264.138.563.247.844.247a.83.83 0 0 0 .614-.247l2.913-2.912c.404-.403.265-1.008 0-1.457l-.793-1.317a13.3 13.3 0 0 0 1.344-3.232l1.488-.373c.506-.161 1.029-.459 1.029-1.028v-4.124c0-.566-.523-.899-1.029-1.028l-1.488-.371a13.3 13.3 0 0 0-1.344-3.232l.793-1.319c.243-.469.404-1.052 0-1.455l-2.913-2.914a.87.87 0 0 0-.635-.253c-.283 0-.577.107-.823.253l-1.324.796c-1-.577-2.08-1.028-3.223-1.336l-.373-1.5c-.163-.504-.464-1.03-1.031-1.03z"
           ></path>
-          <text
-            fill="#FFF"
-            fontFamily="BebasNeueBold"
-            fontSize="24.713"
-            transform="translate(203.206 386.708)"
-          >
-            D.
-          </text>
+
           <linearGradient
             id="SVGID_00000120558455080001094180000016548163872611061151_"
             x1="569.867"
@@ -624,24 +625,31 @@ const Goals = () => {
             onMouseEnter={() => {
               setHover(5);
             }}
-            onMouseLeave={() => {
-              setHover(null);
-            }}
           ></path>
-          <text transform="translate(72 185)">
+          <text transform="translate(67 178)">
             <tspan
-              x="-5"
-              y="0"
+              x="0"
+              y="-3"
               fill="#"
               fontFamily="Raleway-Medium"
               fontSize="13"
               className="font-bold leading-6"
             >
-              AI at Your
+              AI insights
             </tspan>
             <tspan
-              x="-5"
-              y="14"
+              x="0"
+              y="10"
+              fill="#"
+              fontFamily="Raleway-LightItalic"
+              fontSize="13"
+              className="font-bold leading-6"
+            >
+              at Your
+            </tspan>
+            <tspan
+              x="0"
+              y="22"
               fill="#"
               fontFamily="Raleway-LightItalic"
               fontSize="13"
@@ -665,19 +673,28 @@ const Goals = () => {
             transform="translate(85,140)"
             d="m9.5,2.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5c0,1.025-.617,1.906-1.5,2.291v2.327c-.322-.073-.655-.118-1-.118s-.678.045-1,.118v-2.327c-.883-.386-1.5-1.266-1.5-2.291Zm-3.758,6.169l2.303,1.733c.106-.706.396-1.351.82-1.886l-1.929-1.452c.042-.182.065-.37.065-.565,0-1.381-1.119-2.5-2.5-2.5s-2.5,1.119-2.5,2.5,1.119,2.5,2.5,2.5c.452,0,.876-.121,1.242-.331Zm8.258,7.792v-5.355c0-.996-.681-1.92-1.664-2.08-1.253-.204-2.336.758-2.336,1.973v9.817c-1.076-.886-2.111-1.752-2.145-1.784-.922-.861-2.373-.813-3.235.109-.863.923-.819,2.372.098,3.23l1.821,1.628h16.462v-4l-9-3.538Zm1.927-6.225l2.236-1.625c.387.245.845.388,1.337.388,1.381,0,2.5-1.119,2.5-2.5s-1.119-2.5-2.5-2.5-2.5,1.119-2.5,2.5c0,.156.015.307.042.455l-1.997,1.451c.439.514.749,1.141.882,1.831Z"
           />
-
-          <text
-            fill="#FFF"
-            fontFamily="BebasNeueBold"
-            fontSize="24.713"
-            transform="translate(107.9 262.762)"
-          >
-            E.
-          </text>
         </g>
       </svg>
+      {/* Render Hover Content Dynamically */}
+      {hover !== null && (
+        <div
+          className={`absolute w-96 text-justify p-5 bg-white rounded-2xl border-2 ${
+            hoverContent[hover - 1].position
+          }`}
+        >
+          <p className="sm:text-[18px] text-[14px] font-bold  ">
+            {" "}
+            {hoverContent[hover - 1].heading}
+          </p>
+          <p className="sm:text-[16px] text-[12px] font-semibold  ">
+            {" "}
+            {hoverContent[hover - 1].subHeading}
+          </p>
+          {hoverContent[hover - 1].text}
+        </div>
+      )}
 
-      {hover === 1 && (
+      {/* {hover === 1 && (
         <div className="absolute top-[10%] right-60 w-80   text-justify bg-white p-5  rounded-2xl border-2">
           "Elevate Quality: Redefine Standards, Deliver Excellence"Implement
           world-class QA frameworks that exceed industry benchmarks, ensuring
@@ -711,13 +728,14 @@ const Goals = () => {
           your teams with custom AI/AGI training and deployment solutions to
           drive agility, scalability, and sustained growth.
         </div>
-      )}
+      )} */}
 
       <p className="md:w-1/2 text-xl md:text-2xl pt-10 mx-auto text-center">
         We embed <span className="text-red-500">top-tier</span> quality into
         every product, service, and process, creating a foundation for
-        operational excellence, measurable outcomes, and transformative business
-        growth
+        <span className="text-[#e6c354]">operational excellence</span>,{" "}
+        <span className="text-[#58dce3]">measurable outcomes</span>, and{" "}
+        <span className="text-[#df9b49]">transformative business growth</span>
       </p>
     </section>
   );

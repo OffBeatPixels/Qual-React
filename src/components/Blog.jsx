@@ -669,7 +669,7 @@ const Blog = () => {
         ))}
       </div>
       {/* Display Blogs */}
-      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-32 place-items-center gap-5">
+      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-32 place-items-center gap-32">
         {filteredBlogs.map((blog) => (
           <div
             key={blog.id}

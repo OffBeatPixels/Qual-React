@@ -163,13 +163,13 @@
 //           className="absolute top-48 left-0 h-[70vh]"
 //         /> */}
 //         {/* Cards Section */}
-//         <div className="flex  gap-3 justify-center">
+//         <div className=" flex  gap-3 justify-center">
 //           {ServiceData.map((item) => (
 //             <div
 //               key={item.id}
 //               className="group space-y-4 w-80 text-center bg-white shadow-2xl p-3"
 //             >
-//               <div className="flex justify-center items-center">
+//               <div className=" flex justify-center items-center">
 //                 <img
 //                   src={item.img}
 //                   alt={item.name}
@@ -207,6 +207,8 @@ import Service2 from "../assets/Service-2.jpg";
 import Service3 from "../assets/Service-3.jpg";
 import graph1 from "../assets/graph1.webm";
 import Popup from "./Popup";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const ServiceData = [
   {
@@ -351,34 +353,57 @@ const ServiceData = [
   },
 ];
 
+
 export default function Services() {
+
+// useEffect(() => {
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   const cards = gsap.utils.toArray(".card");
+//   const containerWidth = cards.length * 100;
+//   gsap.to(cards, {
+//     xPercent: -100 * (cards.length - 1),
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: ".horizontal-scroll-section",
+//       start: "top top",
+//       end: `+=${containerWidth}vw`,
+//       scrub: true,
+//       pin: true,
+//       markers: true, 
+//     },
+//   });
+// }, []);
+
+
+
   return (
-    <section className="mx-auto container text-center">
-      <h3 className="text-4xl   pt-10 ml-20 text-left ">
+    <section className="mx-auto  container text-center">
+      <h3 className="text-4xl   pt-10 ml-20 text-center ">
         Project-Based Services:
       </h3>
-      <p className="text-2xl  ml-20 text-left ">
+      <p className="text-2xl  ml-20 text-center ">
         Delivering Tailored Solutions for Immediate Impact
       </p>
-      <div className="pb-8 pt-10">
+      <div className="pb-8 pt-14 ">
         {/* Cards 1 */}
-        <div className="flex gap-10 px-40 ">
+        <div id="card1" className=" flex gap-10 px-40 ">
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000 ">
-            <h1 className="text-3xl">1.Processes Aren’t Designed to Scale</h1>
+            <h1 className="text-2xl">1.Processes Aren’t Designed to Scale</h1>
             <p>
               Most workflows are built for the present, not the future.As
               businesses grow, these static processes crumble under pressure,
               limiting innovation and scalability.
             </p>
           </div>
-          <img src={Service1} alt="" className="w-96 rounded-xl" />
+          <img src={Service1} alt="" className="w-80 rounded-xl" />
         </div>
 
         {/* Cards 2 */}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card2" className=" flex mt-14 gap-10 px-40">
           <img src={Service2} alt="" className="w-96 rounded-xl" />
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000 ">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               {" "}
               2.Teams Struggle with Invisible Inefficiencies
             </h1>
@@ -390,9 +415,9 @@ export default function Services() {
         </div>
 
         {/* Cards 3 */}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card3" className=" flex mt-14 gap-10 px-40">
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               3.Customer Experience Suffers from Operational Gaps n
             </h1>
             <p>
@@ -404,10 +429,10 @@ export default function Services() {
         </div>
 
         {/* Cards 4 */}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card4" className=" flex mt-14 gap-10 px-40">
           <img src={Service1} alt="" className="w-96 rounded-xl" />
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               {" "}
               4.Decision-Making is Based on Gut, Not Data
             </h1>
@@ -419,9 +444,9 @@ export default function Services() {
           </div>
         </div>
         {/* Cards 5 */}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card5" className=" flex mt-14 gap-10 px-40">
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               {" "}
               5.Business Agility is Stifled by Outdated Workflows
             </h1>
@@ -435,10 +460,10 @@ export default function Services() {
         </div>
 
         {/* Cards 6*/}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card6" className=" flex mt-14 gap-10 px-40">
           <img src={Service1} alt="" className="w-96 rounded-xl" />
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               {" "}
               6.Cross-Functional Collaboration Falls Through the Cracks
             </h1>
@@ -451,9 +476,9 @@ export default function Services() {
         </div>
 
         {/* Cards 7 */}
-        <div className="flex mt-14 gap-10 px-40">
+        <div id="card7" className=" flex mt-14 gap-10 px-40">
           <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
-            <h1 className="text-3xl">
+            <h1 className="text-2xl ">
               {" "}
               7.Innovation Takes a Backseat to Routine Tasks
             </h1>
@@ -462,7 +487,6 @@ export default function Services() {
               bandwidth to drive transformative initiatives, stalling business
               growth.
             </p>
-           
           </div>
           <img src={Service3} alt="" className="w-96 rounded-xl" />
         </div>
