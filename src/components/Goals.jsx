@@ -15,7 +15,7 @@ const hoverContent = [
     position: "top-[10%] right-40",
   },
   {
-    heading: "Streamline Success with Process Consulting: ",
+    heading: "Process Consulting: ",
     subHeading: " Optimize Processes, Maximize Impact",
     text: ` Transform workflows and eliminate inefficiencies with tailored process improvement consulting for sustainable operational excellence.`,
     position: "top-[35%] right-0",
