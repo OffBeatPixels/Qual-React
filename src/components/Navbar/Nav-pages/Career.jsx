@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Transition from "../../Animations/Transition";
 
 
-export default function Career() {
+function Career() {
 
   return (
     <div className=" mx-auto flex  ">
@@ -72,3 +73,6 @@ export default function Career() {
     </div>
   );
 }
+
+
+export default Transition(Career)

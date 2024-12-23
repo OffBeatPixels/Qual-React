@@ -14,6 +14,8 @@ const ScrollProvider = ({ children }) => {
     const locoScroll = new LocomotiveScroll({
       el: scrollContainer,
       smooth: true,
+      overflow:"hidden",
+      
     });
 
     return () => {

@@ -9,7 +9,8 @@ import Banner from "../../assets/Service1.jpg";
 import Goals from './../Goals';
 
 
-export function BackgroundBoxesDemo() {
+
+export function BackgroundBoxesDemo () {
   
   return (
     <div
@@ -31,14 +32,14 @@ export function BackgroundBoxesDemo() {
         )}
       > */}
       <h1 className="text-3xl md:text-6xl   text-center  relative z-20 ">
-        Quality in our <span className="text-[#CF7300]">DNA</span>, <br />
-        not just your <span className="text-[#296fa8]">SLA</span>
+        Quality in our <span className="text-[#DA3357]">DNA</span>, <br />
+        not just your <span className="text-[#DA3357]">SLA</span>
       </h1>
 
       <p className="text-wrap   text-center text-2xl mt-8    relative z-20">
         Unlock Revenue, Minimize Costs, Elevate Customer Experience <br /> &
         Accelerate AGI Implementation with{" "}
-        <span className="text-red-500">Quality Insights!</span>
+        <span className="text-[#DA3357]">Quality Insights!</span>
       </p>
       <Link
         to="goals-section" // Target id of Goals section

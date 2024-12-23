@@ -6,7 +6,7 @@ import Services1 from './Offerings/Services1';
 
 export default function Offerings() {
   return (
-    <div>
+    <div className=''>
       <div>
         <h1 className="text-3xl md:text-4xl text-center pb-14   text-black">
           Offerings

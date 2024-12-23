@@ -2,8 +2,9 @@ import React from "react";
 import Usecase1 from "../assets/Usecase1.webp";
 import Usecase2 from "../assets/Usecase2.webp";
 import Usecase3 from "../assets/Usecase3.webp";
+import Transition from "./Animations/Transition";
 
-export default function Usecase() {
+function Usecase() {
   return (
     <div>
       <h1 className="text-3xl sm:text-4xl text-center mt-8 font-bold text-gray-800">
@@ -233,3 +234,7 @@ export default function Usecase() {
     </div>
   );
 }
+
+
+
+export default Transition(Usecase)

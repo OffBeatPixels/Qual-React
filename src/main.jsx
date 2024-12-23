@@ -18,6 +18,7 @@ import { WobbleCardDemo } from "./components/ui/WobbleCardDemo.jsx";
 
 import ScrollProvider from "./components/Animations/ScrollProvider.jsx";
 import Capabilites from "./components/Capabilites.jsx";
+import { AnimatePresence } from "framer-motion";
 
 // Lazy load the components
       const Company = React.lazy(() =>
@@ -74,13 +75,13 @@ const MainLayout = () => {
 
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main  className="flex-grow">
+    <div className="flex flex-col overflow-hidden">
+      <Navbar  />
+      <AnimatePresence  >
         <Suspense fallback={<div className="text-center">Loading .... </div>}>
           <ScrollTop />
-          {/* <ScrollProvider>
-            <div id="scroll-container" className="scroll-container"> */}
+          {/* <ScrollProvider> */}
+            <div id="scroll-container" className="">
               <Routes location={location}>
                 <Route index element={<App />} />
                 <Route path="/company" element={<Company />} />
@@ -93,12 +94,14 @@ const MainLayout = () => {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="*" element={<App />} />
               </Routes>
-            {/* </div>
-          </ScrollProvider> */}
+           
+            <Meeting />
+           <Footer />
+       </div>
+          {/* </ScrollProvider> */}
         </Suspense>
-      </main>
-      <Meeting />
-      <Footer />
+      </AnimatePresence>
+      
     </div>
   );
 };

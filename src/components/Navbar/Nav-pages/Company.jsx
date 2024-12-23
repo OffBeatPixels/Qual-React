@@ -1,7 +1,8 @@
 import React from "react";
 import {motion} from "framer-motion"
+import Transition from "../../Animations/Transition";
 
-export default function Company() {
+function Company(){
   return (
     <div className="flex">
       <div className="md:w-1/2 md:text-justify  md:ml-20 p-8 md:p-10">
@@ -70,3 +71,7 @@ export default function Company() {
     </div>
   );
 }
+
+
+
+export default Transition(Company);

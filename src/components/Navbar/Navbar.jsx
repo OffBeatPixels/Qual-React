@@ -100,7 +100,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`w-full h-20 justify-end ${getNavbarColor()}`}>
+    <nav className={`w-full z-50  sticky top-0 h-20 justify-end ${getNavbarColor()}`}>
       <div
         className="flex items-center mt-2 justify-between font-league"
         ref={menuRef}

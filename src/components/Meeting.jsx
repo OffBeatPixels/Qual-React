@@ -8,14 +8,16 @@ export function Meeting() {
       case "/blog":
         return "bg-white "; // Blue for the About page
       case "/usecase":
-        return "bg-white "; // Blue for the About page
+        return "bg-white ";
+      case "/services":
+        return "bg-white ";
 
       default:
         return "bg-gradient-to-b from-[#ffffff] via-[#b6d5f0]   to-[#ffffff]"; // Default color
     }
   };
   return (
-    // Rremove blue color from Blog page
+   
     <div
       className={`h-[50vh] mt-10 ${getBlogColor()} relative w-full overflow-hidden flex flex-col md:flex-row`}
     >

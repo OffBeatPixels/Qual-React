@@ -27,6 +27,25 @@
 }
 
 
+.slide-in {
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+
+/* background:#261818; */
+transform-origin: bottom;
+}
+.slide-out {
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+/* background:#000000; */
+transform-origin: top;
+}
+
+
 .card {
   position: relative;
   width: 350px;

@@ -561,7 +561,7 @@ const FlipCardSection = () => {
 
   const navigate = useNavigate();
   return (
-    <section className="bg-white my-20">
+    <section className=" py-20">
       <h1 className="text-3xl md:text-4xl text-center my-20 font-bold text-black">
         Capabilities
       </h1>
@@ -593,8 +593,8 @@ const FlipCardSection = () => {
           </p>
         </div>
 
-        <div className="border-[2px] border-[#EC7F2A] mt-10 sm:mt-0  sm:w-[33rem]  p-5 rounded-3xl">
-          <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#ff9b4ffe] w-28 place-content-center place-items-center rounded-full ">
+        <div className="border-[2px] border-[#febf8f] mt-10 sm:mt-0  sm:w-[33rem]  p-5 rounded-3xl">
+          <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#febf8f] w-28 place-content-center place-items-center rounded-full ">
             <img src={qaImg} alt="QA image" className="w-16 h-16" />
           </div>
           <div>
@@ -609,7 +609,7 @@ const FlipCardSection = () => {
             </ul>
           </div>
           <p
-            className="text-[#EC7F2A] font-semibold cursor-pointer text-center mt-5"
+            className="text-[#febf8f] font-semibold cursor-pointer text-center mt-5"
             onClick={() => navigate("/capabilites")}
           >
             Read More

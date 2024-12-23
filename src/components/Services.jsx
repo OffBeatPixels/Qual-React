@@ -209,6 +209,7 @@ import graph1 from "../assets/graph1.webm";
 import Popup from "./Popup";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Transition from "./Animations/Transition";
 
 const ServiceData = [
   {
@@ -354,7 +355,7 @@ const ServiceData = [
 ];
 
 
-export default function Services() {
+ function Services() {
 
 // useEffect(() => {
 //   gsap.registerPlugin(ScrollTrigger);
@@ -378,20 +379,20 @@ export default function Services() {
 
 
   return (
-    <section className="mx-auto  container text-center">
-      <h3 className="text-4xl   pt-10 ml-20 text-center ">
+    <section className="  text-center bg-gradient-to-b from-[#ffffff] via-[#F7E5B6] to-[#ffffff]">
+      <h3 className="text-4xl   pt-10  text-center ">
         Project-Based Services:
       </h3>
-      <p className="text-2xl  ml-20 text-center ">
+      <p className="text-2xl   text-center ">
         Delivering Tailored Solutions for Immediate Impact
       </p>
-      <div className="pb-8 pt-14 ">
+      <div className="pb-8 pt-14 place-content-center mx-auto ">
         {/* Cards 1 */}
         <div id="card1" className=" flex gap-10 px-40 ">
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000 ">
+          <div className="w-1/2 text-lg mt-10  text-justify hover:scale-105 duration-1000 ">
             <h1 className="text-2xl">1.Processes Aren’t Designed to Scale</h1>
             <p>
-              Most workflows are built for the present, not the future.As
+              Most workflows are built for the present, not the future. As
               businesses grow, these static processes crumble under pressure,
               limiting innovation and scalability.
             </p>
@@ -402,7 +403,7 @@ export default function Services() {
         {/* Cards 2 */}
         <div id="card2" className=" flex mt-14 gap-10 px-40">
           <img src={Service2} alt="" className="w-96 rounded-xl" />
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000 ">
+          <div className="w-1/2 text-lg mt-10 text-justify hover:scale-105 duration-1000 ">
             <h1 className="text-2xl ">
               {" "}
               2.Teams Struggle with Invisible Inefficiencies
@@ -416,9 +417,9 @@ export default function Services() {
 
         {/* Cards 3 */}
         <div id="card3" className=" flex mt-14 gap-10 px-40">
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
+          <div className="w-1/2 text-lg tracking-tight mt-10 text-justify hover:scale-105 duration-1000  ">
             <h1 className="text-2xl ">
-              3.Customer Experience Suffers from Operational Gaps n
+              3.Customer Experience Suffers from Operational Gaps
             </h1>
             <p>
               Disjointed processes create inconsistent customer experiences,
@@ -431,7 +432,7 @@ export default function Services() {
         {/* Cards 4 */}
         <div id="card4" className=" flex mt-14 gap-10 px-40">
           <img src={Service1} alt="" className="w-96 rounded-xl" />
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000">
+          <div className="w-1/2 text-lg mt-10  text-justify hover:scale-105 duration-1000">
             <h1 className="text-2xl ">
               {" "}
               4.Decision-Making is Based on Gut, Not Data
@@ -445,7 +446,7 @@ export default function Services() {
         </div>
         {/* Cards 5 */}
         <div id="card5" className=" flex mt-14 gap-10 px-40">
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
+          <div className="w-1/2 text-lg tracking-tight mt-10 text-justify hover:scale-105 duration-1000  ">
             <h1 className="text-2xl ">
               {" "}
               5.Business Agility is Stifled by Outdated Workflows
@@ -462,7 +463,7 @@ export default function Services() {
         {/* Cards 6*/}
         <div id="card6" className=" flex mt-14 gap-10 px-40">
           <img src={Service1} alt="" className="w-96 rounded-xl" />
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000">
+          <div className="w-1/2 text-lg mt-10 text-justify hover:scale-105 duration-1000">
             <h1 className="text-2xl ">
               {" "}
               6.Cross-Functional Collaboration Falls Through the Cracks
@@ -477,7 +478,7 @@ export default function Services() {
 
         {/* Cards 7 */}
         <div id="card7" className=" flex mt-14 gap-10 px-40">
-          <div className="w-1/2 text-lg text-justify hover:scale-105 duration-1000  ">
+          <div className="w-1/2 text-lg mt-10 text-justify hover:scale-105 duration-1000  ">
             <h1 className="text-2xl ">
               {" "}
               7.Innovation Takes a Backseat to Routine Tasks
@@ -494,3 +495,7 @@ export default function Services() {
     </section>
   );
 }
+
+
+
+export default Transition(Services)

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Transition from "./Animations/Transition";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -102,4 +103,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Transition(ContactUs);

@@ -29,16 +29,13 @@ export function WobbleCardDemo() {
 
   return (
     <div>
-      {" "}
-      <h1 className="text-3xl sm:text-4xl text-center my-2   text-gray-800">
-        UseCase
-      </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+      <h1 className="text-3xl sm:text-4xl text-center my-2   ">UseCases</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-[75rem] mx-auto w-full">
         {/* Modal Component */}
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          className="bg-white mt-20 w-1/2 h-[35rem]  overflow-y-scroll"
+          className="bg-white mt-20 w-[90%]  overflow-y-scroll"
         >
           <ModalContent>
             <ModalHeader className="flex flex-col gap-1 ">
@@ -61,10 +58,10 @@ export function WobbleCardDemo() {
         {/* WobbleCard Section 1 */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-[#8FABC3] min-h-[500px] lg:min-h-[300px]">
           <div className="max-w-xs">
-            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
+            <p className="text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
               Sales Performance
-            </h2>
-            <p className="mt-4 text-left text-base/6 text-black">
+            </p>
+            <p className=" text-left text-base/6 text-black">
               At Qualiinsight, we offer a comprehensive Quality as a Service
               (QaaS) solution designed to enhance your sales process. Here’s how
               our service can transform your sales strategy.
@@ -73,154 +70,164 @@ export function WobbleCardDemo() {
               className="bg-gray-50 mt-5 rounded-lg"
               onPress={() =>
                 openModal(
-                  <section className="p-10 bg-gray-50  text-gray-800">
-                    <div className="max-w-6xl mx-auto space-y-12">
+                  <section className="p-10 ">
+                    <div className="max-w-6xl mx-auto space-y-4">
                       {/* Introduction */}
-                      <div className="space-y-6">
-                        <span className=" font-semibold text-2xl">
+                      <div className="space-y-4 w-full">
+                        {/* <div className="bg-gradient-to-b from-[#BF3352] via-[#b6d5f0]   to-[#ffffff]"> */}
+                        <span className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#daeeff]   to-[#ffffff]   border-b-2 p-2">
                           Boost Your Sales with Quality as a Service (QaaS)
                         </span>
-                        <p className="text-lg leading-relaxed">
+                        <p className="text-sm leading-relaxed">
                           At Qualiinsight, we offer a comprehensive Quality as a
                           Service (QaaS) solution designed to enhance your sales
                           process. Here’s how our service can transform your
                           sales strategy:
                         </p>
-                      </div>
 
-                      {/* Customer Experience Enhancement */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Customer Experience Enhancement
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          We ensure every customer interaction is positive,
-                          addressing pain points effectively to foster trust and
-                          loyalty, driving sales growth.
-                        </p>
-                      </div>
+                        {/* Customer Experience Enhancement */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Customer Experience Enhancement
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            We ensure every customer interaction is positive,
+                            addressing pain points effectively to foster trust
+                            and loyalty, driving sales growth.
+                          </p>
+                        </div>
 
-                      {/* Quality Management Systems (QMS) */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Quality Management Systems (QMS)
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          We implement QMS to streamline sales processes, reduce
-                          errors, and enhance operational efficiency, making
-                          your sales pitch more compelling.
-                        </p>
-                      </div>
+                        {/* Quality Management Systems (QMS) */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Quality Management Systems (QMS)
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            We implement QMS to streamline sales processes,
+                            reduce errors, and enhance operational efficiency,
+                            making your sales pitch more compelling.
+                          </p>
+                        </div>
 
-                      {/* Decode the Voice of Customers */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Decode the Voice of Customers
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          Move towards customer-centric selling by comprehending
-                          the customer needs and their key pain points to create
-                          upselling and cross-selling opportunities.
-                        </p>
-                      </div>
+                        {/* Decode the Voice of Customers */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Decode the Voice of Customers
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            Move towards customer-centric selling by
+                            comprehending the customer needs and their key pain
+                            points to create upselling and cross-selling
+                            opportunities.
+                          </p>
+                        </div>
 
-                      {/* Case Study Utilization */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Case Study Utilization
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          We conduct targeted studies that prioritize business
-                          needs, market trends, and product features. Our
-                          approach identifies value-added insights, empowering
-                          business leaders to develop strategies that enhance
-                          sales, brand value, product strength, and customer
-                          experience. This method goes beyond traditional
-                          quality approaches, maximizing the results generated
-                          from your QA systems.
-                        </p>
-                      </div>
+                        {/* Case Study Utilization */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Case Study Utilization
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            We conduct targeted studies that prioritize business
+                            needs, market trends, and product features. Our
+                            approach identifies value-added insights, empowering
+                            business leaders to develop strategies that enhance
+                            sales, brand value, product strength, and customer
+                            experience. This method goes beyond traditional
+                            quality approaches, maximizing the results generated
+                            from your QA systems.
+                          </p>
+                        </div>
 
-                      {/* Data-Driven Insights */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Data-Driven Insights
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          Our QaaS solution analyzes customer interactions and
-                          sales processes to refine pitches, improve targeting,
-                          enhance platform and product features, and elevate
-                          user experience, ultimately driving overall sales
-                          effectiveness.
-                        </p>
-                      </div>
+                        {/* Data-Driven Insights */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Data-Driven Insights
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            Our QaaS solution analyzes customer interactions and
+                            sales processes to refine pitches, improve
+                            targeting, enhance platform and product features,
+                            and elevate user experience, ultimately driving
+                            overall sales effectiveness.
+                          </p>
+                        </div>
 
-                      {/* Continuous Improvement */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
-                          Continuous Improvement
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
-                          Adopting a Total Quality Management (TQM) approach, we
-                          ensure continuous improvement through regular
-                          evaluations and feedback sessions.
-                        </p>
+                        {/* Continuous Improvement */}
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
+                            Continuous Improvement
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
+                            Adopting a Total Quality Management (TQM) approach,
+                            we ensure continuous improvement through regular
+                            evaluations and feedback sessions.
+                          </p>
+                        </div>
                       </div>
 
                       {/* Best Practices for Sales Improvement */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                      <div className="">
+                        <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#daeeff]   to-[#ffffff]   border-b-2 p-2 w-fit ">
                           Best Practices for Sales Improvement
-                        </h2>
-                        <ul className="mt-4 pl-6 text-justify space-y-3 list-disc text-gray-800">
+                        </p>
+                        <ul className="pl-6 mt-2 text-sm text-justify space-y-3 list-disc ">
                           <li>
-                            Drive Lead Generation Quality: Enhance the quality
-                            of leads by refining targeting criteria and
-                            optimizing lead sourcing strategies.
+                            <span className=" ">
+                              Drive Lead Generation Quality:
+                            </span>{" "}
+                            Enhance the quality of leads by refining targeting
+                            criteria and optimizing lead sourcing strategies.
                           </li>
                           <li>
-                            Review End-to-End Customer Engagement Journey:
+                            <span className=" ">
+                              Review End-to-End Customer Engagement Journey:
+                            </span>
                             Conduct a comprehensive analysis of the entire
                             customer engagement process to identify
                             opportunities for improvement.
                           </li>
                           <li>
-                            Reduce Customer Objections: Implement strategies to
-                            anticipate and address potential customer
-                            objections, leading to smoother sales conversations.
+                            <span className=" ">
+                              {" "}
+                              Reduce Customer Objections:
+                            </span>{" "}
+                            Implement strategies to anticipate and address
+                            potential customer objections, leading to smoother
+                            sales conversations.
                           </li>
                           <li>
-                            Test & Learn Framework: Introduce a continuous
-                            improvement approach by testing new processes,
-                            systems, and tools to identify the most effective
-                            sales tactics.
+                            <span className=" "> Test & Learn Framework: </span>{" "}
+                            Introduce a continuous improvement approach by
+                            testing new processes, systems, and tools to
+                            identify the most effective sales tactics.
                           </li>
                           <li>
-                            Design Personalized Sales Strategies: Develop
-                            tailored sales strategies that align with customer
-                            needs and the current market landscape, ensuring a
-                            more targeted approach.
+                            <span className=" "> </span> Design Personalized
+                            Sales Strategies: Develop tailored sales strategies
+                            that align with customer needs and the current
+                            market landscape, ensuring a more targeted approach.
                           </li>
                           <li>
-                            Improve Customer Educational Resources and
-                            Self-Serve Content: Enhance the availability and
-                            quality of educational resources, empowering
-                            customers with self-service options to reduce
-                            friction and build trust.
+                            <span className=" "> </span> Improve Customer
+                            Educational Resources and Self-Serve Content:
+                            Enhance the availability and quality of educational
+                            resources, empowering customers with self-service
+                            options to reduce friction and build trust.
                           </li>
                         </ul>
                       </div>
 
                       {/* Why Choose Our QaaS */}
-                      <div className="space-y-4">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                      <div className="">
+                        <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#daeeff]   to-[#ffffff]   border-b-2 p-2 w-fit ">
                           Why Choose Our QaaS?
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
+                        </p>
+                        <p className=" text-sm mt-2 text-justify leading-relaxed">
                           Leverage our expertise, innovative framework, and
                           data-driven insights to drive sales growth.
                         </p>
-                        <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800 text-justify">
+                        <ul className="mt-4 text-sm pl-6 space-y-3 list-disc  text-justify">
                           <li>
                             Expertise: Leverage our extensive experience in
                             quality management to drive superior outcomes.
@@ -258,11 +265,11 @@ export function WobbleCardDemo() {
                       </div>
 
                       {/* Conclusion */}
-                      <div className="space-y-6">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                      <div className="">
+                        <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#daeeff]   to-[#ffffff]   border-b-2 p-2 w-fit ">
                           Conclusion
-                        </h2>
-                        <p className="mt-4 text-lg text-justify leading-relaxed">
+                        </p>
+                        <p className=" text-sm mt-2 text-justify leading-relaxed">
                           Integrate our QaaS into your outbound sales strategy
                           to improve customer satisfaction, operational
                           efficiency, and sales performance. Contact us today to
@@ -289,10 +296,10 @@ export function WobbleCardDemo() {
 
         {/* WobbleCard Section 2 */}
         <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-          <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
+          <p className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
             Content Services
-          </h2>
-          <p className="mt-4 max-w-[26rem] text-left text-base/6 text-black">
+          </p>
+          <p className=" max-w-[26rem] text-left text-base/6 text-black">
             We specialize in empowering and training content moderation tools to
             effectively monitor and filter user-generated content across various
             digital platforms.
@@ -301,14 +308,14 @@ export function WobbleCardDemo() {
             className="bg-gray-50 mt-5 rounded-lg"
             onPress={() =>
               openModal(
-                <section className="p-10 bg-gray-50 text-gray-800">
-                  <div className="max-w-6xl mx-auto space-y-12">
+                <section className="p-10 bg-gray-50 ">
+                  <div className="max-w-6xl mx-auto space-y-4">
                     {/* Introduction */}
-                    <div className="space-y-6">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#f8e3d4]   to-[#ffffff]   border-b-2 p-2 w-fit">
                         Content Services
-                      </h2>
-                      <p className="text-lg leading-relaxed text-justify">
+                      </p>
+                      <p className="text-sm leading-relaxed text-justify">
                         We specialize in empowering and training content
                         moderation tools to effectively monitor and filter
                         user-generated content across various digital platforms.
@@ -320,11 +327,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Maintain Brand Reputation */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Maintain Brand Reputation
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         By ensuring that the content associated with your brand
                         aligns with your values and standards, our content
                         moderation services help maintain a consistent and
@@ -335,11 +342,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Ensure Regulatory Compliance */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Ensure Regulatory Compliance
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         Our services help you adhere to legal and regulatory
                         requirements by filtering out content that could lead to
                         legal issues. This proactive approach minimizes the risk
@@ -348,11 +355,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Safeguard User Experiences */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Safeguard User Experiences
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         Creating a safe and welcoming environment for all users
                         is essential. Our services prevent exposure to harmful
                         or offensive material, ensuring a positive user
@@ -362,11 +369,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Efficiency and Quality */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Efficiency and Quality
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         Leveraging our tried and tested Quality Framework, we
                         provide accurate and efficient content moderation. This
                         not only enhances the quality of user interactions but
@@ -376,11 +383,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Proactive Policy Management */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Proactive Policy Management
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> Policies may not be
                         updated promptly or may lack clarity, leading to
                         incorrect content moderation. This creates significant
@@ -388,7 +395,7 @@ export function WobbleCardDemo() {
                         result in compliance or legal issues due to
                         inappropriate content on the platform.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> Our clients benefit from
                         regularly updated moderation policies, aligned with
                         current laws and regional regulations. Independent
@@ -399,11 +406,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Maintaining a Dynamic Golden Dataset */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Maintaining a Dynamic 'Golden Dataset'
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> An outdated or poorly
                         maintained 'Golden Dataset' makes it challenging to
                         gauge the accuracy of content moderation, leaving
@@ -411,7 +418,7 @@ export function WobbleCardDemo() {
                         on recent changes. This can lead to inconsistent
                         moderation and gaps in knowledge.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> A well-maintained 'Golden
                         Dataset' ensures that moderator calibrations are always
                         relevant, contributing to sustained high-quality content
@@ -421,18 +428,18 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Enhancing AI Moderation Logic */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Enhancing AI Moderation Logic
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> The absence of a
                         structured process for continuously enhancing AI
                         moderation can lead to increased manual work, higher
                         operational costs, and a greater likelihood of incorrect
                         content slipping through moderation.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> Our framework not only
                         refines human moderation practices but also enhances AI
                         moderation by providing continuous input based on recent
@@ -443,17 +450,17 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Effective Knowledge Dissemination */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Effective Knowledge Dissemination
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> Inconsistent knowledge
                         dissemination can hinder the implementation of new
                         updates and changes, resulting in incorrect content
                         moderation and overall inefficiency.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> Structured systems ensure
                         that policy and process updates are effectively
                         communicated to all moderators, reducing dependency on
@@ -463,17 +470,17 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Focused Studies and Strategic Insights */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Focused Studies and Strategic Insights
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> The lack of focused
                         studies makes it difficult to identify and leverage
                         test-and-learn opportunities in Trust & Safety,
                         potentially leading to missed chances for improvement.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> Focused studies provide
                         strategic insights into market trends, facilitating a
                         test-and-learn approach that enhances moderation quality
@@ -482,17 +489,17 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Targeted Sampling Approach */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-xl font-medium   border-gray-200 ">
                         Targeted Sampling Approach
-                      </h2>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      </p>
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>Without QaaS:</strong> Without a targeted
                         sampling approach, moderation efforts may be spread too
                         thin, leading to inefficiencies and a less effective
                         allocation of resources where they are most needed.
                       </p>
-                      <p className="mt-4 text-lg text-justify leading-relaxed">
+                      <p className=" text-sm text-justify leading-relaxed">
                         <strong>With QaaS:</strong> Targeted sampling ensures
                         that moderation efforts are focused on the most critical
                         areas, maximizing effectiveness and efficiency.
@@ -500,11 +507,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Best Practices for Content Moderation */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#f8e3d4]   to-[#ffffff]   border-b-2 p-2 w-fit">
                         Best Practices for Content Moderation (with QaaS)
-                      </h2>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800 text-justify">
+                      </p>
+                      <ul className="mt-4 pl-6 space-y-3 list-disc text-sm  text-justify">
                         <li>
                           Centralized Quality Monitoring: Independent audits by
                           a central team across regions, markets, and vendors
@@ -558,11 +565,11 @@ export function WobbleCardDemo() {
                     </div>
 
                     {/* Why Choose Our QaaS? */}
-                    <div className="space-y-4">
-                      <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                    <div className="">
+                      <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#f8e3d4]   to-[#ffffff]   border-b-2 p-2 w-fit">
                         Why Choose Our QaaS?
-                      </h2>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800 text-justify">
+                      </p>
+                      <ul className="mt-4 pl-6 space-y-3 list-disc text-sm  text-justify">
                         <li>
                           Expertise: Leverage our extensive experience in
                           quality management to optimize your Trust & Safety
@@ -621,10 +628,10 @@ export function WobbleCardDemo() {
         {/* WobbleCard Section 3 */}
         <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#EDC05F]  min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
           <div className="max-w-sm">
-            <h2 className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
+            <p className="max-w-sm md:max-w-lg text-left text-balance text-base md:text-xl lg:text-3xl   tracking-[-0.015em] text-black">
               Contact Center
-            </h2>
-            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-black">
+            </p>
+            <p className=" max-w-[26rem] text-left text-base/6 text-black">
               At Qualiinsight, we offer a state-of-the-art Quality as a Service
               (QaaS) solution designed to revolutionize your contact center
               operations.
@@ -633,15 +640,15 @@ export function WobbleCardDemo() {
               className="bg-gray-50 mt-5 rounded-lg"
               onPress={() =>
                 openModal(
-                  <section className="p-10 bg-gray-50 text-gray-800">
-                    <div className="max-w-6xl mx-auto space-y-12">
+                  <section className="p-10 text-justify bg-gray-50 ">
+                    <div className="max-w-6xl mx-auto space-y-4">
                       {/* Introduction */}
                       <div className="space-y-6">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                        <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#ffeabc]   to-[#ffffff]   border-b-2 p-2 w-fit">
                           Transform Your Contact Center Operations with Our
                           Comprehensive QaaS Solution
-                        </h2>
-                        <p className="text-lg leading-relaxed text-justify">
+                        </p>
+                        <p className="text-sm leading-relaxed text-justify">
                           At Qualiinsight, we offer a state-of-the-art Quality
                           as a Service (QaaS) solution designed to revolutionize
                           your contact center operations. Our QaaS service
@@ -653,20 +660,20 @@ export function WobbleCardDemo() {
 
                       {/* Our QaaS Offering Includes */}
                       <div className="space-y-6">
-                        <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                        <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#ffeabc]   to-[#ffffff]   border-b-2 p-2 w-fit">
                           Our QaaS Offering Includes:
-                        </h2>
+                        </p>
 
                         {/* Robust QA Framework Implementation */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Robust QA Framework Implementation
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             We establish a comprehensive QA framework tailored
                             to your business needs, including:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>
                                 Key Performance Indicators (KPIs):
@@ -685,15 +692,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Advanced QA Tools and Technologies */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Advanced QA Tools and Technologies
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             Utilize our cutting-edge QA tools to automate and
                             enhance your QA processes:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Automated Call Monitoring:</strong> Our
                               tools and Frameworks offer real-time analytics and
@@ -710,15 +717,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Continuous Training and Coaching Programs */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Continuous Training and Coaching Programs
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             We provide regular training and coaching sessions to
                             maintain high service standards:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Personalized Coaching:</strong> Using data
                               from QA evaluations, we deliver targeted coaching
@@ -733,15 +740,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Agent Engagement and Empowerment */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Agent Engagement and Empowerment
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             We believe in involving agents in the QA process for
                             better outcomes:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Agent Involvement:</strong> We include
                               agents in the development and calibration of QA
@@ -757,15 +764,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Regular Monitoring and Evaluation */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Regular Monitoring and Evaluation
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             Our service includes consistent monitoring and
                             evaluation for continuous improvement:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Real-Time Monitoring:</strong> Implement
                               real-time call monitoring to provide immediate
@@ -780,15 +787,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Strategic Integration */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium  border-gray-200 ">
                             Strategic Integration
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             We align QA efforts with your organization's
                             strategic goals:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Cross-Functional Insights:</strong> Use QA
                               insights to inform other departments such as
@@ -806,15 +813,15 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Customer-Centric Approach */}
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-semibold text-gray-900">
+                        <div className="">
+                          <p className="text-xl font-medium   border-gray-200 ">
                             Customer-Centric Approach
-                          </h3>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             Our QaaS solution adopts a customer-centric mindset
                             to enhance customer satisfaction:
                           </p>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Customer Journey Mapping:</strong> Analyze
                               the customer journey to identify pain points and
@@ -829,11 +836,11 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Benefits of Our QaaS Solution */}
-                        <div className="space-y-4">
-                          <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                        <div className="">
+                          <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#ffeabc]   to-[#ffffff]   border-b-2 p-2 w-fit ">
                             Benefits of Our QaaS Solution
-                          </h2>
-                          <ul className="mt-4 pl-6 list-disc space-y-2 text-lg text-gray-800 text-justify">
+                          </p>
+                          <ul className="mt-4 pl-6 list-disc space-y-2 text-sm  text-justify">
                             <li>
                               <strong>Improved Customer Satisfaction:</strong>{" "}
                               Our enhanced QA processes lead to better customer
@@ -860,18 +867,18 @@ export function WobbleCardDemo() {
                         </div>
 
                         {/* Why Choose Qualiinsight */}
-                        <div className="space-y-4">
-                          <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                        <div className="">
+                          <p className="text-2xl mt-10  font-semibold  bg-gradient-to-b from-[#ffffff] via-[#ffeabc]   to-[#ffffff]   border-b-2 p-2 w-fit ">
                             Why Choose Qualiinsight
-                          </h2>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          </p>
+                          <p className=" text-sm text-justify leading-relaxed">
                             At Qualiinsight, we are committed to delivering
                             exceptional quality assurance services that drive
                             business growth and enhance customer experiences.
                             Partner with us to transform your contact center
                             operations with our comprehensive QaaS solution.
                           </p>
-                          <p className="mt-4 text-lg text-justify leading-relaxed">
+                          <p className=" text-sm text-justify leading-relaxed">
                             Contact us today to learn more about how we can help
                             you achieve excellence in your contact center
                             operations.

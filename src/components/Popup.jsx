@@ -18,7 +18,7 @@ const Popup = ({ image, name, text, onClose }) => {
           {/* Text Section */}
           <div className="w-full pl-4">
             {/* Blog Title */}
-            <h1 className="text-2xl flex justify-center   mb-1">
+            <h1 className="text-3xl flex justify-center   mb-1">
               {text.title}
             </h1>
 

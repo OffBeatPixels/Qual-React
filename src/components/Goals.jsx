@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/logo.webp"
 import { FaCalendarCheck } from "react-icons/fa";
+import { TbHandClick } from "react-icons/tb";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -124,7 +125,7 @@ const Goals = () => {
   return (
     <section
       id="goals-section"
-      className=" relative pb-20 bg-cover bg-no-repeat   "
+      className=" relative  pb-20 bg-cover bg-no-repeat   "
     >
       {/* <div className="flex mx-auto h-px w-[80%] md:w-[30%] text-white justify-center">
         
@@ -183,17 +184,19 @@ const Goals = () => {
           ></path>
           <text
             fill="#"
-            fontFamily="BebasNeueBold"
-            fontSize="17"
-            transform="translate(193 250)"
+            fontFamily="Raleway-extrabold"
+            fontSize="16"
+            className="font-bold "
+            transform="translate(192 245)"
           >
             Transformation
           </text>
           <text
             fill="#"
             fontFamily="BebasNeueBold"
-            fontSize="17"
-            transform="translate(206.885 267.112)"
+            fontSize="16"
+            className="font-bold "
+            transform="translate(206.885 263)"
           >
             Excellence
           </text>
@@ -264,14 +267,14 @@ const Goals = () => {
           {/* Elevate Quality Icon */}
           <g>
             <path
-              transform="translate(265, 50)"
+              transform="translate(262, 45)"
               d="M12,24c-1.611,0-3.131-.667-4.217-1.82-1.578,.043-3.129-.555-4.269-1.694-1.139-1.14-1.741-2.686-1.695-4.269C-.582,14.068-.582,9.932,1.819,7.783c-.046-1.583,.556-3.129,1.695-4.269,1.141-1.14,2.686-1.752,4.269-1.695,2.148-2.402,6.286-2.402,8.434,0,1.571-.057,3.128,.555,4.269,1.694,1.139,1.14,1.741,2.686,1.695,4.269,2.401,2.149,2.401,6.285,0,8.434,.046,1.583-.556,3.129-1.695,4.269-1.141,1.14-2.696,1.738-4.269,1.695-1.086,1.153-2.605,1.82-4.217,1.82Zm-3.563-4.897c.493,0,.962,.243,1.244,.662,1.031,1.628,3.608,1.628,4.639,0,.337-.499,.937-.752,1.53-.634,.92,.178,1.857-.108,2.515-.767,.657-.658,.944-1.598,.767-2.515-.114-.591,.135-1.193,.634-1.529,1.628-1.031,1.628-3.609,0-4.64-.499-.336-.748-.938-.634-1.529,.178-.917-.109-1.857-.767-2.515-.658-.658-1.595-.944-2.515-.767-.587,.12-1.193-.134-1.53-.634-1.031-1.628-3.608-1.628-4.639,0-.336,.499-.937,.752-1.53,.634-.919-.178-1.856,.109-2.515,.767-.657,.658-.944,1.598-.767,2.515,.114,.591-.135,1.193-.634,1.529-1.628,1.031-1.628,3.609,0,4.64,.499,.336,.748,.938,.634,1.529-.178,.917,.109,1.857,.767,2.515,.659,.658,1.596,.945,2.515,.767,.095-.019,.191-.028,.286-.028Zm4.563-3.905l4-3.58c.617-.552,.67-1.501,.118-2.118-.553-.617-1.501-.671-2.118-.117l-4.049,3.638c-.031-.032-1.989-1.671-1.989-1.671-.635-.531-1.583-.447-2.112,.188-.532,.636-.447,1.582,.188,2.113l1.847,1.544c.558,.531,1.286,.822,2.06,.822,.8,0,1.551-.311,2.056-.819Z"
             />
           </g>
           <text transform="translate(243.863 96.013)">
             <tspan
-              x="9"
-              y="-2"
+              x="8"
+              y="-7"
               fill="#"
               fontFamily="Raleway-Medium"
               fontSize="13"
@@ -280,11 +283,11 @@ const Goals = () => {
               Elevate
             </tspan>
             <tspan
-              x="10"
-              y="13"
+              x="5"
+              y="10"
               fill="#"
-              fontFamily="Raleway-LightItalic"
-              fontSize="13"
+              fontFamily="Raleway-Medium"
+              fontSize="15"
               className="font-bold leading-6"
             >
               Quality
@@ -347,7 +350,7 @@ const Goals = () => {
           ></path>
           <text transform="translate(392.908 232)">
             <tspan
-              x="-10"
+              x="-5"
               y="0"
               fill="#"
               fontFamily="Raleway-Medium"
@@ -437,7 +440,7 @@ const Goals = () => {
           <text transform="translate(298 408)">
             <tspan
               x="-10"
-              y="0"
+              y="3"
               fill="#"
               fontFamily="Raleway-Medium"
               fontSize="13"
@@ -446,8 +449,8 @@ const Goals = () => {
               Insights That
             </tspan>
             <tspan
-              x="0"
-              y="14"
+              x="1"
+              y="18"
               fill="#"
               fontFamily="Raleway-LightItalic"
               fontSize="13"
@@ -626,9 +629,9 @@ const Goals = () => {
               setHover(5);
             }}
           ></path>
-          <text transform="translate(67 178)">
+          <text transform="translate(67 175)">
             <tspan
-              x="0"
+              x="-3"
               y="-3"
               fill="#"
               fontFamily="Raleway-Medium"
@@ -638,18 +641,18 @@ const Goals = () => {
               AI insights
             </tspan>
             <tspan
-              x="0"
-              y="10"
+              x="8"
+              y="11"
               fill="#"
               fontFamily="Raleway-LightItalic"
               fontSize="13"
               className="font-bold leading-6"
             >
-              at Your
+              at your
             </tspan>
             <tspan
               x="0"
-              y="22"
+              y="25"
               fill="#"
               fontFamily="Raleway-LightItalic"
               fontSize="13"
@@ -669,10 +672,13 @@ const Goals = () => {
             <path d="M108.81 151.261a13.23 13.23 0 0 1 2.686 8.011c0 7.339-5.947 13.287-13.286 13.287-7.337 0-13.284-5.948-13.284-13.287s5.947-13.287 13.284-13.287a13.2 13.2 0 0 1 8.076 2.736M112.45 145.088l-14.213 14.211M110.301 141.613l-.662 6.286M113.111 138.802l-.662 6.285M115.923 147.237l-6.284.662M118.735 144.425l-6.286.662"></path>
           </g> */}
 
-          <path
+          {/* <path
             transform="translate(85,140)"
             d="m9.5,2.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5c0,1.025-.617,1.906-1.5,2.291v2.327c-.322-.073-.655-.118-1-.118s-.678.045-1,.118v-2.327c-.883-.386-1.5-1.266-1.5-2.291Zm-3.758,6.169l2.303,1.733c.106-.706.396-1.351.82-1.886l-1.929-1.452c.042-.182.065-.37.065-.565,0-1.381-1.119-2.5-2.5-2.5s-2.5,1.119-2.5,2.5,1.119,2.5,2.5,2.5c.452,0,.876-.121,1.242-.331Zm8.258,7.792v-5.355c0-.996-.681-1.92-1.664-2.08-1.253-.204-2.336.758-2.336,1.973v9.817c-1.076-.886-2.111-1.752-2.145-1.784-.922-.861-2.373-.813-3.235.109-.863.923-.819,2.372.098,3.23l1.821,1.628h16.462v-4l-9-3.538Zm1.927-6.225l2.236-1.625c.387.245.845.388,1.337.388,1.381,0,2.5-1.119,2.5-2.5s-1.119-2.5-2.5-2.5-2.5,1.119-2.5,2.5c0,.156.015.307.042.455l-1.997,1.451c.439.514.749,1.141.882,1.831Z"
-          />
+          /> */}
+          <g transform="translate(85,134)">
+            <TbHandClick size={25} />
+          </g>
         </g>
       </svg>
       {/* Render Hover Content Dynamically */}
@@ -731,11 +737,11 @@ const Goals = () => {
       )} */}
 
       <p className="md:w-1/2 text-xl md:text-2xl pt-10 mx-auto text-center">
-        We embed <span className="text-red-500">top-tier</span> quality into
+        We embed <span className="text-[#DA3357]">top-tier</span> quality into
         every product, service, and process, creating a foundation for
-        <span className="text-[#e6c354]">operational excellence</span>,{" "}
-        <span className="text-[#58dce3]">measurable outcomes</span>, and{" "}
-        <span className="text-[#df9b49]">transformative business growth</span>
+        <span className="text-[#DA3357]"> operational excellence</span>,{" "}
+        <span className="text-[#DA3357]">measurable outcomes</span>, and{" "}
+        <span className="text-[#DA3357]">transformative business growth</span>
       </p>
     </section>
   );

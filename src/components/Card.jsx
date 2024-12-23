@@ -426,7 +426,7 @@ const Card = () => {
 
 
   return (
-    <section className="bg-white mb-40">
+    <section >
       <h1 className="card-h1 text-3xl md:text-4xl text-center pt-10 text-[#000000]   relative z-20">
         Challenges faced by the <br />
         business teams today
@@ -451,10 +451,10 @@ const Card = () => {
                 hoveredCard === index ? "z-10 relative" : "" // Bring the hovered card to the front
               }`}
             >
-              {card.icon}
-              <h3 className="text-lg text-center">{card.title}</h3>
+              <p className="">{card.icon}</p>
+              <h3 className="text-lg my-5 text-center">{card.title}</h3>
               <p
-                className="bg-[#dd4160] absolute top-52 text-white  p-1 rounded-lg cursor-pointer"
+                className="bg-[#dd4160] mt-5  text-white  px-5 p-2 rounded-lg cursor-pointer"
                 onClick={() => setHoveredCard(index)}
               >
                 Read More

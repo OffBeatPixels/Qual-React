@@ -1,7 +1,8 @@
 import React from "react";
 import Service from "../../assets/mg.gif";
+import Transition from "../Animations/Transition";
 
-export default function Services1() {
+ function Services1() {
   return (
     <section
       className=" mx-28 mt-10  flex justify-end "
@@ -32,3 +33,6 @@ export default function Services1() {
     </section>
   );
 }
+
+
+export default Transition(Services1)

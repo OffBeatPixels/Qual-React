@@ -2,6 +2,8 @@ import Service1 from "../assets/Blog1.jpg";
 import Service2 from "../assets/Blog2.jpg";
 import React, { useState } from "react";
 import Popup from "./Popup";
+import Transition from "./Animations/Transition";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const blogs = [
   {
@@ -17,7 +19,7 @@ const blogs = [
       sections: [
         {
           content: (
-            <section className="p-10 bg-gray-50 text-gray-800">
+            <section className="p-5 bg-gray-50 text-gray-800 text-justify">
               <div className="max-w-6xl mx-auto space-y-12">
                 {/* Introduction */}
                 <div className="space-y-6">
@@ -38,16 +40,16 @@ const blogs = [
 
                 {/* Section: Challenges */}
                 <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     The Challenges of Multi-Vendor Management
                   </h2>
                   <div className="mt-6 space-y-10">
                     {/* Subsection: Governance */}
                     <div>
-                      <h3 className="text-2xl text-gray-900">
-                        Lack of Centralized and Independent Governance
-                      </h3>
-                      <p className="mt-4 text-lg leading-relaxed">
+                        <h3 className="text-2xl flex text-gray-900">
+                          Lack of Centralized and Independent Governance
+                        </h3>
+                      <p className=" text-lg leading-relaxed">
                         Managing multiple vendors often leads to a lack of
                         standardized processes, resulting in inconsistent
                         customer experiences. Our QaaS solution addresses this
@@ -74,7 +76,7 @@ const blogs = [
                       <h3 className="text-2xl text-gray-900">
                         Biased Audits Impacting Business Decisions
                       </h3>
-                      <p className="mt-4 text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed">
                         In a multi-vendor setup, quality assurance (QA)
                         processes are frequently managed by the same team
                         handling operations, which can lead to bias. Failures
@@ -102,7 +104,7 @@ const blogs = [
                       <h3 className="text-2xl text-gray-900">
                         Slow Speed of Learning
                       </h3>
-                      <p className="mt-4 text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed">
                         In a multi-vendor environment, the speed of learning can
                         be sluggish, as vendors often limit their learnings to
                         internal use. This hampers the implementation of best
@@ -128,7 +130,7 @@ const blogs = [
                       <h3 className="text-2xl text-gray-900">
                         Effective Change Management
                       </h3>
-                      <p className="mt-4 text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed">
                         Clients often invest significant time in change
                         management, struggling to achieve desired results
                         quickly due to limited control over vendor-level success
@@ -153,7 +155,7 @@ const blogs = [
                       <h3 className="text-2xl text-gray-900">
                         Increased Costs Due to Decentralized Management
                       </h3>
-                      <p className="mt-4 text-lg leading-relaxed">
+                      <p className=" text-lg leading-relaxed">
                         Decentralized QA resources across vendors and regions
                         can result in higher costs and reduced capability to
                         manage business continuity planning (BCP) situations
@@ -177,10 +179,10 @@ const blogs = [
 
                 {/* Section: QaaS as a Profit Center */}
                 <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Qualiinsight QaaS - A Profit Center For Clients
                   </h2>
-                  <p className="mt-6 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Our centralized and independent QaaS framework not only
                     resolves these challenges but also acts as a profit center
                     for our clients:
@@ -219,10 +221,10 @@ const blogs = [
 
                 {/* Conclusion */}
                 <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Conclusion
                   </h2>
-                  <p className="mt-6 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     At QualiInsight, our QaaS framework is the cornerstone of
                     effective multi-vendor management. By promoting best
                     practice sharing, standardization, and consistent quality,
@@ -231,7 +233,7 @@ const blogs = [
                     improved operational efficiency and reduced process
                     variations.
                   </p>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Are you ready to elevate your multi-vendor management
                     strategy? Contact us today to learn how QualiInsight can
                     help you achieve unparalleled success!
@@ -245,7 +247,6 @@ const blogs = [
     },
   },
   {
-    
     name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
     category: "Use Case",
     description:
@@ -258,7 +259,7 @@ const blogs = [
       sections: [
         {
           content: (
-            <section className="p-10 bg-gray-50 text-gray-800">
+            <section className="p-5 bg-gray-50 text-gray-800 text-justify">
               <div className="max-w-6xl mx-auto space-y-12">
                 {/* Introduction */}
                 <div className="space-y-6">
@@ -275,11 +276,11 @@ const blogs = [
                 </div>
 
                 {/* Enhancing Existing AI Implementations */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Enhancing Existing AI Implementations
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For clients who already have tools and technology in place
                     and prefer not to introduce new systems, our QaaS framework
                     offers a comprehensive solution to ensure these resources
@@ -288,11 +289,11 @@ const blogs = [
                 </div>
 
                 {/* Measuring AI Solution Quality */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Measuring AI Solution Quality and Ensuring ROI
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Our framework acts as a robust solution to measure the
                     quality of your planned AI implementations. We ensure that
                     your AI initiatives meet expected outcomes and deliver a
@@ -313,11 +314,11 @@ const blogs = [
                 </div>
 
                 {/* Optimizing Implemented AI Solutions */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Optimizing Implemented AI Solutions
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For AI solutions already in place, our expertise can help
                     you identify opportunities for enhancement. We conduct
                     regular research on tool capabilities, benchmark against
@@ -339,11 +340,11 @@ const blogs = [
                 </div>
 
                 {/* Maximizing Technology Investments */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Maximizing Technology Investments
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     We partner with you to ensure that your technology
                     investments are fully utilized and maintained according to
                     changing requirements and environments. This ensures that
@@ -352,11 +353,11 @@ const blogs = [
                 </div>
 
                 {/* Implementing New AI Solutions */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Implementing New AI Solutions
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For clients aspiring to implement new AI tools or
                     technologies, our QaaS framework provides a structured
                     approach to process assessment and solution recommendation.
@@ -375,11 +376,11 @@ const blogs = [
                 </div>
 
                 {/* Expected Benefits */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Expected Benefits
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     By leveraging our QaaS framework, businesses can expect
                     significant improvements in various areas:
                   </p>
@@ -404,18 +405,18 @@ const blogs = [
                 </div>
 
                 {/* Conclusion */}
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Conclusion
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     At QualiInsights, we are committed to helping you harness
                     the power of AI to drive business transformation. Our
                     expertise and innovative QaaS framework ensure that your AI
                     initiatives are not only successfully implemented but also
                     continually optimized for maximum impact.
                   </p>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Ready to transform your business with AI? Contact us today
                     to learn how QualiInsights can help you achieve your goals.
                   </p>
@@ -428,7 +429,6 @@ const blogs = [
     },
   },
   {
-   
     name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
     category: "Industry",
     description:
@@ -458,11 +458,11 @@ const blogs = [
                 </div>
 
                 {/* Enhancing Existing AI Implementations */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Enhancing Existing AI Implementations
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For clients who already have tools and technology in place
                     and prefer not to introduce new systems, our QaaS framework
                     offers a comprehensive solution to ensure these resources
@@ -471,11 +471,11 @@ const blogs = [
                 </div>
 
                 {/* Measuring AI Solution Quality */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Measuring AI Solution Quality and Ensuring ROI
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Our framework acts as a robust solution to measure the
                     quality of your planned AI implementations. We ensure that
                     your AI initiatives meet expected outcomes and deliver a
@@ -496,11 +496,11 @@ const blogs = [
                 </div>
 
                 {/* Optimizing Implemented AI Solutions */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Optimizing Implemented AI Solutions
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For AI solutions already in place, our expertise can help
                     you identify opportunities for enhancement. We conduct
                     regular research on tool capabilities, benchmark against
@@ -522,11 +522,11 @@ const blogs = [
                 </div>
 
                 {/* Maximizing Technology Investments */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Maximizing Technology Investments
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     We partner with you to ensure that your technology
                     investments are fully utilized and maintained according to
                     changing requirements and environments. This ensures that
@@ -535,11 +535,11 @@ const blogs = [
                 </div>
 
                 {/* Implementing New AI Solutions */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Implementing New AI Solutions
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     For clients aspiring to implement new AI tools or
                     technologies, our QaaS framework provides a structured
                     approach to process assessment and solution recommendation.
@@ -558,11 +558,11 @@ const blogs = [
                 </div>
 
                 {/* Expected Benefits */}
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                <div className="">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Expected Benefits
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     By leveraging our QaaS framework, businesses can expect
                     significant improvements in various areas:
                   </p>
@@ -588,17 +588,17 @@ const blogs = [
 
                 {/* Conclusion */}
                 <div className="space-y-6">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 pb-3">
+                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
                     Conclusion
                   </h2>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     At QualiInsights, we are committed to helping you harness
                     the power of AI to drive business transformation. Our
                     expertise and innovative QaaS framework ensure that your AI
                     initiatives are not only successfully implemented but also
                     continually optimized for maximum impact.
                   </p>
-                  <p className="mt-4 text-lg leading-relaxed">
+                  <p className=" text-lg leading-relaxed">
                     Ready to transform your business with AI? Contact us today
                     to learn how QualiInsights can help you achieve your goals.
                   </p>
@@ -610,7 +610,6 @@ const blogs = [
       ],
     },
   },
- 
 ];
 
 
@@ -636,8 +635,9 @@ const Blog = () => {
 
 
   return (
-    <div className="pb-20 bg-gradient-to-b from-[#ffffff] via-[#F7E5B6] to-[#ffffff] ">
-      <h3 className="text-5xl   mt-20 ml-10 text-left md:text-center">
+    // <div className="pb-20">
+      <div className="pb-20 bg-gradient-to-b from-[#ffffff] via-[#ffedf2] to-[#ffffff] ">
+      <h3 className="text-5xl   mt-10 ml-10 text-left md:text-center">
         The Quality Chronicles
       </h3>
 
@@ -645,7 +645,7 @@ const Blog = () => {
         ARTICLES AND STORIES ABOUT QUALITY AS A SERVICE
       </p>
       {/* Categories Menu */}
-      <div className="text-center my-10">
+      <div className="text-center mb-10">
         {categories.map((category) => (
           <button
             key={category}
@@ -669,25 +669,33 @@ const Blog = () => {
         ))}
       </div>
       {/* Display Blogs */}
-      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-32 place-items-center gap-32">
+
+      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-20 place-items-center gap-32">
         {filteredBlogs.map((blog) => (
-          <div
-            key={blog.id}
-            className="group w-96 h-80 text-left bg-white  rounded-xl border-1 border-stone-950 flex flex-col justify-between"
-          >
-            <div>
-              {/* <p className="text-md p-3 rounded-t-xl  bg-gradient-to-r from-[#fccbd7] via-[#f9c2c250] to-[#ffffff] "> */}
-              <p className="text-md p-3 rounded-t-xl  ">{blog.name}</p>
-              <p className="text-md  p-3 text-justify w-full  border-t-1 border-stone-950">
-                {blog.description}
-              </p>
-            </div>
-            <button
-              className="border-t-1 rounded-b-xl border-stone-950 w-full hover:bg-black hover:text-white  mx-auto  py-3 "
-              onClick={() => handleImageClick(blog)}
+          <div className="relative w-[26rem] ">
+            {/* Colored Background Shape */}
+            <div className="absolute -inset-2 mt-28 rounded-2xl bg-gradient-to-r from-[#9D354B] via-[#be6e7f]  to-[#7a5860]" />
+
+            {/* Blog Card */}
+            <div
+              key={blog.id}
+              className="relative group w-[26rem] h-72 text-left bg-white rounded-xl border border-stone-950 flex flex-col justify-between shadow-lg"
             >
-              Read More
-            </button>
+              <div>
+                <p className="text-md pt-10 p-3 text-center font-semibold text-gray-800">
+                  {blog.name}
+                </p>
+                <p className="text-xs px-12 py-8 text-justify w-full  border-stone-950 text-gray-600">
+                  {blog.description}
+                </p>
+              </div>
+              <button
+                className=" border-stone-950 w-full rounded-b-xl hover:bg-black hover:text-white py-2 transition-all"
+                onClick={() => handleImageClick(blog)}
+              >
+                Read More
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -705,5 +713,5 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Transition(Blog);
 
