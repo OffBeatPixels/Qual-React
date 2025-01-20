@@ -3,7 +3,7 @@ import Logo from "/src/assets/logo.webp";
 import fit from "/src/assets/ft-bg-1.jpg";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaLinkedin } from "react-icons/fa6";
-import Services from './Services';
+import Services1 from "./Offerings/Services1";
 
 const Footer = () => {
   return (
@@ -32,12 +32,12 @@ const Footer = () => {
           <h3 className="  text-xl  mb-4 text-black ">Solutions</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/services" className=" hover:text-red-500 ">
+              <Link to="/services1" className=" hover:text-red-500 ">
                 Project Based Services
               </Link>
             </li>
             <li>
-              <Link to="/services1" className=" hover:text-red-500 ">
+              <Link to="/services2" className=" hover:text-red-500 ">
                 Managed Services
               </Link>
             </li>

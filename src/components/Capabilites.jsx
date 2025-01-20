@@ -1,13 +1,9 @@
- 
-
-
-//I am spliting cards data in two array because i cant apply the logice on each row beacuse every cards getting palced in first cards potions so if you can do it please go ahead 
+ //I am splitting cards data in two array because i cant apply the logic on each row because every cards getting placed in first cards potions so if you can do it please go ahead 
 import React, { useState } from "react";
 import { FaBrain } from "react-icons/fa";
-import { FcCustomerSupport, FcBarChart } from "react-icons/fc";
 import { TbGraphFilled } from "react-icons/tb";
 import { FaRobot } from "react-icons/fa";
-import { MdManageSearch } from "react-icons/md";
+
 
 // Default fallback data for cardGroups
 // const defaultCardGroups = {
@@ -99,92 +95,92 @@ import { MdManageSearch } from "react-icons/md";
 //   ],
 // };
 
-const defaultCardGroups = {
-  consulting: [
-    {
-      title: " Process Improvement Consulting",
-      details:
-        "Identify inefficiencies, streamline workflows, and realign processes to strategic business objectives, boosting efficiency and effectiveness.",
-      icon: <FcCustomerSupport size={50} />,
-    },
-    {
-      title: " KPI Development and Implementation",
-      details:
-        " Establish tailored Key Performance Indicators (KPIs) that provide actionable insights, enabling smarter decision-making and measurable outcomes.",
-      icon: <FcBarChart size={50} />,
-    },
-    {
-      title: " Actionable Business and Strategic Insights",
-      details:
-        "Generate insights that empower businesses to make data-driven decisions, address key challenges, and achieve strategic objectives.",
-      icon: <MdManageSearch size={50} color="2A6E2A" />,
-    },
-    {
-      title: "  Vendor and Process Scalability Solutions",
-      details:
-        " Develop adaptive frameworks that scale effortlessly with your business, ensuring consistency and quality across all operations.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: "Accelerate Responsible AGI Development",
-      details:
-        " Leverage expertise in advanced analytics and ethical practices to accelerate the development and deployment of Responsible Artificial General Intelligence (AGI) solutions.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-  ],
-  qaFrameworkEvolution: [
-    {
-      title: "End-to-End QA Frameworks",
-      details:
-        " Design and implement scalable Quality Assurance frameworks that go beyond compliance to capture vital signals and drive operational excellence.",
-      icon: <FaBrain size={50} />,
-    },
-    {
-      title: " Independent Quality Audits",
-      details:
-        "Audits Provide unbiased, third-party evaluations to enhance accountability, improve trust, and deliver actionable recommendations for sustained quality enhancement.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: " Strategic Quality Transformation",
-      details:
-        " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: "  Function as an Independent Monitoring Partners",
-      details:
-        "  Operate as a neutral, independent monitoring function to provide unbiased insights, improve transparency, and maintain accountability.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: "AI-Powered Dashboard Solutions",
-      details:
-        " Leverage cutting-edge visualization tools and predictive analytics to transform raw data into meaningful insights, driving informed strategies and proactive decision-making.",
-      icon: <TbGraphFilled size={50} color="1a88cc" />,
-    },
-  ],
-  continuousImprovement: [
-    {
-      title: " Continuous Improvement Programst",
-      details:
-        " Embed a culture of ongoing innovation with structured initiatives that empower teams to identify and implement impactful changes, ensuring long-term growth.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: " Early Detection of Potential Customer Issuess",
-      details:
-        " Utilize advanced monitoring and predictive analytics to identify and address customer pain points before they escalate.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-    {
-      title: " Strategic Quality Transformation",
-      details:
-        " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
-      icon: <FaRobot size={50} color="2A6E2A" />,
-    },
-  ],
-};
+// const defaultCardGroups = {
+//   consulting: [
+//     {
+//       title: " Process Improvement Consulting",
+//       details:
+//         "Identify inefficiencies, streamline workflows, and realign processes to strategic business objectives, boosting efficiency and effectiveness.",
+//       icon: <FcCustomerSupport size={50} />,
+//     },
+//     {
+//       title: " KPI Development and Implementation",
+//       details:
+//         " Establish tailored Key Performance Indicators (KPIs) that provide actionable insights, enabling smarter decision-making and measurable outcomes.",
+//       icon: <FcBarChart size={50} />,
+//     },
+//     {
+//       title: " Actionable Business and Strategic Insights",
+//       details:
+//         "Generate insights that empower businesses to make data-driven decisions, address key challenges, and achieve strategic objectives.",
+//       icon: <MdManageSearch size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: "  Vendor and Process Scalability Solutions",
+//       details:
+//         " Develop adaptive frameworks that scale effortlessly with your business, ensuring consistency and quality across all operations.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: "Accelerate Responsible AGI Development",
+//       details:
+//         " Leverage expertise in advanced analytics and ethical practices to accelerate the development and deployment of Responsible Artificial General Intelligence (AGI) solutions.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//   ],
+//   qaFrameworkEvolution: [
+//     {
+//       title: "End-to-End QA Frameworks",
+//       details:
+//         " Design and implement scalable Quality Assurance frameworks that go beyond compliance to capture vital signals and drive operational excellence.",
+//       icon: <FaBrain size={50} />,
+//     },
+//     {
+//       title: " Independent Quality Audits",
+//       details:
+//         "Audits Provide unbiased, third-party evaluations to enhance accountability, improve trust, and deliver actionable recommendations for sustained quality enhancement.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: " Strategic Quality Transformation",
+//       details:
+//         " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: "  Function as an Independent Monitoring Partners",
+//       details:
+//         "  Operate as a neutral, independent monitoring function to provide unbiased insights, improve transparency, and maintain accountability.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: "AI-Powered Dashboard Solutions",
+//       details:
+//         " Leverage cutting-edge visualization tools and predictive analytics to transform raw data into meaningful insights, driving informed strategies and proactive decision-making.",
+//       icon: <TbGraphFilled size={50} color="1a88cc" />,
+//     },
+//   ],
+//   continuousImprovement: [
+//     {
+//       title: " Continuous Improvement Programst",
+//       details:
+//         " Embed a culture of ongoing innovation with structured initiatives that empower teams to identify and implement impactful changes, ensuring long-term growth.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: " Early Detection of Potential Customer Issuess",
+//       details:
+//         " Utilize advanced monitoring and predictive analytics to identify and address customer pain points before they escalate.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//     {
+//       title: " Strategic Quality Transformation",
+//       details:
+//         " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+//       icon: <FaRobot size={50} color="2A6E2A" />,
+//     },
+//   ],
+// };
 
 
 // const Capabilites = ({ cardGroups = defaultCardGroups }) => {
@@ -286,27 +282,158 @@ const defaultCardGroups = {
 
 // export default Capabilites;
 
-const Capabilites = ({ cardGroups = defaultCardGroups }) => {
-  const [activeSection, setActiveSection] = useState("consulting");
+// const Capabilites = ({ cardGroups = defaultCardGroups }) => {
+//   const [activeSection, setActiveSection] = useState("consulting");
 
+//   return (
+//     <section className="bg-white">
+//       <h1 className="text-3xl md:text-4xl text-center pt-5 text-black">
+//         Capabilities
+//       </h1>
+
+//       {/* Navigation Buttons */}
+//       <div className="flex justify-center gap-40 mt-6">
+//         <button
+//           className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
+//             activeSection === "consulting"
+//               ? "bg-gray-300 text-black"
+//               : "bg-white "
+//           }`}
+//           onClick={() => setActiveSection("consulting")}
+//         >
+//           Consulting
+//         </button>
+//         <button
+//           className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
+//             activeSection === "qaFrameworkEvolution"
+//               ? "bg-gray-300 text-black"
+//               : "bg-white"
+//           }`}
+//           onClick={() => setActiveSection("qaFrameworkEvolution")}
+//         >
+//           QA Framework Evolution
+//         </button>
+//         <button
+//           className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
+//             activeSection === "continuousImprovement"
+//               ? "bg-gray-300 text-black"
+//               : "bg-white"
+//           }`}
+//           onClick={() => setActiveSection("continuousImprovement")}
+//         >
+//           Continuous Improvement
+//         </button>
+//       </div>
+
+//       {/* Sections */}
+//       <div className="z-auto">
+//         {activeSection === "consulting" && (
+//           <div>
+//             <div className="grid grid-cols-3 shadow-small gap-6 rounded-xl p-10 md:mx-10">
+//               {cardGroups.consulting.map((card, index) => (
+//                 <Card key={index} card={card} />
+//               ))}
+//             </div>
+//           </div>
+//         )}
+
+//         {activeSection === "qaFrameworkEvolution" && (
+//           <div>
+//             <div className="grid grid-cols-3 shadow-small rounded-xl p-10 gap-6 md:mx-10">
+//               {cardGroups.qaFrameworkEvolution.map((card, index) => (
+//                 <Card key={index} card={card} />
+//               ))}
+//             </div>
+//           </div>
+//         )}
+
+//         {activeSection === "continuousImprovement" && (
+//           <div>
+//             <div className="grid grid-cols-3 shadow-small p-10 rounded-xl gap-6 md:mx-10">
+//               {cardGroups.continuousImprovement.map((card, index) => (
+//                 <Card key={index} card={card} />
+//               ))}
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </section>
+//   );
+// };
+// export default Capabilites;
+
+
+
+
+const defaultCardGroups = {
+
+  qaFrameworkEvolution: [
+    {
+      title: "End-to-End QA Frameworks",
+      details:
+        " Design and implement scalable Quality Assurance frameworks that go beyond compliance to capture vital signals and drive operational excellence.",
+      icon: <FaBrain size={50} />,
+    },
+    {
+      title: " Independent Quality Audits",
+      details:
+        "Audits Provide unbiased, third-party evaluations to enhance accountability, improve trust, and deliver actionable recommendations for sustained quality enhancement.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+    {
+      title: " Strategic Quality Transformation",
+      details:
+        " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+    {
+      title: "  Function as an Independent Monitoring Partners",
+      details:
+        "  Operate as a neutral, independent monitoring function to provide unbiased insights, improve transparency, and maintain accountability.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+    {
+      title: "AI-Powered Dashboard Solutions",
+      details:
+        " Leverage cutting-edge visualization tools and predictive analytics to transform raw data into meaningful insights, driving informed strategies and proactive decision-making.",
+      icon: <TbGraphFilled size={50} color="1a88cc" />,
+    },
+  ],
+  continuousImprovement: [
+    {
+      title: " Continuous Improvement Programst",
+      details:
+        " Embed a culture of ongoing innovation with structured initiatives that empower teams to identify and implement impactful changes, ensuring long-term growth.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+    {
+      title: " Early Detection of Potential Customer Issuess",
+      details:
+        " Utilize advanced monitoring and predictive analytics to identify and address customer pain points before they escalate.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+    {
+      title: " Strategic Quality Transformation",
+      details:
+        " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+      icon: <FaRobot size={50} color="2A6E2A" />,
+    },
+  ],
+};
+
+
+const Capabilites = ({ cardGroups = defaultCardGroups }) => {
+  const [activeSection, setActiveSection] = useState("qaFrameworkEvolution");
+  
   return (
     <section className="bg-white">
       <h1 className="text-3xl md:text-4xl text-center pt-5 text-black">
-        Capabilities
+        Managed Services
       </h1>
 
       {/* Navigation Buttons */}
       <div className="flex justify-center gap-40 mt-6">
-        <button
-          className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
-            activeSection === "consulting"
-              ? "bg-gray-300 text-black"
-              : "bg-white "
-          }`}
-          onClick={() => setActiveSection("consulting")}
-        >
-          Consulting
-        </button>
+      
         <button
           className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
             activeSection === "qaFrameworkEvolution"
@@ -367,7 +494,7 @@ const Capabilites = ({ cardGroups = defaultCardGroups }) => {
 export default Capabilites;
 
 // Card Component for Reusability
-const Card = ({ card }) => (
+export  const Card = ({ card }) => (
   <div className="relative flex-shrink-0  transition-all duration-700 group">
     <div className="w-[300px] h-[200px] px-3 border border-gray-200 rounded-lg flex flex-col items-center  transition-all duration-700">
       <span className="py-2" >{card.icon}</span>

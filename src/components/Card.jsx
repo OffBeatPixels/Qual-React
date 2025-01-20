@@ -196,7 +196,7 @@ const Card = () => {
     // },
     {
       title:
-        " Project-Based Services: Delivering Tailored Solutions for Immediate Impact",
+        " Cost",
       description: (
         <div className="space-y-6 w-[50vw] h-fit">
           <div>
@@ -269,7 +269,7 @@ const Card = () => {
       // icon: <video src={graph} alt="Graph Icon" className="h-10" autoPlay loop />,
     },
     {
-      title: " Next Gen QA - Transforming Quality into a Strategic Advantage",
+      title: " Vendor Management",
       description: (
         <div className="space-y-6 p-4 w-[50vw] h-fit ">
           <div>
@@ -347,7 +347,7 @@ const Card = () => {
     },
     {
       title:
-        "Continuous improvement - Transition from Transaction monitoring to Transformation ",
+        "Data Analytics ",
       description: (
         <div className="space-y-6 p-6 bg-white w-[50vw] h-fit ">
           <div >

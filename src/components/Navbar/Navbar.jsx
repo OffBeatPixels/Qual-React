@@ -15,8 +15,8 @@ const navmenu = [
     delay: "0.2s",
     hasDropdown: true, // Added flag for dropdown menu
     dropdownItems: [
-      { title: "Project Based Services", path: "/services" },
-      { title: "Managed Services", path: "/services1" },
+      { title: "Project Based Services", path: "/services1" },
+      { title: "Managed Services", path: "/Services2" },
     ],
   },
   {
@@ -100,7 +100,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`w-full z-50  sticky top-0 h-20 justify-end ${getNavbarColor()}`}>
+    <nav
+      className={`w-full z-50  sticky top-0 h-20 justify-end ${getNavbarColor()}`}
+    >
       <div
         className="flex items-center mt-2 justify-between font-league"
         ref={menuRef}

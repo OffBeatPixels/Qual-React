@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.clip-arrow-left {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+}
+
+.clip-arrow-right {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
 *{
   margin: 0;
   padding: 0;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: 'Inter',sans-serif;
   font-weight: 500;

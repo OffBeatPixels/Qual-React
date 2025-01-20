@@ -158,8 +158,6 @@
 //     <section className="bg-white ">
 //       <div className="flex mx-auto h-px w-[80%] md:w-[30%] text-white justify-center">
 
-
-
 //         <div className="flex-grow h-[2px] bg-black"> </div>
 //         <span className="h-[2px] ml-2 bg-black">....</span>
 //         <span className="h-[2px] ml-2 bg-black">....</span>
@@ -202,9 +200,6 @@
 // };
 
 // export default FlipCardSection;
-
-
-
 
 // with graph points
 // import React, { useState } from "react";
@@ -338,9 +333,7 @@
 
 // export default FlipCardSection;
 
-
-
-// with card next 
+// with card next
 // import React, { useState } from "react";
 // import { FaBrain } from "react-icons/fa6";
 // import { FcCustomerSupport } from "react-icons/fc";
@@ -438,7 +431,6 @@
 // };
 
 // export default FlipCardSection;
-
 
 // import React, { useState } from "react";
 // import { FaBrain } from "react-icons/fa6";
@@ -549,97 +541,204 @@
 
 // export default FlipCardSection;
 
-
-
 import React from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { cmImg, consultingImg, qaImg } from "../assets";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { useScroll, useTransform } from "framer-motion";
+import { GoogleGeminiEffect } from "./ui/google-gemini-effect";
+
+const CardData = [
+  {
+    name: "Process Improvement Consulting",
+  },
+  {
+    name: "Actionable Business and Strategic Insights",
+  },
+  {
+    name: "Accelerate Responsible AGI Development",
+  },
+  {
+    name: "End-to-End QA Frameworks",
+  },
+  {
+    name: "Independent Quality Audits",
+  },
+  { name: "Continuous Improvement Programs" },
+];
+
+const Card = ({ data }) => {
+  // const navigate = useNavigate();
+
+  return (
+    <VerticalTimelineElement
+      contentStyle={{
+        background: "#A2CEF0",
+        color: "#0000",
+      }}
+      contentArrowStyle={{ borderRight: "8px solid  #232631" }}
+      iconStyle={{ background: "#000" }}
+      // icon={
+      //   <div className="flex justify-center items-center w-full h-full">
+      //     <img
+      //       src={data.image}
+      //       alt={data.name}
+      //       className="w-[60%] h-[60%] object-contain rounded-full"
+      //     />
+      //   </div>
+      // }
+    >
+      <div>
+        <h3 className="text-black text-xl font-bold  ">{data.name}</h3>
+      </div>
+    </VerticalTimelineElement>
+  );
+};
+
+// const FlipCardSection = () => {
+//   return (
+//     <section className="my-10 h-fit">
+//       <div>
+//         <div className="bg-[#F4F8FC] w-full h-fit  p-5 ">
+//           <h1 className="text-3xl md:text-4xl text-center  mb-5 font-bold text-black">
+//             How We Resolve
+//           </h1>
+//           {/* <div className="rotate-45 w-60 mt-20 absolute left-[20%] bg-black h-1" />
+//           <div className="-rotate-45 w-60 mt-[15.6rem] absolute left-[20%] bg-black h-1" />
+//           <div className="rotate-45 w-60 mt-20 absolute right-[30%] bg-black h-1" />
+//           <div className=" w-[39.5rem]  absolute right-[41.5%] bg-black h-1" />
+//           <div className="-rotate-45 w-60 mt-[15.6rem]  absolute right-[30%] bg-black h-1" /> <div className="border-[2px] border-[#febf8f] mt-10 sm:mt-0  sm:w-[33rem]  p-5 rounded-3xl">
+//           <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#febf8f] w-28 place-content-center place-items-center rounded-full ">
+//             <img src={qaImg} alt="QA image" className="w-16 h-16" />
+//           </div>
+//           <div>
+//             {" "}
+//             <p className="font-bold text-2xl mb-2">QA Framework Evolution</p>
+//             <ul className="list-disc  ml-6 space-y-2">
+//               <li>End-to-End QA Frameworks</li>
+//               <li>Independent Quality Audits</li>
+//               <li>Strategic Quality Transformation</li>
+//               <li>AI-Powered Dashboard Solutions</li>
+//               <li>Function as an Independent Monitoring Partner</li>
+//             </ul>
+//           </div>
+//         </div>
+
+//         <div className="border-[2px] border-[#FFDE88]  mt-10 sm:mt-0 sm:w-[33rem]  p-5 rounded-3xl">
+//           <div className="sm:translate-x-32 sm:-translate-y-24 h-28 bg-[#FFDE88] w-28 place-content-center place-items-center rounded-full ">
+//             <img src={cmImg} alt="Improvement image" className="  w-16 h-16 " />
+//           </div>
+//           <div>
+//             <p className="font-bold text-2xl mb-2">Continuous Improvement</p>
+//             <ul className="list-disc  ml-6 space-y-2">
+//               <li>Continuous Improvement Programs</li>
+//               <li>Early Detection of Potential Customer Issues</li>
+//               <li>Strategic Quality Transformation</li>
+//             </ul>
+//           </div>
+//         </div> */}
+//           <div className=" flex flex-col">
+//             <VerticalTimeline>
+//               {CardData.map((data, index) => (
+//                 <Card key={`management-${index}`} data={data} />
+//               ))}
+//             </VerticalTimeline>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default FlipCardSection;
+
 
 
 
 const FlipCardSection = () => {
+ const ref = React.useRef(null);
+ const { scrollYProgress } = useScroll({
+   target: ref,
+   offset: ["start start", "end start"],
+ });
 
-  const navigate = useNavigate();
+ const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 2.1]);
+ const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 2.1]);
+ const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 2.1]);
+ const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 2.1]);
+ const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 2.1]);
+ 
+
   return (
-    <section className=" py-20">
-      <h1 className="text-3xl md:text-4xl text-center my-20 font-bold text-black">
-        Capabilities
-      </h1>
+    // <section className="my-10 h-fit">
+    //   <div>
+    //     <div className="bg-[#F4F8FC] w-full h-fit  p-5 ">
+    //       <h1 className="text-3xl md:text-4xl text-center  mb-5 font-bold text-black">
+    //         How We Resolve
+    //       </h1>
+    //       {/* <div className="rotate-45 w-60 mt-20 absolute left-[20%] bg-black h-1" />
+    //       <div className="-rotate-45 w-60 mt-[15.6rem] absolute left-[20%] bg-black h-1" />
+    //       <div className="rotate-45 w-60 mt-20 absolute right-[30%] bg-black h-1" />
+    //       <div className=" w-[39.5rem]  absolute right-[41.5%] bg-black h-1" />
+    //       <div className="-rotate-45 w-60 mt-[15.6rem]  absolute right-[30%] bg-black h-1" /> <div className="border-[2px] border-[#febf8f] mt-10 sm:mt-0  sm:w-[33rem]  p-5 rounded-3xl">
+    //       <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#febf8f] w-28 place-content-center place-items-center rounded-full ">
+    //         <img src={qaImg} alt="QA image" className="w-16 h-16" />
+    //       </div>
+    //       <div>
+    //         {" "}
+    //         <p className="font-bold text-2xl mb-2">QA Framework Evolution</p>
+    //         <ul className="list-disc  ml-6 space-y-2">
+    //           <li>End-to-End QA Frameworks</li>
+    //           <li>Independent Quality Audits</li>
+    //           <li>Strategic Quality Transformation</li>
+    //           <li>AI-Powered Dashboard Solutions</li>
+    //           <li>Function as an Independent Monitoring Partner</li>
+    //         </ul>
+    //       </div>
+    //     </div>
 
-      <div className="sm:flex   gap-2 mx-10 ">
-        <div className="border-[2px] border-[#A2CEF0] sm:w-[33rem]  p-5  rounded-3xl">
-          <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#A2CEF0] w-28 place-content-center place-items-center rounded-full ">
-            <img
-              src={consultingImg}
-              alt="Consulting image"
-              className=" w-16 h-16    "
-            />
-          </div>
-          <div>
-            <p className="font-bold text-2xl mb-2">Consulting</p>
-            <ul className="list-disc  ml-6 space-y-2">
-              <li>Process Improvement Consulting</li>
-              <li>KPI Development and Implementation</li>
-              <li>Actionable Business and Strategic Insights</li>
-              <li>Vendor and Process Scalability Solutions</li>
-              <li>Accelerate Responsible AGI Development</li>
-            </ul>
-          </div>
-          <p
-            className="text-[#A2CEF0] font-semibold cursor-pointer text-center mt-5"
-            onClick={() => navigate("/capabilites")}
-          >
-            Read More
-          </p>
-        </div>
-
-        <div className="border-[2px] border-[#febf8f] mt-10 sm:mt-0  sm:w-[33rem]  p-5 rounded-3xl">
-          <div className="sm:translate-x-32 sm:-translate-y-20 h-28 bg-[#febf8f] w-28 place-content-center place-items-center rounded-full ">
-            <img src={qaImg} alt="QA image" className="w-16 h-16" />
-          </div>
-          <div>
-            {" "}
-            <p className="font-bold text-2xl mb-2">QA Framework Evolution</p>
-            <ul className="list-disc  ml-6 space-y-2">
-              <li>End-to-End QA Frameworks</li>
-              <li>Independent Quality Audits</li>
-              <li>Strategic Quality Transformation</li>
-              <li>AI-Powered Dashboard Solutions</li>
-              <li>Function as an Independent Monitoring Partner</li>
-            </ul>
-          </div>
-          <p
-            className="text-[#febf8f] font-semibold cursor-pointer text-center mt-5"
-            onClick={() => navigate("/capabilites")}
-          >
-            Read More
-          </p>
-        </div>
-
-        <div className="border-[2px] border-[#FFDE88]  mt-10 sm:mt-0 sm:w-[33rem]  p-5 rounded-3xl">
-          <div className="sm:translate-x-32 sm:-translate-y-24 h-28 bg-[#FFDE88] w-28 place-content-center place-items-center rounded-full ">
-            <img src={cmImg} alt="Improvement image" className="  w-16 h-16 " />
-          </div>
-          <div>
-            <p className="font-bold text-2xl mb-2">Continuous Improvement</p>
-            <ul className="list-disc  ml-6 space-y-2">
-              <li>Continuous Improvement Programs</li>
-              <li>Early Detection of Potential Customer Issues</li>
-              <li>Strategic Quality Transformation</li>
-            </ul>
-          </div>
-          <p
-            className="text-[#f6d47f] font-semibold cursor-pointer text-center pt-20"
-            onClick={() => navigate("/capabilites")}
-          >
-            Read More
-          </p>
-        </div>
-      </div>
-    </section>
+    //     <div className="border-[2px] border-[#FFDE88]  mt-10 sm:mt-0 sm:w-[33rem]  p-5 rounded-3xl">
+    //       <div className="sm:translate-x-32 sm:-translate-y-24 h-28 bg-[#FFDE88] w-28 place-content-center place-items-center rounded-full ">
+    //         <img src={cmImg} alt="Improvement image" className="  w-16 h-16 " />
+    //       </div>
+    //       <div>
+    //         <p className="font-bold text-2xl mb-2">Continuous Improvement</p>
+    //         <ul className="list-disc  ml-6 space-y-2">
+    //           <li>Continuous Improvement Programs</li>
+    //           <li>Early Detection of Potential Customer Issues</li>
+    //           <li>Strategic Quality Transformation</li>
+    //         </ul>
+    //       </div>
+    //     </div> */}
+    //       <div className=" flex flex-col">
+    //         <VerticalTimeline>
+    //           {CardData.map((data, index) => (
+    //             <Card key={`management-${index}`} data={data} />
+    //           ))}
+    //         </VerticalTimeline>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+    <div
+      className="h-[80vh] bg-[#375d7c] w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      ref={ref}
+    >
+      <GoogleGeminiEffect
+        pathLengths={[
+          pathLengthFirst,
+          pathLengthSecond,
+          pathLengthThird,
+          pathLengthFourth,
+          pathLengthFifth,
+        ]}
+      />
+    </div>
   );
 };
 
 export default FlipCardSection;
-
- 

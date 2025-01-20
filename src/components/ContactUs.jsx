@@ -33,7 +33,7 @@ const ContactUs = () => {
           >
             <div className="mb-4">
               <label htmlFor="firstName" className="block text-gray-700">
-                First Name <span className="text-red-500">*</span>
+                Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -47,15 +47,30 @@ const ContactUs = () => {
             </div>
 
             <div className="mb-4">
-              <label htmlFor="lastName" className="block text-gray-700">
-                Last Name
+              <label htmlFor="organizationName" className="block text-gray-700">
+                Organization Name 
               </label>
               <input
                 type="text"
+                id="organizationName"
+                name="organizationName"
+                value={formData.organizationName}
+                onChange={handleChange}
+               
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-pink-400"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="lastName" className="block text-gray-700">
+                Phone No
+              </label>
+              <input
+                type="phone"
                 id="lastName"
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
+               
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-pink-400"
               />
             </div>
@@ -104,3 +119,6 @@ const ContactUs = () => {
 };
 
 export default Transition(ContactUs);
+
+
+

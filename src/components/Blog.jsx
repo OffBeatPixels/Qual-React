@@ -1,717 +1,470 @@
-import Service1 from "../assets/Blog1.jpg";
-import Service2 from "../assets/Blog2.jpg";
-import React, { useState } from "react";
-import Popup from "./Popup";
-import Transition from "./Animations/Transition";
-import { MdKeyboardArrowRight } from "react-icons/md";
 
-const blogs = [
+// import React, { useState, useEffect } from "react";
+// import Popup from "./Popup"; // Ensure you have a Popup component
+
+// const Blog = () => {
+//   const [blogs, setBlogs] = useState([]);
+//   const [popupData, setPopupData] = useState(null);
+//   const [selectedCategory, setSelectedCategory] = useState("All");
+
+//   // Fetch blogs from Strapi API
+//   useEffect(() => {
+//     const fetchBlogs = async () => {
+//       try {
+//         const response = await fetch("http://localhost:1337/api/blog-posts");
+//         if (!response.ok) {
+//           throw new Error("Network response was not ok");
+//         }
+//         const data = await response.json();
+//         // Extracting blog data from the response
+//         const blogData = data.data.map((item) => ({
+//           id: item.id,
+//           name: item.attributes.Blog_Title,
+//           description: item.attributes.Blog_Data[0]?.Blog_Data || "No description available",
+//           category: item.attributes.Blog_Category,
+//         }));
+//         setBlogs(blogData);
+//       } catch (error) {
+//         console.error("Error fetching blogs:", error);
+//       }
+//     };
+
+//     fetchBlogs();
+//   }, []);
+
+//   // Handle image click to show popup
+//   const handleImageClick = (blog) => {
+//     setPopupData(blog);
+//   };
+
+//   // Close the popup
+//   const handleClosePopup = () => {
+//     setPopupData(null);
+//   };
+
+//   // Get unique categories from blogs
+//   const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
+
+//   // Filter blogs based on selected category
+//   const filteredBlogs =
+//     selectedCategory === "All"
+//       ? blogs
+//       : blogs.filter((blog) => blog.category === selectedCategory);
+
+//   return (
+//     <div className="pb-20 bg-gradient-to-b from-[#ffffff] via-[#ffedf2] to-[#ffffff]">
+//       <h3 className="text-5xl mt-10 ml-10 text-left md:text-center">
+//         The Quality Chronicles
+//       </h3>
+//       <p className="text-left md:text-center py-5 ml-10">
+//         ARTICLES AND STORIES ABOUT QUALITY AS A SERVICE
+//       </p>
+//       {/* Categories Menu */}
+//       <div className="text-center mb-10">
+//         {categories.map((category) => (
+//           <button
+//             key={category}
+//             onClick={() => setSelectedCategory(category)}
+//             style={{
+//               margin: "5px",
+//               padding: "5px",
+//               backgroundColor:
+//                 selectedCategory === category ? "#B8B9B8" : "#fff",
+//               color: selectedCategory === category ? "#fff" : "#000",
+//               border: "1px solid #ddd",
+//               borderRadius: "10px",
+//               height: "30px",
+//               width: "100px",
+//               cursor: "pointer",
+//             }}
+//             className="items-center"
+//           >
+//             {category}
+//           </button>
+//         ))}
+//       </div>
+//       {/* Display Blogs */}
+//       <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-20 place-items-center gap-32">
+//         {filteredBlogs.map((blog) => (
+//           <div className="relative w-[26rem]" key={blog.id}>
+//             {/* Colored Background Shape */}
+//             <div className="absolute -inset-2 mt-28 rounded-2xl bg-gradient-to-r from-[#9D354B] via-[#be6e7f] to-[#7a5860]" />
+//             {/* Blog Card */}
+//             <div className="relative group w-[26rem] h-72 text-left bg-white rounded-xl border border-stone-950 flex flex-col justify-between shadow-lg">
+//               <div>
+//                 <p className="text-md pt-10 p-3 text-center font-semibold text-gray-800">
+//                   {blog.name}
+//                 </p>
+//                 <p className="text-xs px-12 py-8 text-justify w-full border-stone-950 text-gray-600">
+//                   {blog.description}
+//                 </p>
+//               </div>
+//               <button
+//                 className="border-stone-950 w-full rounded-b-xl hover:bg-black hover:text-white py-2 transition-all"
+//                 onClick={() => handleImageClick(blog)}
+//               >
+//                 Read More
+//               </button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       {/* Popup */}
+//       {popupData && (
+//         <Popup
+//           name={popupData.name}
+//           text={popupData.description}
+//           onClose={handleClosePopup}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Blog;
+
+
+
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronUp, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+// import { styles } from "../../../style.js";
+// import { BlogImg, BlogImg2 } from "../../../assets";
+
+const LatestBlogs = [
   {
-    name: "Mastering Multi-Vendor Complexity with the QualiInsights QaaS Framework",
-    category: "POV",
-    img: Service1,
-    description:
-      "In today’s competitive landscape, managing multiple vendors can be a daunting task. Businesses often face challenges such as inconsistent customer experiences, biased audits, slow learning processes, ineffective change management, and increased costs.",
+    id: 1,
+    title: "5 Principles to grow your business",
+    description: `We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.
 
-    text: {
-      title:
-        "Mastering Multi-Vendor Complexity with the QualiInsights QaaS Framework",
-      sections: [
-        {
-          content: (
-            <section className="p-5 bg-gray-50 text-gray-800 text-justify">
-              <div className="max-w-6xl mx-auto space-y-12">
-                {/* Introduction */}
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed">
-                    In today’s competitive landscape, managing multiple vendors
-                    can be a daunting task. Businesses often face challenges
-                    such as inconsistent customer experiences, biased audits,
-                    slow learning processes, ineffective change management, and
-                    increased costs. At QualiInsight, we understand these
-                    complexities and are proud to introduce our Quality as a
-                    Service (QaaS) framework, designed to streamline and
-                    optimize multi-vendor management across various geographies
-                    and languages. Let’s explore how our QaaS solution can
-                    transform your business operations for greater efficiency
-                    and effectiveness.
-                  </p>
-                </div>
+   What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                {/* Section: Challenges */}
-                <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    The Challenges of Multi-Vendor Management
-                  </h2>
-                  <div className="mt-6 space-y-10">
-                    {/* Subsection: Governance */}
-                    <div>
-                        <h3 className="text-2xl flex text-gray-900">
-                          Lack of Centralized and Independent Governance
-                        </h3>
-                      <p className=" text-lg leading-relaxed">
-                        Managing multiple vendors often leads to a lack of
-                        standardized processes, resulting in inconsistent
-                        customer experiences. Our QaaS solution addresses this
-                        challenge by introducing a unified approach that
-                        centralizes monitoring and drives consistency.
-                      </p>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                        <li>
-                          Standardization: We achieve approximately a 40%
-                          reduction in process variation by standardizing
-                          processes and customer experiences through centralized
-                          QaaS governance.
-                        </li>
-                        <li>
-                          Consistency: Our framework ensures that all vendors
-                          adhere to the same high standards, significantly
-                          improving overall operational efficiency.
-                        </li>
-                      </ul>
-                    </div>
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                    {/* Subsection: Biased Audits */}
-                    <div>
-                      <h3 className="text-2xl text-gray-900">
-                        Biased Audits Impacting Business Decisions
-                      </h3>
-                      <p className=" text-lg leading-relaxed">
-                        In a multi-vendor setup, quality assurance (QA)
-                        processes are frequently managed by the same team
-                        handling operations, which can lead to bias. Failures
-                        and learnings may not be transparently shared with
-                        clients, distorting true performance metrics.
-                      </p>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                        <li>
-                          Independent QA: Our QaaS framework provides an
-                          independent view on quality, eliminating bias from
-                          audits.
-                        </li>
-                        <li>
-                          True Insights: This unbiased approach equips clients
-                          with accurate insights, fostering better business
-                          decisions and outcomes. Clients can expect a 25-30%
-                          improvement in business outcomes due to more reliable
-                          performance data.
-                        </li>
-                      </ul>
-                    </div>
 
-                    {/* Subsection: Slow Learning */}
-                    <div>
-                      <h3 className="text-2xl text-gray-900">
-                        Slow Speed of Learning
-                      </h3>
-                      <p className=" text-lg leading-relaxed">
-                        In a multi-vendor environment, the speed of learning can
-                        be sluggish, as vendors often limit their learnings to
-                        internal use. This hampers the implementation of best
-                        practices across all vendors, negatively affecting
-                        customer experience and sales opportunities.
-                      </p>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                        <li>
-                          Real-Time Feedback: Our QaaS framework captures
-                          learnings in real time, accelerating the feedback loop
-                          and promoting a culture of continuous improvement.
-                        </li>
-                        <li>
-                          Faster Adaptation: Businesses can achieve a 30% faster
-                          adaptation to market changes, ensuring they remain
-                          competitive and responsive to customer needs.
-                        </li>
-                      </ul>
-                    </div>
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
-                    {/* Subsection: Effective Change Management */}
-                    <div>
-                      <h3 className="text-2xl text-gray-900">
-                        Effective Change Management
-                      </h3>
-                      <p className=" text-lg leading-relaxed">
-                        Clients often invest significant time in change
-                        management, struggling to achieve desired results
-                        quickly due to limited control over vendor-level success
-                        metrics.
-                      </p>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                        <li>
-                          Seamless Implementation: Our QaaS solution provides
-                          centralized governance, enabling more effective
-                          measurement and management of changes across vendors.
-                        </li>
-                        <li>
-                          Impact: This leads to a 25% improvement in customer
-                          satisfaction (C-Sat) by ensuring changes are
-                          implemented uniformly and effectively.
-                        </li>
-                      </ul>
-                    </div>
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
 
-                    {/* Subsection: Increased Costs Due to Decentralized Management */}
-                    <div>
-                      <h3 className="text-2xl text-gray-900">
-                        Increased Costs Due to Decentralized Management
-                      </h3>
-                      <p className=" text-lg leading-relaxed">
-                        Decentralized QA resources across vendors and regions
-                        can result in higher costs and reduced capability to
-                        manage business continuity planning (BCP) situations
-                        like resource crunches or attrition.
-                      </p>
-                      <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                        <li>
-                          Cost Efficiency: Our centralized QaaS team effectively
-                          manages these challenges, offering improved resource
-                          fungibility and utilization.
-                        </li>
-                        <li>
-                          TCO Reduction: Clients can achieve a 30% reduction in
-                          Total Cost of Ownership (TCO) through better resource
-                          management and efficiency gains.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section: QaaS as a Profit Center */}
-                <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Qualiinsight QaaS - A Profit Center For Clients
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    Our centralized and independent QaaS framework not only
-                    resolves these challenges but also acts as a profit center
-                    for our clients:
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      X-Utilization & Fungibility: Improved cross-training and
-                      utilization of quality analysts across workflows and
-                      languages lead to a 30% reduction in TCO.
-                    </li>
-                    <li>
-                      Optimized Total Cost of Ownership: Enhanced efficiency,
-                      revenue generation, and customer experience contribute to
-                      a 10% improvement in revenue.
-                    </li>
-                    <li>
-                      Centralized Learning & Best Practices: Achieve a 30%
-                      increase in speed to competency through centralized
-                      learning and best practice sharing.
-                    </li>
-                    <li>
-                      Uniform Data Analytics, Reporting, and Insights: Gain 15%
-                      efficiency through consistent data analytics and
-                      reporting.
-                    </li>
-                    <li>
-                      Efficient Change Management: Experience a 25% improvement
-                      in customer satisfaction (C-Sat).
-                    </li>
-                    <li>
-                      Independent/Unbiased Quality Results: Realize a 30%+
-                      improvement in overall quality outcomes.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Conclusion */}
-                <div>
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Conclusion
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    At QualiInsight, our QaaS framework is the cornerstone of
-                    effective multi-vendor management. By promoting best
-                    practice sharing, standardization, and consistent quality,
-                    we empower businesses to seamlessly manage multiple vendors
-                    across different geographies and languages, resulting in
-                    improved operational efficiency and reduced process
-                    variations.
-                  </p>
-                  <p className=" text-lg leading-relaxed">
-                    Are you ready to elevate your multi-vendor management
-                    strategy? Contact us today to learn how QualiInsight can
-                    help you achieve unparalleled success!
-                  </p>
-                </div>
-              </div>
-            </section>
-          ),
-        },
-      ],
-    },
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    
+    We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
+    // image: BlogImg,
   },
   {
-    name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
-    category: "Use Case",
-    description:
-      "In today`s rapidly evolving technological landscape, businesses are constantly seeking ways to stay ahead of the curve. At QualiInsights, we understand the unique challenges and opportunities presented by AI.",
-    img: Service2,
+    id: 2,
+    title: "7 Effective Marketing Strategies",
+    description: `
+   What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-    text: {
-      title:
-        "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
-      sections: [
-        {
-          content: (
-            <section className="p-5 bg-gray-50 text-gray-800 text-justify">
-              <div className="max-w-6xl mx-auto space-y-12">
-                {/* Introduction */}
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed">
-                    In today’s rapidly evolving technological landscape,
-                    businesses are constantly seeking ways to stay ahead of the
-                    curve. At QualiInsights, we understand the unique challenges
-                    and opportunities presented by AI. Our Quality as a Service
-                    (QaaS) framework is designed to help businesses not only
-                    implement and adopt AI but also optimize and enhance
-                    existing AI solutions. Here’s how we can help you achieve
-                    unparalleled success with your AI initiatives.
-                  </p>
-                </div>
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                {/* Enhancing Existing AI Implementations */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Enhancing Existing AI Implementations
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For clients who already have tools and technology in place
-                    and prefer not to introduce new systems, our QaaS framework
-                    offers a comprehensive solution to ensure these resources
-                    deliver maximum value.
-                  </p>
-                </div>
 
-                {/* Measuring AI Solution Quality */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Measuring AI Solution Quality and Ensuring ROI
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    Our framework acts as a robust solution to measure the
-                    quality of your planned AI implementations. We ensure that
-                    your AI initiatives meet expected outcomes and deliver a
-                    strong return on investment (ROI). As domain experts, we:
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Identify the Right Use Cases: We pinpoint the most
-                      effective AI or automation use cases tailored to your
-                      business needs.
-                    </li>
-                    <li>
-                      Design AI Solutions: We support you in designing AI
-                      solutions and drafting precise requirements for tech
-                      teams.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Optimizing Implemented AI Solutions */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Optimizing Implemented AI Solutions
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For AI solutions already in place, our expertise can help
-                    you identify opportunities for enhancement. We conduct
-                    regular research on tool capabilities, benchmark against
-                    similar solutions in the market, and ensure that new trends,
-                    policies, and process changes are incorporated. This
-                    continuous optimization ensures your AI solutions deliver
-                    consistent, high-value outcomes.
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Improvement Opportunities: We identify areas where
-                      technology/platform capabilities can be enhanced.
-                    </li>
-                    <li>
-                      Market Comparisons: We compare your solutions with market
-                      alternatives to ensure competitiveness.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Maximizing Technology Investments */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Maximizing Technology Investments
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    We partner with you to ensure that your technology
-                    investments are fully utilized and maintained according to
-                    changing requirements and environments. This ensures that
-                    your AI solutions remain relevant and valuable over time.
-                  </p>
-                </div>
-
-                {/* Implementing New AI Solutions */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Implementing New AI Solutions
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For clients aspiring to implement new AI tools or
-                    technologies, our QaaS framework provides a structured
-                    approach to process assessment and solution recommendation.
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Comprehensive Process Assessments: We pinpoint the most
-                      effective AI or automation use cases tailored to your
-                      business needs.
-                    </li>
-                    <li>
-                      Strategic Recommendations: We identify areas where
-                      technology/platform capabilities can be enhanced.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Expected Benefits */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Expected Benefits
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    By leveraging our QaaS framework, businesses can expect
-                    significant improvements in various areas:
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Enhanced ROI: Our solutions typically result in a 20-30%
-                      increase in ROI by optimizing existing AI implementations
-                      and ensuring new AI investments are strategically aligned
-                      with business goals.
-                    </li>
-                    <li>
-                      Cost Reduction: Clients can achieve up to 25% reduction in
-                      operational costs by streamlining processes and
-                      implementing efficient AI solutions.
-                    </li>
-                    <li>
-                      Improved Customer Experience: AI-driven enhancements can
-                      lead to a 15-20% improvement in customer satisfaction and
-                      engagement.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Conclusion */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Conclusion
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    At QualiInsights, we are committed to helping you harness
-                    the power of AI to drive business transformation. Our
-                    expertise and innovative QaaS framework ensure that your AI
-                    initiatives are not only successfully implemented but also
-                    continually optimized for maximum impact.
-                  </p>
-                  <p className=" text-lg leading-relaxed">
-                    Ready to transform your business with AI? Contact us today
-                    to learn how QualiInsights can help you achieve your goals.
-                  </p>
-                </div>
-              </div>
-            </section>
-          ),
-        },
-      ],
-    },
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    
+    We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
+    // image: BlogImg2,
   },
   {
-    name: "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
-    category: "Industry",
+    id: 3,
+    title: "Digital Transformation Guide",
     description:
-      "In today`s rapidly evolving technological landscape, businesses are constantly seeking ways to stay ahead of the curve. At QualiInsights, we understand the unique challenges and opportunities presented by AI.",
-    img: Service2,
+      "We specialize in providing practical advice and hands-on support to businesses like yours...",
+    // image: BlogImg,
+  },
+  {
+    id: 4,
+    title: "Financial Planning Tips",
+    description:
+      "We specialize in providing practical advice and hands-on support to businesses like yours...",
+    // image: BlogImg2,
+  },
+];
+const OldBlogs = [
+  {
+    id: 1,
+    title: "5 Principles to grow your business",
+    description: `We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.
 
-    text: {
-      title:
-        "Mastering AI solutions and to transforming AI Journey with QualiInsights’ Game-Changing QaaS",
-      sections: [
-        {
-          content: (
-            <section className="p-10 bg-gray-50 text-gray-800">
-              <div className="max-w-6xl mx-auto space-y-12">
-                {/* Introduction */}
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed">
-                    In today’s rapidly evolving technological landscape,
-                    businesses are constantly seeking ways to stay ahead of the
-                    curve. At QualiInsights, we understand the unique challenges
-                    and opportunities presented by AI. Our Quality as a Service
-                    (QaaS) framework is designed to help businesses not only
-                    implement and adopt AI but also optimize and enhance
-                    existing AI solutions. Here’s how we can help you achieve
-                    unparalleled success with your AI initiatives.
-                  </p>
-                </div>
+   What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                {/* Enhancing Existing AI Implementations */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Enhancing Existing AI Implementations
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For clients who already have tools and technology in place
-                    and prefer not to introduce new systems, our QaaS framework
-                    offers a comprehensive solution to ensure these resources
-                    deliver maximum value.
-                  </p>
-                </div>
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                {/* Measuring AI Solution Quality */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Measuring AI Solution Quality and Ensuring ROI
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    Our framework acts as a robust solution to measure the
-                    quality of your planned AI implementations. We ensure that
-                    your AI initiatives meet expected outcomes and deliver a
-                    strong return on investment (ROI). As domain experts, we:
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Identify the Right Use Cases: We pinpoint the most
-                      effective AI or automation use cases tailored to your
-                      business needs.
-                    </li>
-                    <li>
-                      Design AI Solutions: We support you in designing AI
-                      solutions and drafting precise requirements for tech
-                      teams.
-                    </li>
-                  </ul>
-                </div>
 
-                {/* Optimizing Implemented AI Solutions */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Optimizing Implemented AI Solutions
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For AI solutions already in place, our expertise can help
-                    you identify opportunities for enhancement. We conduct
-                    regular research on tool capabilities, benchmark against
-                    similar solutions in the market, and ensure that new trends,
-                    policies, and process changes are incorporated. This
-                    continuous optimization ensures your AI solutions deliver
-                    consistent, high-value outcomes.
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Improvement Opportunities: We identify areas where
-                      technology/platform capabilities can be enhanced.
-                    </li>
-                    <li>
-                      Market Comparisons: We compare your solutions with market
-                      alternatives to ensure competitiveness.
-                    </li>
-                  </ul>
-                </div>
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
-                {/* Maximizing Technology Investments */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Maximizing Technology Investments
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    We partner with you to ensure that your technology
-                    investments are fully utilized and maintained according to
-                    changing requirements and environments. This ensures that
-                    your AI solutions remain relevant and valuable over time.
-                  </p>
-                </div>
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
 
-                {/* Implementing New AI Solutions */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Implementing New AI Solutions
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    For clients aspiring to implement new AI tools or
-                    technologies, our QaaS framework provides a structured
-                    approach to process assessment and solution recommendation.
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Comprehensive Process Assessments: We pinpoint the most
-                      effective AI or automation use cases tailored to your
-                      business needs.
-                    </li>
-                    <li>
-                      Strategic Recommendations: We identify areas where
-                      technology/platform capabilities can be enhanced.
-                    </li>
-                  </ul>
-                </div>
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    
+    We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
+    // image: BlogImg,
+  },
+  {
+    id: 2,
+    title: "7 Effective Marketing Strategies",
+    description: `
+   What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                {/* Expected Benefits */}
-                <div className="">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Expected Benefits
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    By leveraging our QaaS framework, businesses can expect
-                    significant improvements in various areas:
-                  </p>
-                  <ul className="mt-4 pl-6 space-y-3 list-disc text-gray-800">
-                    <li>
-                      Enhanced ROI: Our solutions typically result in a 20-30%
-                      increase in ROI by optimizing existing AI implementations
-                      and ensuring new AI investments are strategically aligned
-                      with business goals.
-                    </li>
-                    <li>
-                      Cost Reduction: Clients can achieve up to 25% reduction in
-                      operational costs by streamlining processes and
-                      implementing efficient AI solutions.
-                    </li>
-                    <li>
-                      Improved Customer Experience: AI-driven enhancements can
-                      lead to a 15-20% improvement in customer satisfaction and
-                      engagement.
-                    </li>
-                  </ul>
-                </div>
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                {/* Conclusion */}
-                <div className="space-y-6">
-                  <h2 className="text-3xl font-medium text-gray-900 border-b-2 border-gray-200 ">
-                    Conclusion
-                  </h2>
-                  <p className=" text-lg leading-relaxed">
-                    At QualiInsights, we are committed to helping you harness
-                    the power of AI to drive business transformation. Our
-                    expertise and innovative QaaS framework ensure that your AI
-                    initiatives are not only successfully implemented but also
-                    continually optimized for maximum impact.
-                  </p>
-                  <p className=" text-lg leading-relaxed">
-                    Ready to transform your business with AI? Contact us today
-                    to learn how QualiInsights can help you achieve your goals.
-                  </p>
-                </div>
-              </div>
-            </section>
-          ),
-        },
-      ],
-    },
+
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+Where can I get some?
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+    
+    We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
+    // image: BlogImg,
+  },
+  {
+    id: 3,
+    title: "Digital Transformation Guide",
+    description:
+      "We specialize in providing practical advice and hands-on support to businesses like yours...",
+    // image: BlogImg,
+  },
+  {
+    id: 4,
+    title: "Financial Planning Tips",
+    description:
+      "We specialize in providing practical advice and hands-on support to businesses like yours...",
+    // image: BlogImg,
   },
 ];
 
+function Blog() {
+  const [selectedBlog, setSelectedBlog] = useState(LatestBlogs[0]);
+  const [selectedOldBlog, setSelectedOldBlog] = useState(OldBlogs[0]);
 
-const Blog = () => {
-    const [popupData, setPopupData] = useState(null);
+  const contentRefLatest = useRef(null);
+  const contentRefOld = useRef(null);
 
-    const handleImageClick = (blog) => {
-      setPopupData(blog);
+  const scrollStep = 100;
+  const [scrollProgressLatest, setScrollProgressLatest] = useState(0);
+  const [scrollProgressOld, setScrollProgressOld] = useState(0);
+
+  // Scroll Content Function
+  const scrollContent = (direction, section) => {
+    const container =
+      section === "latest" ? contentRefLatest.current : contentRefOld.current;
+
+    if (container) {
+      const newPosition =
+        container.scrollTop + (direction === "up" ? -scrollStep : scrollStep);
+      container.scrollTo({
+        top: newPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Handle Scroll Progress
+  const handleScroll = (section) => {
+    const container =
+      section === "latest" ? contentRefLatest.current : contentRefOld.current;
+    const setScrollProgress =
+      section === "latest" ? setScrollProgressLatest : setScrollProgressOld;
+
+    if (container) {
+      const totalHeight = container.scrollHeight - container.clientHeight;
+      const scrollTop = container.scrollTop;
+      const progress = (scrollTop / totalHeight) * 100;
+      setScrollProgress(progress);
+    }
+  };
+
+  useEffect(() => {
+    const containerLatest = contentRefLatest.current;
+    const containerOld = contentRefOld.current;
+
+    const scrollHandlerLatest = () => handleScroll("latest");
+    const scrollHandlerOld = () => handleScroll("old");
+
+    if (containerLatest) {
+      containerLatest.addEventListener("scroll", scrollHandlerLatest);
+    }
+    if (containerOld) {
+      containerOld.addEventListener("scroll", scrollHandlerOld);
+    }
+
+    return () => {
+      if (containerLatest) {
+        containerLatest.removeEventListener("scroll", scrollHandlerLatest);
+      }
+      if (containerOld) {
+        containerOld.removeEventListener("scroll", scrollHandlerOld);
+      }
     };
-
-    const handleClosePopup = () => {
-      setPopupData(null);
-    };
-
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
-
-  const filteredBlogs =
-    selectedCategory === "All"
-      ? blogs
-      : blogs.filter((blog) => blog.category === selectedCategory);
-
+  }, []);
 
   return (
-    // <div className="pb-20">
-      <div className="pb-20 bg-gradient-to-b from-[#ffffff] via-[#ffedf2] to-[#ffffff] ">
-      <h3 className="text-5xl   mt-10 ml-10 text-left md:text-center">
-        The Quality Chronicles
-      </h3>
+    <div className="min-h-screen bg-[#d5e8f6] p-8 text-justify">
+      <div className="lg:pl-14 lg:pr-28">
+        <h3 className="text-center pt-5 text-4xl font-bold">Our Blogs</h3>
 
-      <p className="text-left md:text-center py-5 ml-10  ">
-        ARTICLES AND STORIES ABOUT QUALITY AS A SERVICE
-      </p>
-      {/* Categories Menu */}
-      <div className="text-center mb-10">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            style={{
-              margin: "5px",
-              padding: "5px",
-              backgroundColor:
-                selectedCategory === category ? "#B8B9B8" : "#fff",
-              color: selectedCategory === category ? "#fff" : "#000",
-              border: "1px solid #ddd",
-              borderRadius: "10px",
-              height: "30px",
-              width: "100px",
-              cursor: "pointer",
-            }}
-            className="items-center"
-          >
-            {category}
-          </button>
-        ))}
+        {/* Latest Blogs Section */}
+        <Section
+          title="Latest Blogs"
+          blogs={LatestBlogs}
+          selectedBlog={selectedBlog}
+          setSelectedBlog={setSelectedBlog}
+          contentRef={contentRefLatest}
+          scrollProgress={scrollProgressLatest}
+          setScrollProgress={setScrollProgressLatest}
+        />
+
+        {/* Featured Blogs Section for Old Blogs */}
+        <Section
+          title="Featured Blogs"
+          blogs={OldBlogs}
+          selectedBlog={selectedOldBlog}
+          setSelectedBlog={setSelectedOldBlog}
+          contentRef={contentRefOld}
+          scrollProgress={scrollProgressOld}
+          setScrollProgress={setScrollProgressOld}
+        />
       </div>
-      {/* Display Blogs */}
+    </div>
+  );
+}
 
-      <div className="grid grid-cols-1 mt-10 sm:grid-cols-2 md:grid-cols-3 mx-20 place-items-center gap-32">
-        {filteredBlogs.map((blog) => (
-          <div className="relative w-[26rem] ">
-            {/* Colored Background Shape */}
-            <div className="absolute -inset-2 mt-28 rounded-2xl bg-gradient-to-r from-[#9D354B] via-[#be6e7f]  to-[#7a5860]" />
-
-            {/* Blog Card */}
-            <div
-              key={blog.id}
-              className="relative group w-[26rem] h-72 text-left bg-white rounded-xl border border-stone-950 flex flex-col justify-between shadow-lg"
-            >
-              <div>
-                <p className="text-md pt-10 p-3 text-center font-semibold text-gray-800">
-                  {blog.name}
-                </p>
-                <p className="text-xs px-12 py-8 text-justify w-full  border-stone-950 text-gray-600">
-                  {blog.description}
+const Section = ({
+  title,
+  blogs,
+  selectedBlog,
+  setSelectedBlog,
+  contentRef,
+  scrollProgress,
+  scrollContent,
+  section,
+}) => {
+  return (
+    <div className="mt-20">
+      <p className="my-5 text-4xl font-bold">{title}</p>
+      <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
+        <div className="grid lg:grid-cols-2">
+          <img
+            // src={selectedBlog.image}
+            alt="Featured blog post"
+            className="lg:h-[80%] lg:w-[85%] rounded-2xl object-cover"
+          />
+          <div className="flex">
+            <div className="flex flex-col justify-start">
+              <h2 className="text-2xl font-bold text-[#538D4E]">
+                {selectedBlog.title}
+              </h2>
+              <div
+                ref={contentRef}
+                className="max-h-[40rem] lg:max-h-[25rem]  overflow-y-scroll scrollbar-none  p-5"
+                onScroll={() => handleScroll("latest")}
+              >
+                <p className="text-gray-600 whitespace-pre-line">
+                  {selectedBlog.description}
                 </p>
               </div>
-              <button
-                className=" border-stone-950 w-full rounded-b-xl hover:bg-black hover:text-white py-2 transition-all"
-                onClick={() => handleImageClick(blog)}
-              >
-                Read More
-              </button>
             </div>
+            {/* Custom Scroll Arrows */}
+            <ScrollControls
+              scrollContent={scrollContent}
+              scrollProgress={scrollProgress}
+              section={section}
+            />
           </div>
-        ))}
+        </div>
       </div>
 
-      {/* Popup */}
-      {popupData && (
-        <Popup
-          // image={popupData.img}
-          name={popupData.name}
-          text={popupData.text}
-          onClose={handleClosePopup}
-        />
-      )}
+      {/* Blog Grid */}
+      <div className="grid gap-6 h-full w-full sm:grid-cols-2">
+        {blogs.map((post) => (
+          <motion.button
+            key={post.id}
+            onClick={() => setSelectedBlog(post)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="flex gap-4 rounded-2xl bg-white p-4 text-left shadow-sm transition-all hover:shadow-md"
+          >
+            <img
+              // src={post.image}
+              alt={post.title}
+              className="h-24 w-24 rounded-2xl object-cover"
+            />
+            <div>
+              <h3 className="mb-2 font-extrabold text-black">{post.title}</h3>
+              <p className="text-md text-gray-600 line-clamp-2">
+                {post.description}
+              </p>
+            </div>
+          </motion.button>
+        ))}
+      </div>
     </div>
   );
 };
+const ScrollControls = ({ scrollContent, scrollProgress, section }) => (
+  <div className="flex flex-col items-center absolute right-1 md:right-20 self-start">
+    <button
+      onClick={() => scrollContent("up", section)}
+      className="rounded-t-md bg-gray-100 p-2 hover:bg-gray-200 active:bg-gray-300"
+      aria-label="Scroll up"
+    >
+      <ChevronUp className="h-4 w-4" />
+    </button>
+    <div className="h-[20rem] w-2 bg-gray-200 relative">
+      <div
+        className="absolute w-full bg-[#686868]"
+        style={{ height: `${scrollProgress}%` }}
+      />
+    </div>
+    <button
+      onClick={() => scrollContent("down", section)}
+      className="rounded-b-md bg-gray-100 p-2 hover:bg-gray-200 active:bg-gray-300"
+      aria-label="Scroll down"
+    >
+      <ChevronDown className="h-4 w-4" />
+    </button>
+  </div>
+);
 
-export default Transition(Blog);
-
+export default Blog
