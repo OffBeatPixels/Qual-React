@@ -53,7 +53,7 @@ gsap.to(".scroller", {
    
 })
   return (
-    <div className="">
+    <div >
       {/* <div className="scroller"> */}
         <BackgroundBoxesDemo />
       {/* </div> */}

@@ -734,32 +734,32 @@ const Goals = () => {
   return (
     <section
       id="goals-section"
-      className="relative min-h-fit  py-40 bg-center bg-no-repeat bg-white"
+      className="relative min-h-fit  p-24 bg-center bg-no-repeat bg-white"
       style={{
-        zIndex: -1,
+        // zIndex: -1,
       }}
     >
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${images[focusElement]})`,
           opacity: 0.3, // Set the opacity of the background image
           zIndex: -1,
         }}
-      ></div>
+      ></div> */}
 
-      <div className="relative z-10 container mx-auto px-6 md:px-12">
+      <div className="relative  container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center gap-1">
           {/* Carousel Section */}
-          <div className="w-full md:w-1/2 flex justify-center">
+          <div className="w-full md:w-1/2  flex justify-center">
             <FancyCarousel
               images={images}
-              carouselRadius={400}
-              peripheralImageRadius={100}
-              centralImageRadius={200}
+              carouselRadius={200}
+              peripheralImageRadius={50}
+              centralImageRadius={80}
               focusElementStyling={{ border: "2px solid #ba4949" }}
-              autoRotateTime={3}
-              borderWidth={4}
+             
+              borderWidth={3}
               borderHexColor={"1c364f"}
               setFocusElement={setFocusElement}
             />
