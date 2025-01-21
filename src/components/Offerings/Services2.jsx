@@ -160,7 +160,7 @@ const Services2 = ({ cardGroups = defaultCardGroups }) => {
 
         {activeSection === "qaFrameworkEvolution" && (
           <div>
-            <div className="grid grid-cols-4 shadow-small  rounded-xl p-10 gap-6 md:mx-10">
+            <div className="grid grid-cols-4 shadow-small rounded-xl p-10 gap-6 md:mx-10">
               {cardGroups.qaFrameworkEvolution.map((card, index) => (
                 <Card key={index} card={card} />
               ))}
