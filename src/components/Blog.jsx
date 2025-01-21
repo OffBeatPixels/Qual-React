@@ -129,7 +129,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 // import { styles } from "../../../style.js";
-// import { BlogImg, BlogImg2 } from "../../../assets";
+// import { "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid", "https://img.freepik.com/free-photo/tablet-which-you-can-read-blog_1134-226.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid" } from "../../../assets";
 
 const LatestBlogs = [
   {
@@ -163,7 +163,7 @@ Where can I get some?
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
     
     We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 2,
@@ -185,21 +185,21 @@ Where can I get some?
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
     
     We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
-    // image: BlogImg2,
+    image: "https://img.freepik.com/free-photo/tablet-which-you-can-read-blog_1134-226.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 3,
     title: "Digital Transformation Guide",
     description:
       "We specialize in providing practical advice and hands-on support to businesses like yours...",
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 4,
     title: "Financial Planning Tips",
     description:
       "We specialize in providing practical advice and hands-on support to businesses like yours...",
-    // image: BlogImg2,
+    image: "https://img.freepik.com/free-photo/tablet-which-you-can-read-blog_1134-226.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
 ];
 const OldBlogs = [
@@ -234,7 +234,7 @@ Where can I get some?
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
     
     We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 2,
@@ -256,21 +256,21 @@ Where can I get some?
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
     
     We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.`,
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 3,
     title: "Digital Transformation Guide",
     description:
       "We specialize in providing practical advice and hands-on support to businesses like yours...",
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     id: 4,
     title: "Financial Planning Tips",
     description:
       "We specialize in providing practical advice and hands-on support to businesses like yours...",
-    // image: BlogImg,
+    image: "https://img.freepik.com/free-photo/aerial-view-computer-laptop-wooden-table-photography-hobby-concept_53876-24773.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
 ];
 
@@ -386,7 +386,7 @@ const Section = ({
       <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
         <div className="grid lg:grid-cols-2">
           <img
-            // src={selectedBlog.image}
+            src={selectedBlog.image}
             alt="Featured blog post"
             className="lg:h-[80%] lg:w-[85%] rounded-2xl object-cover"
           />
@@ -426,7 +426,7 @@ const Section = ({
             className="flex gap-4 rounded-2xl bg-white p-4 text-left shadow-sm transition-all hover:shadow-md"
           >
             <img
-              // src={post.image}
+              src={post.image}
               alt={post.title}
               className="h-24 w-24 rounded-2xl object-cover"
             />
