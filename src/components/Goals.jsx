@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
+import {motion} from "framer-motion"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/logo.webp"
 import { FaCalendarCheck } from "react-icons/fa";
@@ -7,6 +8,7 @@ import { TbHandClick } from "react-icons/tb";
 import FancyCarousel from "react-fancy-circular-carousel";
 import "react-fancy-circular-carousel/FancyCarousel.css";
 gsap.registerPlugin(ScrollTrigger);
+
 
 import {
     goals1,
@@ -22,32 +24,45 @@ const hoverContent = [
     subHeading: " Optimize Processes, Maximize Impact",
     text: ` Transform workflows and eliminate inefficiencies with tailored process improvement consulting for sustainable operational excellence.`,
     position: "top-[35%] right-0",
+    image:
+      "https://img.freepik.com/free-photo/business-adviser-analyzing-financial-figures-denoting-progress-work-company_1423-97.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     heading: "Elevate Quality:",
     subHeading: "Redefine Standards, Deliver Excellence",
     text: ` Implement world-class QA frameworks that exceed industry benchmarks, ensuring operational consistency, compliance, and customer satisfaction.`,
     position: "top-[10%] right-40",
+    image:
+      "https://img.freepik.com/free-photo/business-adviser-analyzing-financial-figures-denoting-progress-work-company_1423-97.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     heading: "Insights That Empower:",
     subHeading: "Measure, Predict, Transform",
     text: ` Leverage data-driven KPI design and AI-powered dashboards to gain actionable insights and predictive analytics for smarter decisions.`,
     position: "top-[60%] right-24",
+    image:
+      "https://img.freepik.com/free-photo/business-adviser-analyzing-financial-figures-denoting-progress-work-company_1423-97.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     heading: "Continuously Innovate:",
     subHeading: "Build a Future-Ready Organization",
     text: ` Embed a culture of continuous improvement with robust frameworks, innovation councils, and benefit measurement strategies.`,
     position: "top-[60%] left-10",
+    image:
+      "https://img.freepik.com/free-photo/business-adviser-analyzing-financial-figures-denoting-progress-work-company_1423-97.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
   {
     heading: "AI at Your Fingertips:",
     subHeading: "Tailored Training, Seamless Deployment",
     text: ` Equip your teams with custom AI/AGI training and deployment solutions to drive agility, scalability, and sustained growth.`,
     position: "top-[25%] left-0",
+    image:
+      "https://img.freepik.com/free-photo/business-adviser-analyzing-financial-figures-denoting-progress-work-company_1423-97.jpg?uid=R129847054&ga=GA1.1.84914892.1735965833&semt=ais_hybrid",
   },
 ];
+
+
+// circular svg
 // const Goals = () => {
 //     const [focusElement, setFocusElement] = useState(0);
 //   const images = [goals1, goals2, goals3, goals4, goals5];
@@ -708,25 +723,14 @@ const hoverContent = [
 //         <span className="text-[#DA3357]">measurable outcomes</span>, and{" "}
 //         <span className="text-[#DA3357]">transformative business growth</span>
 //       </p>
-//       <div className="carousel flex">
-//         <FancyCarousel
-//           images={images}
-//           carouselRadius={400}
-//           peripheralImageRadius={100}
-//           centralImageRadius={200}
-//           focusElementStyling={{ border: "2px solid #ba4949" }}
-//           autoRotateTime={3}
-//           borderWidth={4}
-//           borderHexColor={"1c364f"}
-//           setFocusElement={setFocusElement}
-//         />
-//         <div className="mt-40">
-//           <p> {info[focusElement]} </p>
-//         </div>
-//       </div>
+      
 //     </section>
 //   );
 // };
+
+// export default Goals;
+
+
 const Goals = () => {
   const [focusElement, setFocusElement] = useState(0);
   const images = [goals1, goals2, goals3, goals4, goals5];
@@ -735,19 +739,14 @@ const Goals = () => {
     <section
       id="goals-section"
       className="relative min-h-fit  p-24 bg-center bg-no-repeat bg-white"
-      style={{
-        // zIndex: -1,
-      }}
     >
-      {/* <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${images[focusElement]})`,
-          opacity: 0.3, // Set the opacity of the background image
-          zIndex: -1,
-        }}
-      ></div> */}
-
+     
+      <p className="w-full text-4xl  pb-10  text-center">
+         <span className="text-[#296fa8]"> Transforming excellence</span> from
+        a  goal to your <br />
+         daily reality with
+        <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
+      </p>
       <div className="relative  container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center gap-1">
           {/* Carousel Section */}
@@ -758,7 +757,6 @@ const Goals = () => {
               peripheralImageRadius={50}
               centralImageRadius={80}
               focusElementStyling={{ border: "2px solid #ba4949" }}
-             
               borderWidth={3}
               borderHexColor={"1c364f"}
               setFocusElement={setFocusElement}
@@ -782,6 +780,29 @@ const Goals = () => {
         </div>
       </div>
     </section>
+    // <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-8 bg-gray-100">
+    //   {hoverContent.map((item, index) => (
+    //     <div
+    //       key={index}
+    //       className="relative group h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg"
+    //       style={{
+    //         backgroundImage: `url(${item.image})`,
+    //         backgroundSize: "cover",
+    //         backgroundPosition: "center",
+    //         backgroundRepeat: "no-repeat"
+    //       }}
+    //     >
+    //       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
+    //       <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity text-white">
+    //         <h3 className="text-lg font-bold">{item.heading}</h3>
+    //         <h4 className="text-sm font-semibold">{item.subHeading}</h4>
+    //         <p className="text-xs mt-2">{item.text}</p>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>
   );
 };
+
+
 export default Goals;
