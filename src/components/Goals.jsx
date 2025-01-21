@@ -17,6 +17,7 @@ import {
     goals4,
     goals5,}
      from "../assets/index"
+import { Rotate3d, Rotate3D } from "lucide-react";
 
 const hoverContent = [
   {
@@ -736,71 +737,85 @@ const Goals = () => {
   const images = [goals1, goals2, goals3, goals4, goals5];
 
   return (
-    <section
-      id="goals-section"
-      className="relative min-h-fit  p-24 bg-center bg-no-repeat bg-white"
-    >
-     
-      <p className="w-full text-4xl  pb-10  text-center">
-         <span className="text-[#296fa8]"> Transforming excellence</span> from
-        a  goal to your <br />
-         daily reality with
-        <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
-      </p>
-      <div className="relative  container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row items-center gap-1">
-          {/* Carousel Section */}
-          <div className="w-full md:w-1/2  flex justify-center">
-            <FancyCarousel
-              images={images}
-              carouselRadius={200}
-              peripheralImageRadius={50}
-              centralImageRadius={80}
-              focusElementStyling={{ border: "2px solid #ba4949" }}
-              borderWidth={3}
-              borderHexColor={"1c364f"}
-              setFocusElement={setFocusElement}
-            />
-          </div>
+    // <section
+    //   id="goals-section"
+    //   className="relative min-h-fit  p-24 bg-center bg-no-repeat bg-white"
+    // >
 
-          {/* Content Section */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <div className="p-6 bg-white ml-40 mb-40 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h2 className="text-xl font-semibold text-gray-800">
-                {hoverContent[focusElement].heading}
-              </h2>
-              <h3 className="text-lg text-gray-600 mt-2">
-                {hoverContent[focusElement].subHeading}
-              </h3>
-              <p className="text-gray-700 mt-4">
-                {hoverContent[focusElement].text}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    // <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-8 bg-gray-100">
-    //   {hoverContent.map((item, index) => (
-    //     <div
-    //       key={index}
-    //       className="relative group h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg"
-    //       style={{
-    //         backgroundImage: `url(${item.image})`,
-    //         backgroundSize: "cover",
-    //         backgroundPosition: "center",
-    //         backgroundRepeat: "no-repeat"
-    //       }}
-    //     >
-    //       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
-    //       <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity text-white">
-    //         <h3 className="text-lg font-bold">{item.heading}</h3>
-    //         <h4 className="text-sm font-semibold">{item.subHeading}</h4>
-    //         <p className="text-xs mt-2">{item.text}</p>
+    //   <p className="w-full text-4xl  pb-10  text-center">
+    //      <span className="text-[#296fa8]"> Transforming excellence</span> from
+    //     a  goal to your <br />
+    //      daily reality with
+    //     <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
+    //   </p>
+    //   <div className="relative  container mx-auto px-6 md:px-12">
+    //     <div className="flex flex-col md:flex-row items-center gap-1">
+    //       {/* Carousel Section */}
+    //       <div className="w-full md:w-1/2  flex justify-center">
+    //         <FancyCarousel
+    //           images={images}
+    //           carouselRadius={200}
+    //           peripheralImageRadius={50}
+    //           centralImageRadius={80}
+    //           focusElementStyling={{ border: "2px solid #ba4949" }}
+    //           borderWidth={3}
+    //           borderHexColor={"1c364f"}
+    //           setFocusElement={setFocusElement}
+    //         />
+    //       </div>
+
+    //       {/* Content Section */}
+    //       <div className="w-full md:w-1/2 text-center md:text-left">
+    //         <div className="p-6 bg-white ml-40 mb-40 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    //           <h2 className="text-xl font-semibold text-gray-800">
+    //             {hoverContent[focusElement].heading}
+    //           </h2>
+    //           <h3 className="text-lg text-gray-600 mt-2">
+    //             {hoverContent[focusElement].subHeading}
+    //           </h3>
+    //           <p className="text-gray-700 mt-4">
+    //             {hoverContent[focusElement].text}
+    //           </p>
+    //         </div>
     //       </div>
     //     </div>
-    //   ))}
-    // </div>
+    //   </div>
+    // </section>
+    <div>
+      <p className="w-full text-4xl  pb-10  text-center">
+        <span className="text-[#296fa8]"> Transforming excellence</span> from a
+        goal to your <br />
+        daily reality with
+        <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-8 bg-gray-100">
+        {/* <p className="w-full text-4xl  pb-10  text-center">
+          <span className="text-[#296fa8]"> Transforming excellence</span> from
+          a goal to your <br />
+          daily reality with
+          <span className="text-[#CF7300]">Qualiinsight's QaaS</span>.
+        </p> */}
+        {hoverContent.map((item, index) => (
+          <div
+            key={index}
+            className={`relative group h-64 bg-gray-300 rounded-lg overflow-hidden shadow-lg   `}
+            style={{
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-80 transition-opacity"></div>
+            <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100  animate- transition-opacity text-white">
+              <h3 className="text-lg font-bold">{item.heading}</h3>
+              <h4 className="text-sm font-semibold">{item.subHeading}</h4>
+              <p className="text-xs mt-2">{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

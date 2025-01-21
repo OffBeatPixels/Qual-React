@@ -72,8 +72,6 @@ const defaultCardGroups = {
         " Leverage cutting-edge visualization tools and predictive analytics to transform raw data into meaningful insights, driving informed strategies and proactive decision-making.",
       icon: <TbGraphFilled size={50} color="1a88cc" />,
     },
-  ],
-  continuousImprovement: [
     {
       title: " Continuous Improvement Programst",
       details:
@@ -93,6 +91,26 @@ const defaultCardGroups = {
       icon: <FaRobot size={50} color="2A6E2A" />,
     },
   ],
+  // continuousImprovement: [
+  //   {
+  //     title: " Continuous Improvement Programst",
+  //     details:
+  //       " Embed a culture of ongoing innovation with structured initiatives that empower teams to identify and implement impactful changes, ensuring long-term growth.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: " Early Detection of Potential Customer Issuess",
+  //     details:
+  //       " Utilize advanced monitoring and predictive analytics to identify and address customer pain points before they escalate.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  //   {
+  //     title: " Strategic Quality Transformation",
+  //     details:
+  //       " Shift quality from being a cost center to a growth enabler by integrating it into core business strategies, driving innovation, efficiency, and competitive advantage.",
+  //     icon: <FaRobot size={50} color="2A6E2A" />,
+  //   },
+  // ],
 };
 
 const Services2 = ({ cardGroups = defaultCardGroups }) => {
@@ -100,12 +118,12 @@ const Services2 = ({ cardGroups = defaultCardGroups }) => {
 
   return (
     <section className="bg-white">
-      <h1 className="text-3xl md:text-4xl text-center pt-5 text-black">
+      <h1 className="text-3xl md:text-4xl text-center py-5 text-black">
         Managed Services
       </h1>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-center gap-40 mt-6">
+      {/* <div className="flex justify-center gap-40 mt-6">
         <button
           className={`px-6 py-2 rounded-t-xl border-t-2 border-l-2 border-r-2 ${
             activeSection === "qaFrameworkEvolution"
@@ -126,7 +144,7 @@ const Services2 = ({ cardGroups = defaultCardGroups }) => {
         >
           Continuous Improvement
         </button>
-      </div>
+      </div> */}
 
       {/* Sections */}
       <div className="z-auto">
@@ -142,7 +160,7 @@ const Services2 = ({ cardGroups = defaultCardGroups }) => {
 
         {activeSection === "qaFrameworkEvolution" && (
           <div>
-            <div className="grid grid-cols-3 shadow-small rounded-xl p-10 gap-6 md:mx-10">
+            <div className="grid grid-cols-4 shadow-small  rounded-xl p-10 gap-6 md:mx-10">
               {cardGroups.qaFrameworkEvolution.map((card, index) => (
                 <Card key={index} card={card} />
               ))}
