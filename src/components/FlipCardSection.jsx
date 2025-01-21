@@ -725,7 +725,7 @@ const FlipCardSection = () => {
     //   </div>
     // </section>
     <div
-      className="h-[80vh] bg-[#375d7c] w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      className="h-[100vh] bg-[#375d7c] w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 2xl:pt-40 overflow-clip"
       ref={ref}
     >
       <GoogleGeminiEffect
